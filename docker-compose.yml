@@ -1,0 +1,81 @@
+services:
+  ai-diagnostics-service:
+    build: ./AI_Diagnostics_Service
+    container_name: AI_Diagnostics_Service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./AI_Diagnostics_Service:/app
+    depends_on:
+      - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=AI_Diagnostics_Service.settings
+      - DATABASE_URL=postgresql://medisphere:medisphere@123@db:5432/medisphere
+
+  appointment-service:
+    build: ./Appointment_Service
+    container_name: Appointment_Service
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./Appointment_Service:/app
+    depends_on:
+      - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=Appointment_Service.settings
+      - DATABASE_URL=postgresql://medisphere:medisphere@123@db:5432/medisphere
+
+  notification-service:
+    build: ./Notification_Service
+    container_name: Notification_Service
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./Notification_Service:/app
+    depends_on:
+      - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=Notification_Service.settings
+      - DATABASE_URL=postgresql://medisphere:medisphere@123@db:5432/medisphere
+
+  user-service:
+    build: ./User_Service
+    container_name: User_Service
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./User_Service:/app
+    depends_on:
+      - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=User_Service.settings
+      - DATABASE_URL=postgresql://medisphere:medisphere@123@db:5432/medisphere
+
+  video-call-service:
+    build: ./Video_Call_Service
+    container_name: Video_Call_Service
+    ports:
+      - "8004:8004"
+    volumes:
+      - ./Video_Call_Service:/app
+    depends_on:
+      - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=Video_Call_Service.settings
+      - DATABASE_URL=postgresql://medisphere:medisphere@123@db:5432/medisphere
+
+  db:
+    image: postgres:latest
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_DB: medisphere
+      POSTGRES_USER: medisphere
+      POSTGRES_PASSWORD: medisphere@123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
