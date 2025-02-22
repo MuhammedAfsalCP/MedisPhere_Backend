@@ -16,9 +16,10 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views import sample
+from .views import Register_Validate,Register_User
 
 urlpatterns = [
-    path('sample/',sample.as_view()),
+    path('registervalidate/',Register_Validate.as_view()),
+    path('userregistersave/',Register_User.as_view()),
     
 ]
