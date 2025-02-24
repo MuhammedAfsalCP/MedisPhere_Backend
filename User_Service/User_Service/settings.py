@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'User_Service.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "medisphere",
-        "HOST":"db",
-        "PORT":"5432",
-        "USER":"medisphere",
-        "PASSWORD":"medisphere@123"
+        "NAME": os.getenv("DATA_BASE_NAME"),
+        "HOST":os.getenv("DATA_BASE_HOST"),
+        "PORT":os.getenv("DATA_BASE_PORT"),
+        "USER":os.getenv("DATA_BASE_USER"),
+        "PASSWORD":os.getenv("DATA_BASE_PASSWORD")
     }
 }
 

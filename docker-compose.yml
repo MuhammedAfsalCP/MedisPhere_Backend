@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   ai-diagnostics-service:
     build: ./AI_Diagnostics_Service
@@ -8,9 +10,8 @@ services:
       - ./AI_Diagnostics_Service:/app
     depends_on:
       - db
-    environment:
-      - DJANGO_SETTINGS_MODULE=AI_Diagnostics_Service.settings
-      - DATABASE_URL=postgresql://medisphere:medisphere@123@db:5432/medisphere
+    env_file:
+      - .env
 
   appointment-service:
     build: ./Appointment_Service
@@ -21,9 +22,8 @@ services:
       - ./Appointment_Service:/app
     depends_on:
       - db
-    environment:
-      - DJANGO_SETTINGS_MODULE=Appointment_Service.settings
-      - DATABASE_URL=postgresql://medisphere:medisphere@123@db:5432/medisphere
+    env_file:
+      - .env
 
   notification-service:
     build: ./Notification_Service
@@ -34,9 +34,8 @@ services:
       - ./Notification_Service:/app
     depends_on:
       - db
-    environment:
-      - DJANGO_SETTINGS_MODULE=Notification_Service.settings
-      - DATABASE_URL=postgresql://medisphere:medisphere@123@db:5432/medisphere
+    env_file:
+      - .env
 
   user-service:
     build: ./User_Service
@@ -47,9 +46,8 @@ services:
       - ./User_Service:/app
     depends_on:
       - db
-    environment:
-      - DJANGO_SETTINGS_MODULE=User_Service.settings
-      - DATABASE_URL=postgresql://medisphere:medisphere@123@db:5432/medisphere
+    env_file:
+      - .env
 
   video-call-service:
     build: ./Video_Call_Service
@@ -60,18 +58,15 @@ services:
       - ./Video_Call_Service:/app
     depends_on:
       - db
-    environment:
-      - DJANGO_SETTINGS_MODULE=Video_Call_Service.settings
-      - DATABASE_URL=postgresql://medisphere:medisphere@123@db:5432/medisphere
+    env_file:
+      - .env
 
   db:
     image: postgres:latest
     container_name: postgres_container
     restart: always
-    environment:
-      POSTGRES_DB: medisphere
-      POSTGRES_USER: medisphere
-      POSTGRES_PASSWORD: medisphere@123
+    env_file:
+      - .env
     ports:
       - "5432:5432"
     volumes:
