@@ -28,8 +28,17 @@ TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
 TWILIO_PHONE_NUMBER = os.getenv("TWILIO_PHONE_NUMBER")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
+ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = []
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",  # Add your frontend URL
+]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # This is where your front-end might be running
+    "http://127.0.0.1:5173",
+]
+# CORS_ALLOW_CREDENTIALS = True
+
 
 
 # Application definition
@@ -44,12 +53,15 @@ INSTALLED_APPS = [
     'app',
     "rest_framework_simplejwt",
     "rest_framework",
+    "corsheaders",
+    
     
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

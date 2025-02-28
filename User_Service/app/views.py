@@ -6,6 +6,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import AllowAny, IsAdminUser
 from django.contrib.auth import authenticate
 from rest_framework import status
+from django.views.decorators.csrf import csrf_exempt
 from .utils import send_otp
 from .serializer import (
     RegisterValidateSerializer,
@@ -18,6 +19,7 @@ from .serializer import (
 
 
 class Register_Validate(APIView):
+    permission_classes = [AllowAny]
     def post(self, request):
         serializer = RegisterValidateSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
@@ -31,6 +33,7 @@ class Register_Validate(APIView):
 
 
 class Register_User(APIView):
+    permission_classes = [AllowAny]
     def post(self, request):
         serializer = Register_User_Data(data=request.data)
 
@@ -62,6 +65,7 @@ class Register_User(APIView):
 
 
 class Register_Doctor(APIView):
+    permission_classes = [AllowAny]
     def post(self, request):
         serializer = Register_Doctor_Data(data=request.data)
 
@@ -94,7 +98,7 @@ class Register_Doctor(APIView):
 
 class Login_Email_and_Password(APIView):
     permission_classes = [AllowAny]
-
+    
     def post(self, request):
         email = request.data.get("email")
         password = request.data.get("password")
@@ -177,6 +181,7 @@ class Login_Mobile_Number_verify(APIView):
 
 
 class Chaining_Password(APIView):
+    permission_classes = [AllowAny]
     def post(self, request):
         serializer = ChainingPasswordSerializer(data=request.data)
         if serializer.is_valid():
@@ -189,6 +194,7 @@ class Chaining_Password(APIView):
 
 
 class Forget_Password_otp_Sent(APIView):
+    permission_classes = [AllowAny]
     def post(self, request):
         phone = request.data.get("mobile_number")
         user = UserProfile.objects.get(mobile_number=phone)
@@ -208,6 +214,7 @@ class Forget_Password_otp_Sent(APIView):
 
 
 class Forge_Password_Save(APIView):
+    permission_classes = [AllowAny]
     def post(self, request):
         phone = request.data.get("checkmobile")
         otp_entered = request.data.get("otp")
