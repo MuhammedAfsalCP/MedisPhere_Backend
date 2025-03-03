@@ -1,6 +1,15 @@
 version: '3.8'
 
 services:
+  rabbitmq:
+    image: "rabbitmq:management"
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"  # RabbitMQ message broker
+      - "15672:15672" # Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
   ai-diagnostics-service:
     build: ./AI_Diagnostics_Service
     container_name: AI_Diagnostics_Service
@@ -48,6 +57,9 @@ services:
       - db
     env_file:
       - .env
+    command: >
+      sh -c "sleep 10 && python manage.py migrate &&
+      python manage.py runserver 0.0.0.0:8000 & python app/consumer.py"
 
   video-call-service:
     build: ./Video_Call_Service

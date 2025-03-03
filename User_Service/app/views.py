@@ -1,7 +1,7 @@
 from django.core.cache import cache  # For temporary storage
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import UserProfile
+from .models import UserProfile,DoctorAvailability
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import AllowAny, IsAdminUser
 from django.contrib.auth import authenticate
@@ -16,7 +16,8 @@ from .serializer import (
     ChainingPasswordSerializer,
     ForgetPasswordSerializer,
 )
-
+import pika
+import json
 
 class Register_Validate(APIView):
     permission_classes = [AllowAny]
@@ -236,3 +237,30 @@ class Forge_Password_Save(APIView):
                 )
 
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+class DoctorAvailabilityAPIView(APIView):
+    """API to check doctor availability"""
+
+    def post(self, request):
+        data = request.data
+        doctor_firstname = data.get("doctor_name")
+        date = data.get("date")
+        slot = data.get("slot")
+        
+
+        try:
+            doctor = UserProfile.objects.get(first_name=doctor_firstname, is_doctor=True)
+            availability = DoctorAvailability.objects.filter(
+                doctor=doctor, date=date, slot=slot, is_available=True
+            )
+
+            if availability:
+                return Response(
+                    {"available": True, "doctor_name": f"{doctor.first_name} {doctor.last_name}"}
+                )
+            else:
+                return Response(
+                    {"available": False, "doctor_name": f"{doctor.first_name} {doctor.last_name}"}
+                )
+
+        except UserProfile.DoesNotExist:
+            return Response({"error": "Doctor not found"}, status=status.HTTP_404_NOT_FOUND)

@@ -116,3 +116,44 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+
+
+class TimeSlotChoices(models.TextChoices):
+    
+    NINE_TEN_AM = "09:00", "09:00-10:00"
+    TEN_ELEVEN_AM = "10:00", "10:00-11:00"
+    ELEVEN_TWELVE_AM = "11:00", "11:00-12:00"
+    TWELVE_ONE_PM = "12:00", "12:00-11:00"
+    ONE_TWO_PM = "1:00", "1:00-2:00"
+    TWO_THREE_PM = "2:00", "2:00-3:00"
+    THREE_FOUR_PM = "3:00", "3:00-4:00"
+    FOUR_FIVE_PM = "4:00", "4:00-5:00"
+    FIVE_SIX_PM = "5:00", "5:00-6:00"
+    SIX_SEVEN_PM = "6:00", "6:00-7:00"
+    SEVEN_EIGHT_PM = "7:00", "7:00-8:00"
+    EIGHT_NINE_PM = "8:00", "8:00-9:00"
+    
+
+class DoctorAvailability(models.Model):
+    doctor = models.ForeignKey(UserProfile,
+        on_delete=models.CASCADE,
+        limit_choices_to={'is_doctor': True},
+        related_name='availabilities'
+    )
+    date = models.DateField(help_text="Date of availability")
+    slot = models.CharField(
+        max_length=5, 
+        choices=TimeSlotChoices.choices, 
+        help_text="Select the available time slot (each slot is one hour)"
+    )
+    is_available = models.BooleanField(default=True, help_text="Indicates if the doctor is available during this slot")
+    
+    class Meta:
+        unique_together = ('doctor', 'date', 'slot')
+        ordering = ['date', 'slot']
+    
+    def __str__(self):
+        slot_label = dict(TimeSlotChoices.choices).get(self.slot, self.slot)
+        return f"{self.doctor.first_name} {self.doctor.last_name} on {self.date} at {slot_label}"
+

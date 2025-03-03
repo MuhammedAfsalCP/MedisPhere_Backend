@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,7 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-(q*dpp0it1(p@h5ldjpdxvp)x4@#y@z1%m5+lb^g1^17ov%9l5'
+BROKER_URL = 'amqp://guest:guest@rabbitmq:5672//'
 
+# If you're using Celery
+CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672//'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -37,6 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'appointments',
+    "rest_framework_simplejwt",
+    "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -44,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -74,10 +86,31 @@ WSGI_APPLICATION = 'Appointment_Service.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("DATA_BASE_NAME"),
+        "HOST":os.getenv("DATA_BASE_HOST"),
+        "PORT":os.getenv("DATA_BASE_PORT"),
+        "USER":os.getenv("DATA_BASE_USER"),
+        "PASSWORD":os.getenv("DATA_BASE_PASSWORD")
     }
+}
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+        # "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ],
+    # "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
+}
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
 }
 
 

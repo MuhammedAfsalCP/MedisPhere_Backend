@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
-from .models import UserProfile
+from .models import UserProfile,DoctorAvailability
 
 class UserProfileAdmin(BaseUserAdmin):
     ordering = ('email',)
@@ -35,3 +35,12 @@ class UserProfileAdmin(BaseUserAdmin):
     search_fields = ('email', 'first_name', 'last_name', 'mobile_number')
 
 admin.site.register(UserProfile, UserProfileAdmin)
+
+
+class DoctorAvailabilityAdmin(admin.ModelAdmin):
+    list_display = ("doctor", "date", "slot", "is_available")
+    list_filter = ("date", "is_available")
+    search_fields = ("doctor__email",)
+    ordering = ("date", "slot")
+
+admin.site.register(DoctorAvailability,DoctorAvailabilityAdmin)
