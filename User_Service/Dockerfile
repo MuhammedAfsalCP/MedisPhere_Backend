@@ -17,5 +17,5 @@ EXPOSE 8003
 ENV DJANGO_SETTINGS_MODULE=User_Service.settings
 
 # Start both Django server and consumer.py
-CMD ["sh", "-c", "python manage.py runserver 0.0.0.0:8003 "]
+CMD ["sh", "-c", "python manage.py runserver 0.0.0.0:8003"]
 

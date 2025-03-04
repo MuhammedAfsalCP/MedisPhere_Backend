@@ -5,7 +5,7 @@ import logging
 import os
 import django
 import sys
-
+from rest_framework import status
 # Set the Django settings module
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "User_Service.settings")
 
@@ -64,12 +64,13 @@ def check_doctor_availability(data):
 
     try:
         doctor = UserProfile.objects.get(first_name=doctor_firstname, is_doctor=True)
+        
 
         with transaction.atomic():  # ✅ Ensures DB changes are committed
             availability = DoctorAvailability.objects.select_for_update().filter(
                 doctor=doctor, date=date, slot=slot, is_available=True
             ).first()
-
+            logging.info("hi")
             if availability:
                 availability.is_available = False
                 availability.save()
@@ -77,14 +78,40 @@ def check_doctor_availability(data):
                 return {"available": False, "doctor_name": doctor.first_name, "status": "Booked"}
             else:
                 logging.warning(f"Doctor {doctor_firstname} is not available on {date} at {slot}.")
-                return {"available": False, "doctor_name": doctor.first_name, "status": "Not Available"}
-
+                return {"error": "Doctor is not available"}
     except UserProfile.DoesNotExist:
         logging.error(f"Doctor '{doctor_firstname}' not found.")
         return {"error": "Doctor not found"}
 
     except Exception as e:
         logging.error(f"Database error: {e}")
+        return {"error": "Database connection failed"}
+def doctor_slot_creation(data):
+    doctor_firstname = data.get("doctor_name")
+    date = data.get("date")
+    slot = data.get("slot")
+
+    try:
+        doctor = UserProfile.objects.get(first_name=doctor_firstname, is_doctor=True)
+        logger.info(doctor)
+        with transaction.atomic():
+            #  Prevent duplicate slot creation
+            existing_slot = DoctorAvailability.objects.filter(doctor=doctor, date=date, slot=slot).first()
+            if existing_slot:
+                logger.warning(f" Slot already exists for Dr. {doctor_firstname} on {date} at {slot}.")
+                return {"status": "Slot Already Exists"}
+
+            #  Create Slot
+            DoctorAvailability.objects.create(doctor=doctor, date=date, slot=slot)
+            logger.info(f" Slot created for Dr. {doctor_firstname} on {date} at {slot}.")
+            return {"status": "Slot Created", "date": date, "slot": slot}
+
+    except UserProfile.DoesNotExist:
+        logger.error(f"Doctor '{doctor_firstname}' not found.")
+        return {"error": "Doctor not found"}
+
+    except Exception as e:
+        logger.error(f"Database error: {e}")
         return {"error": "Database connection failed"}
 
 def callback(ch, method, properties, body):
@@ -121,8 +148,10 @@ def start_consumer():
             connection = connect_to_rabbitmq()
             channel = connection.channel()
             channel.queue_declare(queue="check_doctor_availability")
+            channel.queue_declare(queue="doctor_slot_creation")
             channel.basic_qos(prefetch_count=1)
             channel.basic_consume(queue="check_doctor_availability", on_message_callback=callback)
+            channel.basic_consume(queue="doctor_slot_creation", on_message_callback=callback)
 
             logging.info(" [✔] Waiting for messages from Appointment Service...")
             channel.start_consuming()
@@ -139,3 +168,5 @@ if __name__ == "__main__":
     logging.info("Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.")
     time.sleep(5)  # Ensures RabbitMQ is ready before starting
     start_consumer()
+
+

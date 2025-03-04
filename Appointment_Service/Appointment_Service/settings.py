@@ -22,13 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(q*dpp0it1(p@h5ldjpdxvp)x4@#y@z1%m5+lb^g1^17ov%9l5'
+SECRET_KEY = os.getenv("APPONTMENT_SERVICE_SECRET_KEY")
 BROKER_URL = 'amqp://guest:guest@rabbitmq:5672//'
 
 # If you're using Celery
 CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672//'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 

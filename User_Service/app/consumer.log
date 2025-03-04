@@ -1,0 +1,813 @@
+2025-03-04 08:17:32,111 - INFO - hlo
+2025-03-04 08:25:34,777 - INFO - 🚀 Starting Slot Consumer...
+2025-03-04 08:25:34,785 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 08:25:34,786 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 39836), raddr=('172.18.0.3', 5672)>
+2025-03-04 08:25:34,788 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe364bdc6a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe364bdc6a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 08:25:34,803 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe364bdc6a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 08:25:34,807 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe364bdc6a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 08:25:34,810 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe364bdc6a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 08:25:34,815 - INFO - ✅ Connected to RabbitMQ successfully.
+2025-03-04 08:25:34,824 - INFO - Created channel=1
+2025-03-04 08:25:34,850 - INFO - ✅ Waiting for messages from Appointment Service...
+2025-03-04 08:46:11,657 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 39836)>
+2025-03-04 08:46:11,732 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 39836)>
+2025-03-04 08:46:11,777 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 39836)>
+2025-03-04 08:46:11,810 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-04 08:46:11,859 - INFO - Stack terminated due to ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-04 08:46:11,874 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 39836)>
+2025-03-04 08:46:11,890 - ERROR - Unexpected connection close detected: ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-04 09:09:55,198 - INFO - hlo
+2025-03-04 09:09:55,200 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-04 09:10:00,205 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:10:00,214 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:10:00,216 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 59732), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:00,218 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d0d60>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d0d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:10:00,231 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d0d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:00,232 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d0d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:00,235 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d0d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:00,238 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:10:00,241 - INFO - Created channel=1
+2025-03-04 09:10:00,246 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d0d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:10:00,253 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:10:05,260 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:10:05,260 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:10:05,261 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:10:05,263 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 59732), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:05,264 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 59732), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:05,265 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 59732), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:05,267 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:05,269 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:05,270 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 59732), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:05,272 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:10:05,275 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:10:05,282 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:10:05,284 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41808), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:05,287 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2200>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:10:05,295 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:05,297 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:05,301 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:05,303 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:10:05,310 - INFO - Created channel=1
+2025-03-04 09:10:05,329 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:10:05,338 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:10:10,344 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:10:10,345 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:10:10,346 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:10:10,349 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41808), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:10,350 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41808), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:10,352 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41808), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:10,354 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:10,358 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:10,361 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41808), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:10,363 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:10:10,367 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:10:10,370 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:10:10,372 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41824), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:10,380 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2a10>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2a10> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:10:10,397 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2a10> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:10,398 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2a10> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:10,400 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2a10> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:10,401 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:10:10,404 - INFO - Created channel=1
+2025-03-04 09:10:10,413 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2a10> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:10:10,416 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:10:15,419 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:10:15,421 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:10:15,430 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:10:15,435 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41824), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:15,442 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41824), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:15,450 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41824), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:15,454 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:15,456 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:15,473 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41824), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:15,505 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:10:15,539 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:10:15,551 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:10:15,565 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 33770), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:15,584 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3250>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3250> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:10:15,593 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3250> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:15,615 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3250> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:15,620 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3250> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:15,633 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:10:15,652 - INFO - Created channel=1
+2025-03-04 09:10:15,703 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3250> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:10:15,749 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:10:20,778 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:10:20,779 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:10:20,780 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:10:20,782 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 33770), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:20,783 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 33770), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:20,785 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 33770), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:20,786 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:20,787 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:20,788 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 33770), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:20,789 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:10:20,790 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:10:20,793 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:10:20,795 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 33778), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:20,797 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3a90>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:10:20,804 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:20,805 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:20,806 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:20,807 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:10:20,814 - INFO - Created channel=1
+2025-03-04 09:10:20,829 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:10:20,839 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:10:25,845 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:10:25,846 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:10:25,847 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:10:25,849 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 33778), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:25,850 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 33778), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:25,853 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 33778), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:25,854 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:25,856 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:25,857 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 33778), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:25,859 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:10:25,863 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:10:25,868 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:10:25,870 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 36064), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:25,877 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130310>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130310> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:10:25,888 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130310> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:25,891 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130310> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:25,909 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130310> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:25,918 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:10:25,922 - INFO - Created channel=1
+2025-03-04 09:10:25,929 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130310> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:10:25,946 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:10:30,962 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:10:30,964 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:10:30,966 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:10:30,969 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 36064), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:30,973 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 36064), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:30,974 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 36064), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:30,977 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:30,990 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:31,002 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 36064), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:31,007 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:10:31,025 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:10:31,030 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:10:31,039 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 36066), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:31,041 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3f70>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3f70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:10:31,054 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3f70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:31,058 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3f70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:31,075 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3f70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:31,089 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:10:31,092 - INFO - Created channel=1
+2025-03-04 09:10:31,104 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3f70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:10:31,107 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:10:36,115 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:10:36,116 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:10:36,119 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:10:36,122 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 36066), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:36,123 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 36066), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:36,125 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 36066), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:36,126 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:36,128 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:36,136 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 36066), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:36,139 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:10:36,142 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:10:36,148 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:10:36,162 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 53726), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:36,177 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d1d80>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d1d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:10:36,191 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d1d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:36,195 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d1d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:36,206 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d1d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:36,220 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:10:36,223 - INFO - Created channel=1
+2025-03-04 09:10:36,263 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d1d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:10:36,273 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:10:41,289 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:10:41,290 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:10:41,290 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:10:41,292 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 53726), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:41,293 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 53726), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:41,295 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 53726), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:41,297 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:41,299 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:41,301 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 53726), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:41,303 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:10:41,308 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:10:41,314 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:10:41,317 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 53728), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:41,337 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2890>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2890> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:10:41,349 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2890> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:41,366 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2890> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:41,383 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2890> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:41,386 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:10:41,389 - INFO - Created channel=1
+2025-03-04 09:10:41,401 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2890> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:10:41,404 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:10:46,412 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:10:46,419 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:10:46,449 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:10:46,470 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 53728), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:46,483 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 53728), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:46,492 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 53728), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:46,557 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:46,569 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:46,583 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 53728), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:46,598 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:10:46,623 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:10:46,665 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:10:46,680 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60982), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:46,708 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130a90>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:10:46,722 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:46,733 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:46,741 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:46,756 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:10:46,770 - INFO - Created channel=1
+2025-03-04 09:10:46,778 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:10:46,790 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:10:51,803 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:10:51,804 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:10:51,806 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:10:51,808 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60982), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:51,812 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60982), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:51,814 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60982), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:51,815 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:51,817 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:51,819 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60982), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:51,821 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:10:51,822 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:10:51,827 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:10:51,834 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60998), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:51,837 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a61312a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a61312a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:10:51,845 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a61312a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:51,856 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a61312a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:51,860 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a61312a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:51,868 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:10:51,874 - INFO - Created channel=1
+2025-03-04 09:10:51,879 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a61312a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:10:51,888 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:10:56,890 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:10:56,892 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:10:56,893 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:10:56,898 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60998), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:56,898 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60998), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:56,899 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60998), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:56,902 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:56,902 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:10:56,903 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60998), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:56,904 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:10:56,909 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:10:56,918 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:10:56,934 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60006), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:10:56,941 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131990>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131990> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:10:56,950 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131990> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:56,960 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131990> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:56,961 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131990> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:10:56,963 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:10:56,966 - INFO - Created channel=1
+2025-03-04 09:10:56,974 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131990> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:10:56,988 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:11:02,004 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:11:02,004 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:11:02,005 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:11:02,007 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60006), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:02,009 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60006), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:02,010 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60006), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:02,012 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:11:02,013 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:11:02,015 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60006), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:02,017 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:11:02,019 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:11:02,024 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:11:02,026 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60010), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:02,030 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3280>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:11:02,039 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:02,042 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:02,048 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:02,052 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:11:02,054 - INFO - Created channel=1
+2025-03-04 09:11:02,059 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:11:02,062 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:11:07,072 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:11:07,072 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:11:07,073 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:11:07,075 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60010), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:07,076 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60010), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:07,077 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60010), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:07,080 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:11:07,081 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:11:07,084 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 60010), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:07,087 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:11:07,094 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:11:07,101 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:11:07,104 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40464), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:07,116 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2e30>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2e30> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:11:07,134 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2e30> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:07,138 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2e30> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:07,157 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2e30> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:07,160 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:11:07,165 - INFO - Created channel=1
+2025-03-04 09:11:07,171 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d2e30> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:11:07,175 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:11:12,182 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:11:12,183 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:11:12,185 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:11:12,187 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40464), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:12,197 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40464), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:12,199 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40464), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:12,201 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:11:12,205 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:11:12,216 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40464), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:12,219 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:11:12,247 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:11:12,253 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:11:12,264 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40476), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:12,268 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3760>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3760> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:11:12,275 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3760> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:12,281 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3760> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:12,287 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3760> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:12,293 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:11:12,301 - INFO - Created channel=1
+2025-03-04 09:11:12,308 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a65d3760> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:11:12,311 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:11:17,325 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:11:17,326 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:11:17,326 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:11:17,329 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40476), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:17,331 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40476), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:17,333 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40476), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:17,334 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:11:17,336 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:11:17,337 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40476), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:17,338 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:11:17,342 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:11:17,347 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:11:17,350 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41452), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:17,352 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130bb0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130bb0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:11:17,362 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130bb0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:17,368 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130bb0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:17,377 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130bb0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:17,389 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:11:17,398 - INFO - Created channel=1
+2025-03-04 09:11:17,405 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6130bb0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:11:17,419 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:11:22,443 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:11:22,444 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:11:22,445 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:11:22,452 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41452), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:22,454 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41452), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:22,456 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41452), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:22,460 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:11:22,463 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:11:22,475 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41452), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:22,479 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:11:22,486 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:11:22,493 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:11:22,504 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41454), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:22,507 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131ff0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131ff0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:11:22,525 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131ff0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:22,530 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131ff0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:22,537 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131ff0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:11:22,538 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:11:22,540 - INFO - Created channel=1
+2025-03-04 09:11:22,561 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-04 09:11:26,010 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:11:26,011 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:11:26,014 - INFO - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131ff0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:11:26,020 - INFO - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff6a6131ff0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:11:26,022 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:11:26,024 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41454), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:26,026 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41454), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:26,028 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41454), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:26,033 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:11:26,036 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:11:26,039 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 41454), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:11:26,041 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:30:07,944 - INFO - hlo
+2025-03-04 09:30:07,946 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-04 09:30:12,950 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:30:12,960 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:30:12,961 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 57700), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:12,963 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e8d60>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e8d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:30:12,972 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e8d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:12,977 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e8d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:12,981 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e8d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:12,983 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:30:12,985 - INFO - Created channel=1
+2025-03-04 09:30:12,998 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e8d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:30:13,001 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:30:18,008 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:30:18,009 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:30:18,011 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:30:18,014 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 57700), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:18,017 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 57700), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:18,019 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 57700), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:18,021 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:18,025 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:18,029 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 57700), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:18,033 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:30:18,038 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:30:18,060 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:30:18,064 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 56892), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:18,066 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ea200>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ea200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:30:18,075 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ea200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:18,077 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ea200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:18,086 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ea200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:18,092 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:30:18,098 - INFO - Created channel=1
+2025-03-04 09:30:18,104 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ea200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:30:18,113 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:30:23,121 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:30:23,121 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:30:23,123 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:30:23,125 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 56892), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:23,126 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 56892), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:23,128 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 56892), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:23,129 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:23,130 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:23,132 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 56892), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:23,134 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:30:23,137 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:30:23,143 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:30:23,148 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 56908), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:23,151 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eaa10>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eaa10> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:30:23,160 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eaa10> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:23,165 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eaa10> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:23,171 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eaa10> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:23,178 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:30:23,180 - INFO - Created channel=1
+2025-03-04 09:30:23,185 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eaa10> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:30:23,193 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:30:28,200 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:30:28,200 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:30:28,201 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:30:28,204 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 56908), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:28,207 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 56908), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:28,208 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 56908), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:28,209 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:28,211 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:28,214 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 56908), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:28,216 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:30:28,223 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:30:28,229 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:30:28,231 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59272), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:28,237 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb250>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb250> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:30:28,245 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb250> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:28,247 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb250> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:28,249 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb250> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:28,252 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:30:28,258 - INFO - Created channel=1
+2025-03-04 09:30:28,262 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb250> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:30:28,263 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:30:33,270 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:30:33,271 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:30:33,271 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:30:33,274 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59272), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:33,276 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59272), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:33,278 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59272), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:33,280 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:33,282 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:33,283 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59272), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:33,286 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:30:33,293 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:30:33,300 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:30:33,304 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59282), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:33,310 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eba90>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eba90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:30:33,318 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eba90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:33,325 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eba90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:33,332 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eba90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:33,334 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:30:33,337 - INFO - Created channel=1
+2025-03-04 09:30:33,344 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eba90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:30:33,348 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:30:38,355 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:30:38,355 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:30:38,356 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:30:38,361 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59282), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:38,364 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59282), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:38,365 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59282), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:38,367 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:38,369 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:38,370 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59282), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:38,371 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:30:38,376 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:30:38,383 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:30:38,408 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60858), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:38,416 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148310>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148310> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:30:38,424 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148310> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:38,434 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148310> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:38,440 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148310> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:38,446 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:30:38,451 - INFO - Created channel=1
+2025-03-04 09:30:38,462 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148310> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:30:38,497 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:30:43,510 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:30:43,511 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:30:43,511 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:30:43,514 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60858), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:43,515 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60858), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:43,516 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60858), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:43,518 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:43,519 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:43,521 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60858), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:43,522 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:30:43,528 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:30:43,532 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:30:43,534 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60874), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:43,536 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ebf70>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ebf70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:30:43,544 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ebf70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:43,549 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ebf70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:43,566 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ebf70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:43,573 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:30:43,575 - INFO - Created channel=1
+2025-03-04 09:30:43,593 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ebf70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:30:43,595 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:30:48,601 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:30:48,604 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:30:48,620 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:30:48,638 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60874), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:48,672 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60874), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:48,732 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60874), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:48,773 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:48,775 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:48,782 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60874), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:48,785 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:30:48,848 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:30:48,869 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:30:48,881 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60208), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:48,885 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e9d80>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e9d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:30:48,897 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e9d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:48,910 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e9d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:48,928 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e9d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:48,935 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:30:48,943 - INFO - Created channel=1
+2025-03-04 09:30:48,952 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e9d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:30:48,987 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:30:54,008 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:30:54,012 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:30:54,018 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:30:54,020 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60208), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:54,042 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60208), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:54,045 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60208), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:54,047 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:54,051 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:54,053 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60208), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:54,057 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:30:54,060 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:30:54,073 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:30:54,080 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60222), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:54,085 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ea890>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ea890> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:30:54,098 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ea890> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:54,118 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ea890> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:54,127 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ea890> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:54,134 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:30:54,145 - INFO - Created channel=1
+2025-03-04 09:30:54,165 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05ea890> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:30:54,171 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:30:59,183 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:30:59,184 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:30:59,185 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:30:59,188 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60222), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:59,193 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60222), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:59,195 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60222), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:59,202 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:59,208 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:30:59,218 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 60222), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:59,233 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:30:59,244 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:30:59,261 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:30:59,265 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59326), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:30:59,270 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148a90>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:30:59,279 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:59,295 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:59,301 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:30:59,317 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:30:59,324 - INFO - Created channel=1
+2025-03-04 09:30:59,343 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148a90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:30:59,351 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:31:04,369 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:31:04,369 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:31:04,372 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:31:04,375 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59326), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:04,377 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59326), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:04,379 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59326), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:04,382 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:04,383 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:04,411 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 59326), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:04,414 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:31:04,418 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:31:04,431 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:31:04,436 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 45794), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:04,443 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa01492a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa01492a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:31:04,454 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa01492a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:04,464 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa01492a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:04,477 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa01492a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:04,479 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:31:04,481 - INFO - Created channel=1
+2025-03-04 09:31:04,488 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa01492a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:31:04,494 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:31:09,504 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:31:09,505 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:31:09,505 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:31:09,508 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 45794), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:09,510 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 45794), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:09,511 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 45794), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:09,512 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:09,515 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:09,518 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 45794), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:09,520 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:31:09,523 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:31:09,534 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:31:09,551 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 45808), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:09,559 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0149990>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0149990> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:31:09,581 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0149990> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:09,585 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0149990> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:09,594 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0149990> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:09,596 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:31:09,599 - INFO - Created channel=1
+2025-03-04 09:31:09,610 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0149990> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:31:09,614 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:31:14,627 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:31:14,628 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:31:14,630 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:31:14,633 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 45808), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:14,636 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 45808), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:14,638 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 45808), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:14,640 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:14,642 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:14,647 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 45808), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:14,656 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:31:14,667 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:31:14,685 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:31:14,694 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39770), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:14,697 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb280>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:31:14,711 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:14,730 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:14,761 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:14,796 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:31:14,808 - INFO - Created channel=1
+2025-03-04 09:31:14,815 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:31:14,821 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:31:19,833 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:31:19,833 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:31:19,834 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:31:19,836 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39770), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:19,837 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39770), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:19,839 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39770), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:19,841 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:19,842 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:19,843 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39770), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:19,846 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:31:19,848 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:31:19,861 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:31:19,863 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39784), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:19,875 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eae30>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eae30> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:31:19,881 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eae30> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:19,884 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eae30> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:19,888 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eae30> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:19,891 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:31:19,896 - INFO - Created channel=1
+2025-03-04 09:31:19,901 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eae30> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:31:19,906 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:31:24,915 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:31:24,916 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:31:24,917 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:31:24,919 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39784), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:24,925 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39784), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:24,942 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39784), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:24,949 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:24,967 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:24,977 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39784), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:24,980 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:31:24,998 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:31:25,021 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:31:25,030 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 53816), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:25,033 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb760>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb760> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:31:25,054 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb760> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:25,068 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb760> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:25,081 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb760> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:25,083 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:31:25,093 - INFO - Created channel=1
+2025-03-04 09:31:25,098 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05eb760> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:31:25,102 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:31:30,116 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:31:30,117 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:31:30,117 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:31:30,119 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 53816), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:30,125 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 53816), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:30,126 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 53816), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:30,128 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:30,129 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:30,133 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 53816), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:30,160 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:31:30,179 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:31:30,188 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:31:30,197 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 53824), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:30,209 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148bb0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148bb0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:31:30,225 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148bb0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:30,233 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148bb0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:30,250 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148bb0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:30,259 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:31:30,263 - INFO - Created channel=1
+2025-03-04 09:31:30,283 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0148bb0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:31:30,333 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:31:35,355 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:31:35,356 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:31:35,356 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:31:35,358 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 53824), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:35,359 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 53824), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:35,361 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 53824), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:35,363 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:35,364 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:35,365 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 53824), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:35,367 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:31:35,370 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:31:35,376 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:31:35,381 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39226), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:35,383 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0149ff0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0149ff0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:31:35,394 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0149ff0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:35,397 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0149ff0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:35,401 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0149ff0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:35,406 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:31:35,411 - INFO - Created channel=1
+2025-03-04 09:31:35,415 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa0149ff0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:31:35,418 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:31:40,412 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:31:40,413 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:31:40,414 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:31:40,417 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39226), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:40,419 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39226), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:40,420 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39226), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:40,421 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:40,423 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:40,424 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39226), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:40,425 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:31:40,428 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:31:40,431 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:31:40,436 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39240), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:40,445 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa014a710>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa014a710> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:31:40,461 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa014a710> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:40,461 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa014a710> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:40,463 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa014a710> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:40,464 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:31:40,465 - INFO - Created channel=1
+2025-03-04 09:31:40,469 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa014a710> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:31:40,471 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:31:45,477 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:31:45,477 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:31:45,478 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:31:45,480 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39240), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:45,481 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39240), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:45,482 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39240), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:45,483 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:45,484 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:45,485 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 39240), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:45,486 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:31:45,488 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:31:45,493 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:31:45,496 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 47344), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:45,497 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e9d80>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e9d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:31:45,505 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e9d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:45,506 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e9d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:45,507 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e9d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:31:45,508 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:31:45,509 - INFO - Created channel=1
+2025-03-04 09:31:45,513 - WARNING - Received remote Channel.Close (406): "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'" on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2fa05e9d80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:31:45,514 - ERROR - Consumer error: (406, "PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'doctor_slot_creation' in vhost '/': received 'true' but current is 'false'"). Restarting in 5 seconds...
+2025-03-04 09:31:49,648 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:31:49,651 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:31:49,652 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:31:49,657 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 47344), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:49,658 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 47344), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:49,661 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 47344), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:49,667 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:49,672 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:31:49,674 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 47344), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:31:49,683 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-04 09:34:44,604 - INFO - hlo
+2025-03-04 09:34:44,605 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-04 09:34:49,611 - INFO - Connecting to RabbitMQ...
+2025-03-04 09:34:49,618 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-04 09:34:49,619 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 44482), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:34:49,621 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc29a3d0d60>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc29a3d0d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-04 09:34:49,632 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc29a3d0d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:34:49,634 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc29a3d0d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:34:49,636 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc29a3d0d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-04 09:34:49,639 - INFO -  Connected to RabbitMQ successfully.
+2025-03-04 09:34:49,642 - INFO - Created channel=1
+2025-03-04 09:34:49,652 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-04 09:34:49,652 - INFO - 📥 Raw message received: {"doctor_name": "afsal", "date": "2025-03-05", "slot": "1:00"}
+2025-03-04 09:34:49,654 - INFO - Parsed JSON: {'doctor_name': 'afsal', 'date': '2025-03-05', 'slot': '1:00'}
+2025-03-04 09:34:49,685 - INFO - muhammedafsalcp7@gmail.com
+2025-03-04 09:34:49,701 - INFO -  Slot created for Dr. afsal on 2025-03-05 at 1:00.
+2025-03-04 09:34:49,706 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-05', 'slot': '1:00'}
+2025-03-04 09:35:14,198 - INFO - 📥 Raw message received: {"doctor_name": "afsal", "date": "2025-03-05", "slot": "2:00"}
+2025-03-04 09:35:14,199 - INFO - Parsed JSON: {'doctor_name': 'afsal', 'date': '2025-03-05', 'slot': '2:00'}
+2025-03-04 09:35:14,204 - INFO - muhammedafsalcp7@gmail.com
+2025-03-04 09:35:14,221 - INFO -  Slot created for Dr. afsal on 2025-03-05 at 2:00.
+2025-03-04 09:35:14,229 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-05', 'slot': '2:00'}
+2025-03-04 09:35:30,656 - INFO - Closing RabbitMQ connection.
+2025-03-04 09:35:30,660 - INFO - Closing connection (200): Normal shutdown
+2025-03-04 09:35:30,673 - INFO - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc29a3d0d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:35:30,679 - INFO - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc29a3d0d60> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>>
+2025-03-04 09:35:30,681 - INFO - Closing connection (200): 'Normal shutdown'
+2025-03-04 09:35:30,683 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 44482), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:35:30,688 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 44482), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:35:30,691 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 44482), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:35:30,694 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:35:30,695 - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-04 09:35:30,697 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 44482), raddr=('172.18.0.3', 5672)>
+2025-03-04 09:35:30,701 - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')

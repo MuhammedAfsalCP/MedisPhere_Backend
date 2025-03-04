@@ -124,7 +124,7 @@ class TimeSlotChoices(models.TextChoices):
     NINE_TEN_AM = "09:00", "09:00-10:00"
     TEN_ELEVEN_AM = "10:00", "10:00-11:00"
     ELEVEN_TWELVE_AM = "11:00", "11:00-12:00"
-    TWELVE_ONE_PM = "12:00", "12:00-11:00"
+    TWELVE_ONE_PM = "12:00", "12:00-1:00"
     ONE_TWO_PM = "1:00", "1:00-2:00"
     TWO_THREE_PM = "2:00", "2:00-3:00"
     THREE_FOUR_PM = "3:00", "3:00-4:00"

@@ -28,5 +28,5 @@ urlpatterns = [
     path('chainigpassword/',Chaining_Password.as_view()),
     path('forgetpasswordotpsent/',Forget_Password_otp_Sent.as_view()),
     path('forgetpasswordsave/',Forge_Password_Save.as_view()),
-    path('api/doctor_availability/', DoctorAvailabilityAPIView.as_view(), name='doctor_availability'),
+    path('doctor_availability/', DoctorAvailabilityAPIView.as_view(), name='doctor_availability'),
 ]
