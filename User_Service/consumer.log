@@ -1460,3 +1460,210 @@ Traceback (most recent call last):
     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
 socket.gaierror: [Errno -2] Name or service not known
 2025-03-04 09:47:14,083 - ERROR - Consumer error: [Errno -2] Name or service not known. Restarting in 5 seconds...
+2025-03-05 02:41:56,334 - INFO - hlo
+2025-03-05 02:41:56,336 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-05 02:42:01,340 - INFO - Connecting to RabbitMQ...
+2025-03-05 02:42:01,353 - INFO - Pika version 1.3.2 connecting to ('172.18.0.2', 5672)
+2025-03-05 02:42:01,354 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 43440), raddr=('172.18.0.2', 5672)>
+2025-03-05 02:42:01,357 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f3d04ff4610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f3d04ff4610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-05 02:42:01,384 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f3d04ff4610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:42:01,385 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f3d04ff4610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:42:01,388 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f3d04ff4610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:42:01,396 - INFO -  Connected to RabbitMQ successfully.
+2025-03-05 02:42:01,398 - INFO - Created channel=1
+2025-03-05 02:42:01,427 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-05 02:42:50,342 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 43440)>
+2025-03-05 02:42:50,407 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 43440)>
+2025-03-05 02:42:50,423 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 43440)>
+2025-03-05 02:42:50,440 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-05 02:42:50,455 - INFO - Stack terminated due to ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-05 02:42:50,520 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 43440)>
+2025-03-05 02:42:50,552 - ERROR - Unexpected connection close detected: ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-05 02:42:50,556 - ERROR - RabbitMQ connection lost: (320, "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"). Reconnecting in 5 seconds...
+2025-03-05 02:42:55,565 - INFO - Connecting to RabbitMQ...
+2025-03-05 02:42:58,942 - ERROR - Address resolution failed: gaierror(-2, 'Name or service not known')
+2025-03-05 02:42:58,944 - ERROR - getaddrinfo failed: gaierror(-2, 'Name or service not known').
+2025-03-05 02:42:58,946 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - gaierror(-2, 'Name or service not known'); first exception - None.
+2025-03-05 02:42:58,950 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - gaierror(-2, 'Name or service not known'); first exception - None
+2025-03-05 02:42:58,954 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - gaierror(-2, 'Name or service not known'); first exception - None
+2025-03-05 02:42:58,963 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/utils/selector_ioloop_adapter.py", line 565, in _resolve
+    result = socket.getaddrinfo(self._host, self._port, self._family,
+  File "/usr/local/lib/python3.10/socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+2025-03-05 02:42:58,966 - ERROR - Consumer error: [Errno -2] Name or service not known. Restarting in 5 seconds...
+2025-03-05 02:46:12,390 - INFO - hlo
+2025-03-05 02:46:12,391 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-05 02:46:17,397 - INFO - Connecting to RabbitMQ...
+2025-03-05 02:46:17,420 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-05 02:46:17,421 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 39824), raddr=('172.18.0.3', 5672)>
+2025-03-05 02:46:17,424 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb3df5f0370>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb3df5f0370> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-05 02:46:17,455 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb3df5f0370> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:46:17,458 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb3df5f0370> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:46:17,462 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb3df5f0370> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:46:17,467 - INFO - Connected to RabbitMQ successfully.
+2025-03-05 02:46:17,474 - INFO - Created channel=1
+2025-03-05 02:46:17,497 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-05 02:46:50,740 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 39824), raddr=('172.18.0.3', 5672)>
+2025-03-05 02:46:50,757 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 39824)>
+2025-03-05 02:46:50,772 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 39824)>
+2025-03-05 02:46:50,775 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-05 02:46:50,776 - INFO - Stack terminated due to ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-05 02:46:50,778 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 39824)>
+2025-03-05 02:46:50,779 - ERROR - Unexpected connection close detected: ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-05 02:46:50,783 - ERROR - RabbitMQ connection lost: (320, "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"). Reconnecting in 5 seconds...
+2025-03-05 02:46:55,798 - INFO - Connecting to RabbitMQ...
+2025-03-05 02:46:59,169 - ERROR - Address resolution failed: gaierror(-2, 'Name or service not known')
+2025-03-05 02:46:59,170 - ERROR - getaddrinfo failed: gaierror(-2, 'Name or service not known').
+2025-03-05 02:46:59,172 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - gaierror(-2, 'Name or service not known'); first exception - None.
+2025-03-05 02:46:59,176 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - gaierror(-2, 'Name or service not known'); first exception - None
+2025-03-05 02:46:59,179 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - gaierror(-2, 'Name or service not known'); first exception - None
+2025-03-05 02:46:59,184 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/utils/selector_ioloop_adapter.py", line 565, in _resolve
+    result = socket.getaddrinfo(self._host, self._port, self._family,
+  File "/usr/local/lib/python3.10/socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+2025-03-05 02:46:59,189 - ERROR - Consumer error: [Errno -2] Name or service not known. Restarting in 5 seconds...
+2025-03-05 02:49:19,322 - INFO - hlo
+2025-03-05 02:49:19,326 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-05 02:49:19,362 - INFO - hlo
+2025-03-05 02:49:19,363 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-05 02:49:24,332 - INFO - Connecting to RabbitMQ...
+2025-03-05 02:49:24,356 - INFO - Pika version 1.3.2 connecting to ('172.18.0.2', 5672)
+2025-03-05 02:49:24,358 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 60572), raddr=('172.18.0.2', 5672)>
+2025-03-05 02:49:24,361 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0ad5ff4610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0ad5ff4610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-05 02:49:24,367 - INFO - Connecting to RabbitMQ...
+2025-03-05 02:49:24,384 - INFO - Pika version 1.3.2 connecting to ('172.18.0.2', 5672)
+2025-03-05 02:49:24,389 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 60584), raddr=('172.18.0.2', 5672)>
+2025-03-05 02:49:24,391 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f96e8b04370>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f96e8b04370> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-05 02:49:24,415 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f96e8b04370> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:49:24,417 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f96e8b04370> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:49:24,416 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0ad5ff4610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:49:24,418 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f96e8b04370> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:49:24,420 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0ad5ff4610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:49:24,424 - INFO - Connected to RabbitMQ successfully.
+2025-03-05 02:49:24,425 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0ad5ff4610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:49:24,431 - INFO - Created channel=1
+2025-03-05 02:49:24,433 - INFO -  Connected to RabbitMQ successfully.
+2025-03-05 02:49:24,435 - INFO - Created channel=1
+2025-03-05 02:49:24,456 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-05 02:49:24,466 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-05 02:50:50,766 - INFO - 📥 Raw message received: {"doctor_name": "afsal", "date": "2025-03-06", "slot": "10:00"}
+2025-03-05 02:50:50,767 - INFO - Parsed JSON: {'doctor_name': 'afsal', 'date': '2025-03-06', 'slot': '10:00'}
+2025-03-05 02:50:50,812 - INFO - muhammedafsalcp7@gmail.com
+2025-03-05 02:50:50,836 - INFO -  Slot created for Dr. afsal on 2025-03-06 at 10:00.
+2025-03-05 02:50:50,849 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-06', 'slot': '10:00'}
+2025-03-05 02:51:11,907 - INFO - Received message: {'doctor_name': 'afsal', 'date': '2025-03-06', 'slot': '10:00'}
+2025-03-05 02:51:11,943 - INFO - hi
+2025-03-05 02:51:11,951 - INFO - Booked appointment for Dr. afsal on 2025-03-06 at 10:00.
+2025-03-05 02:51:11,955 - INFO - Sent response: {'available': False, 'doctor_name': 'afsal', 'status': 'Booked'}
+2025-03-05 02:53:29,266 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 60572), raddr=('172.18.0.2', 5672)>
+2025-03-05 02:53:29,266 - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 60584)>
+2025-03-05 02:53:29,268 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 60572), raddr=('172.18.0.2', 5672)>
+2025-03-05 02:53:29,269 - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 60584)>
+2025-03-05 02:53:29,285 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 60572)>
+2025-03-05 02:53:29,286 - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 60584)>
+2025-03-05 02:53:29,303 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-05 02:53:29,303 - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-05 02:53:29,320 - INFO - Stack terminated due to ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-05 02:53:29,324 - INFO - Stack terminated due to ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-05 02:53:29,330 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 60572)>
+2025-03-05 02:53:29,333 - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 60584)>
+2025-03-05 02:53:29,358 - ERROR - Unexpected connection close detected: ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-05 02:53:29,359 - ERROR - Unexpected connection close detected: ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-03-05 02:53:29,396 - ERROR - RabbitMQ connection lost: (320, "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"). Reconnecting in 5 seconds...
+2025-03-05 02:53:29,396 - ERROR - RabbitMQ connection lost: (320, "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"). Reconnecting in 5 seconds...
+2025-03-05 02:53:34,452 - INFO - Connecting to RabbitMQ...
+2025-03-05 02:53:34,452 - INFO - Connecting to RabbitMQ...
+2025-03-05 02:53:37,862 - ERROR - Address resolution failed: gaierror(-2, 'Name or service not known')
+2025-03-05 02:53:37,862 - ERROR - Address resolution failed: gaierror(-2, 'Name or service not known')
+2025-03-05 02:53:37,864 - ERROR - getaddrinfo failed: gaierror(-2, 'Name or service not known').
+2025-03-05 02:53:37,864 - ERROR - getaddrinfo failed: gaierror(-2, 'Name or service not known').
+2025-03-05 02:53:37,867 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - gaierror(-2, 'Name or service not known'); first exception - None.
+2025-03-05 02:53:37,868 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - gaierror(-2, 'Name or service not known'); first exception - None.
+2025-03-05 02:53:37,870 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - gaierror(-2, 'Name or service not known'); first exception - None
+2025-03-05 02:53:37,871 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - gaierror(-2, 'Name or service not known'); first exception - None
+2025-03-05 02:53:37,876 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - gaierror(-2, 'Name or service not known'); first exception - None
+2025-03-05 02:53:37,879 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - gaierror(-2, 'Name or service not known'); first exception - None
+2025-03-05 02:53:37,883 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/utils/selector_ioloop_adapter.py", line 565, in _resolve
+    result = socket.getaddrinfo(self._host, self._port, self._family,
+  File "/usr/local/lib/python3.10/socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+2025-03-05 02:53:37,885 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/utils/selector_ioloop_adapter.py", line 565, in _resolve
+    result = socket.getaddrinfo(self._host, self._port, self._family,
+  File "/usr/local/lib/python3.10/socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+2025-03-05 02:53:37,896 - ERROR - Consumer error: [Errno -2] Name or service not known. Restarting in 5 seconds...
+2025-03-05 02:53:37,897 - ERROR - Consumer error: [Errno -2] Name or service not known. Restarting in 5 seconds...
+2025-03-05 02:56:25,027 - INFO - hlo
+2025-03-05 02:56:25,035 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-05 02:56:25,068 - INFO - hlo
+2025-03-05 02:56:25,069 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-05 02:56:30,041 - INFO - Connecting to RabbitMQ...
+2025-03-05 02:56:30,052 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-05 02:56:30,053 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 56332)>; error=111 (Connection refused)
+2025-03-05 02:56:30,061 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.3', 5672))
+2025-03-05 02:56:30,063 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-05 02:56:30,065 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-05 02:56:30,067 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-05 02:56:30,068 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-05 02:56:30,070 - INFO - Connecting to RabbitMQ...
+2025-03-05 02:56:30,069 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-05 02:56:30,084 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-05 02:56:30,123 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-05 02:56:30,128 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 56342)>; error=111 (Connection refused)
+2025-03-05 02:56:30,133 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.3', 5672))
+2025-03-05 02:56:30,136 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-05 02:56:30,149 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-05 02:56:30,178 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-05 02:56:30,181 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-05 02:56:30,184 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-05 02:56:30,194 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-05 02:56:35,095 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-05 02:56:35,100 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 55764), raddr=('172.18.0.3', 5672)>
+2025-03-05 02:56:35,110 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fba049fd120>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fba049fd120> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-05 02:56:35,168 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fba049fd120> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:56:35,171 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fba049fd120> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:56:35,179 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fba049fd120> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:56:35,181 - INFO - Connected to RabbitMQ successfully.
+2025-03-05 02:56:35,183 - INFO - Created channel=1
+2025-03-05 02:56:35,202 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-05 02:56:35,206 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-05 02:56:35,210 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.4', 55770), raddr=('172.18.0.3', 5672)>
+2025-03-05 02:56:35,217 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f72ad5f9390>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f72ad5f9390> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-05 02:56:35,235 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f72ad5f9390> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:56:35,239 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f72ad5f9390> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:56:35,242 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f72ad5f9390> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-05 02:56:35,246 - INFO -  Connected to RabbitMQ successfully.
+2025-03-05 02:56:35,249 - INFO - Created channel=1
+2025-03-05 02:56:35,262 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-05 02:56:59,823 - INFO - Received message: {'doctor_name': 'afsal', 'date': '2025-03-05', 'slot': '5:00'}
+2025-03-05 02:56:59,875 - INFO - hi
+2025-03-05 02:56:59,883 - INFO - Booked appointment for Dr. afsal on 2025-03-05 at 5:00.
+2025-03-05 02:56:59,940 - INFO - Sent response: {'available': False, 'doctor_name': 'afsal', 'status': 'Booked'}

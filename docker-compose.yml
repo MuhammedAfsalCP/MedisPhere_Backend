@@ -57,15 +57,11 @@ services:
       - db
     env_file:
       - .env
-    # command: >
-    #   sh -c "sleep 10 && python manage.py migrate &&
-    #   python manage.py runserver 0.0.0.0:8000 & python app/consumer.py"
-    # command: >
-    #   sh -c "sleep 10 && python manage.py migrate &&
-    #   (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookconsumer.py)"
+   
     command: >
       sh -c "sleep 10 && python manage.py migrate &&
-      python manage.py runserver 0.0.0.0:8003 & python app/bookconsumer.py"
+      (python manage.py runserver 0.0.0.0:8003 & python app/bookingconsumer.py & python app/slotconsumer.py)"
+   
 
     
 

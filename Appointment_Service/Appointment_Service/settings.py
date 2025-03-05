@@ -23,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("APPONTMENT_SERVICE_SECRET_KEY")
-BROKER_URL = 'amqp://guest:guest@rabbitmq:5672//'
+BROKER_URL = os.getenv("BROKER_URL")
 
 # If you're using Celery
-CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672//'
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 
