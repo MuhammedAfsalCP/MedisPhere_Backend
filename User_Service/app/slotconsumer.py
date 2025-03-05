@@ -53,27 +53,27 @@ def connect_to_rabbitmq():
 
 #  Doctor Slot Creation
 def doctor_slot_creation(data):
-    doctor_firstname = data.get("doctor_name")
+    doctor_email = data.get("doctor_email")
     date = data.get("date")
     slot = data.get("slot")
 
     try:
-        doctor = UserProfile.objects.get(first_name=doctor_firstname, is_doctor=True)
+        doctor = UserProfile.objects.get(email=doctor_email, is_doctor=True)
         logger.info(doctor)
         with transaction.atomic():
             #  Prevent duplicate slot creation
             existing_slot = DoctorAvailability.objects.filter(doctor=doctor, date=date, slot=slot).first()
             if existing_slot:
-                logger.warning(f" Slot already exists for Dr. {doctor_firstname} on {date} at {slot}.")
+                logger.warning(f" Slot already exists for Dr. {doctor.first_name} on {date} at {slot}.")
                 return {"status": "Slot Already Exists"}
 
             #  Create Slot
             DoctorAvailability.objects.create(doctor=doctor, date=date, slot=slot)
-            logger.info(f" Slot created for Dr. {doctor_firstname} on {date} at {slot}.")
+            logger.info(f" Slot created for Dr. {doctor.first_name} on {date} at {slot}.")
             return {"status": "Slot Created", "date": date, "slot": slot}
 
     except UserProfile.DoesNotExist:
-        logger.error(f"Doctor '{doctor_firstname}' not found.")
+        logger.error(f"Doctor '{doctor.first_name}' not found.")
         return {"error": "Doctor not found"}
 
     except Exception as e:

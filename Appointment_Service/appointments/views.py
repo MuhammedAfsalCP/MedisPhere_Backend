@@ -15,10 +15,10 @@ class BookingAppointmentAPIView(APIView):
 
     def post(self, request):
         data = request.data
-        doctor_firstname = data.get("doctor_name")
+        doctor_email = data.get("doctor_email")
         date = data.get("date")
         slot = data.get("slot")
-
+        patient_email = data.get("patient_email")
         correlation_id = str(uuid.uuid4())
         doctor_response = None
 
@@ -52,9 +52,10 @@ class BookingAppointmentAPIView(APIView):
 
             # Send request to RabbitMQ queue
             request_data = json.dumps({
-                "doctor_name": doctor_firstname,
+                "doctor_email": doctor_email,
                 "date": date,
-                "slot": slot
+                "slot": slot,
+                "patient_email":patient_email
             })
             channel.basic_publish(
                 exchange="",
@@ -89,8 +90,8 @@ class BookingAppointmentAPIView(APIView):
 
         # If no response, return an error
         if doctor_response is None:
-            logger.warning("No response from slot creating service")
-            return Response({"error": "No response from slot creating service"}, status=status.HTTP_504_GATEWAY_TIMEOUT)
+            logger.warning("No response from BookingAppointment Service")
+            return Response({"error": "No response from BookingAppointment service"}, status=status.HTTP_504_GATEWAY_TIMEOUT)
 
         # Check the doctor's availability
         if doctor_response.get("error"):
@@ -115,10 +116,10 @@ class DoctorSlotCreating(APIView):
 
     def post(self, request):
         data = request.data
-        doctor_firstname = data.get("doctor_name")
+        doctor_email = data.get("doctor_email")
         date = data.get("date")
         slot = data.get("slot")
-
+        
         correlation_id = str(uuid.uuid4())
         doctor_response = None
 
@@ -152,9 +153,10 @@ class DoctorSlotCreating(APIView):
 
             # Send request to RabbitMQ queue
             request_data = json.dumps({
-                "doctor_name": doctor_firstname,
+                "doctor_email": doctor_email,
                 "date": date,
-                "slot": slot
+                "slot": slot,
+                
             })
             channel.basic_publish(
                 exchange="",

@@ -23,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("APPONTMENT_SERVICE_SECRET_KEY")
-BROKER_URL = os.getenv("BROKER_URL")
+# BROKER_URL = os.getenv("BROKER_URL")
 
-# If you're using Celery
-CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
+# # If you're using Celery
+# CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
+# CELERY_ACCEPT_CONTENT = ['json']
+# CELERY_TASK_SERIALIZER = 'json'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

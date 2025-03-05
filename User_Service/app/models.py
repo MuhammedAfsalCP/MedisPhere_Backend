@@ -148,7 +148,7 @@ class DoctorAvailability(models.Model):
         help_text="Select the available time slot (each slot is one hour)"
     )
     is_available = models.BooleanField(default=True, help_text="Indicates if the doctor is available during this slot")
-    
+    patient = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name="appointments",limit_choices_to={'is_doctor': False})
     class Meta:
         unique_together = ('doctor', 'date', 'slot')
         ordering = ['date', 'slot']

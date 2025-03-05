@@ -27,6 +27,19 @@ TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
 TWILIO_PHONE_NUMBER = os.getenv("TWILIO_PHONE_NUMBER")
 # SECURITY WARNING: don't run with debug turned on in production!
+
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")  # Redis as message broker
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+
+# EMAIL SETTINGS (Using Gmail)
+EMAIL_BACKEND = os.getenv("EMAIL_BACKEND")
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_PORT = int(os.getenv("EMAIL_PORT"))
+EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")  # Replace with your email
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")  # Generate from Google App Passwords
+DEFAULT_FROM_EMAIL = os.getenv("EMAIL_HOST_USER")
 DEBUG = os.getenv("DEBUG")
 ALLOWED_HOSTS = ['*']
 

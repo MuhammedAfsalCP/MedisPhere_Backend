@@ -17,7 +17,7 @@ django.setup()
 
 # Now import your models
 from app.models import UserProfile, DoctorAvailability# 
-
+from app.task import send_appointment_email
 
 # Initialize Django ORM manually if needed
 
@@ -58,29 +58,38 @@ from django.db import transaction
 
 def check_doctor_availability(data):
     """Check if a doctor is available and update the slot status if booked"""
-    doctor_firstname = data.get("doctor_name")
+    doctor_email = data.get("doctor_email")
     date = data.get("date")
     slot = data.get("slot")
+    patient_email = data.get("patient_email")
 
     try:
-        doctor = UserProfile.objects.get(first_name=doctor_firstname, is_doctor=True)
+        doctor = UserProfile.objects.get(email=doctor_email, is_doctor=True)
+        patient=UserProfile.objects.get(email=patient_email, is_doctor=False)
         
+
 
         with transaction.atomic(): 
             availability = DoctorAvailability.objects.select_for_update().filter(
                 doctor=doctor, date=date, slot=slot, is_available=True
             ).first()
-            logging.info("hi")
+            
             if availability:
                 availability.is_available = False
+                availability.patient=patient
                 availability.save()
-                logging.info(f"Booked appointment for Dr. {doctor_firstname} on {date} at {slot}.")
+                logging.info("hi")
+                to_email = patient.email
+                subject = "Appointment Confirmation"
+                message = f"Your appointment is confirmed. See you soon! Booking Date {date} at {slot}"
+                send_appointment_email.delay(to_email, subject, message)
+                logging.info(f"Booked appointment for Dr. {doctor.first_name} on {date} at {slot}.")
                 return {"available": False, "doctor_name": doctor.first_name, "status": "Booked"}
             else:
-                logging.warning(f"Doctor {doctor_firstname} is not available on {date} at {slot}.")
+                logging.warning(f"Doctor {doctor.first_name} is not available on {date} at {slot}.")
                 return {"error": "Doctor is not available"}
     except UserProfile.DoesNotExist:
-        logging.error(f"Doctor '{doctor_firstname}' not found.")
+        logging.error(f"Doctor '{doctor.first_name}' not found.")
         return {"error": "Doctor not found"}
 
     except Exception as e:
