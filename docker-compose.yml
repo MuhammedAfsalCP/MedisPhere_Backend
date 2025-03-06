@@ -1,3 +1,5 @@
+
+
 # version: '3.8'
 
 # services:
@@ -10,87 +12,21 @@
 #     environment:
 #       RABBITMQ_DEFAULT_USER: guest
 #       RABBITMQ_DEFAULT_PASS: guest
-#   ai-diagnostics-service:
-#     build: ./AI_Diagnostics_Service
-#     container_name: AI_Diagnostics_Service
-#     ports:
-#       - "8000:8000"
-#     volumes:
-#       - ./AI_Diagnostics_Service:/app
-#     depends_on:
-#       - db
-#     env_file:
-#       - .env
+#     networks:
+#       - medisphere
 
-#   appointment-service:
-#     build: ./Appointment_Service
-#     container_name: Appointment_Service
-#     ports:
-#       - "8001:8001"
-#     volumes:
-#       - ./Appointment_Service:/app
-#     depends_on:
-#       - db
-#     env_file:
-#       - .env
-
-#   notification-service:
-#     build: ./Notification_Service
-#     container_name: Notification_Service
-#     ports:
-#       - "8002:8002"
-#     volumes:
-#       - ./Notification_Service:/app
-#     depends_on:
-#       - db
-#     env_file:
-#       - .env
-
-#   user-service:
-#     build: ./User_Service
-#     container_name: User_Service
-#     ports:
-#       - "8003:8003"
-#     volumes:
-#       - ./User_Service:/app
-#     depends_on:
-#       - db
-#     env_file:
-#       - .env
-   
-#     command: >
-#       sh -c "sleep 10 && python manage.py migrate &&
-#       (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py)"
-   
-
-    
-
-
-
-    
-
-
-#   video-call-service:
-#     build: ./Video_Call_Service
-#     container_name: Video_Call_Service
-#     ports:
-#       - "8004:8004"
-#     volumes:
-#       - ./Video_Call_Service:/app
-#     depends_on:
-#       - db
-#     env_file:
-#       - .env
 #   redis:
 #     image: redis:alpine
 #     container_name: redis
 #     restart: always
 #     networks:
-#      - medisphere
+#       - medisphere
 #     healthcheck:
 #       test: ["CMD", "redis-cli", "ping"]
 #       interval: 10s
 #       retries: 5
+#     ports:
+#       - "6379:6379"
 #   db:
 #     image: postgres:latest
 #     container_name: postgres_container
@@ -105,12 +41,108 @@
 #       - "5432:5432"
 #     volumes:
 #       - postgres_data:/var/lib/postgresql/data
+#     networks:
+#       - medisphere
+
+#   ai-diagnostics-service:
+#     build: ./AI_Diagnostics_Service
+#     container_name: AI_Diagnostics_Service
+#     ports:
+#       - "8000:8000"
+#     volumes:
+#       - ./AI_Diagnostics_Service:/app
+#     depends_on:
+#       - db
+#       - redis
+#     env_file:
+#       - .env
+#     networks:
+#       - medisphere
+
+#   appointment-service:
+#     build: ./Appointment_Service
+#     container_name: Appointment_Service
+#     ports:
+#       - "8001:8001"
+#     volumes:
+#       - ./Appointment_Service:/app
+#     depends_on:
+#       - db
+#       - redis
+#     env_file:
+#       - .env
+#     networks:
+#       - medisphere
+
+#   notification-service:
+#     build: ./Notification_Service
+#     container_name: Notification_Service
+#     ports:
+#       - "8002:8002"
+#     volumes:
+#       - ./Notification_Service:/app
+#     depends_on:
+#       - db
+#       - redis
+#     env_file:
+#       - .env
+#     networks:
+#       - medisphere
+
+#   user-service:
+#     build: ./User_Service
+#     container_name: User_Service
+#     ports:
+#       - "8003:8003"
+#     volumes:
+#       - ./User_Service:/app
+#     depends_on:
+#       - db
+#       - redis
+#       - rabbitmq
+#     env_file:
+#       - .env
+#     networks:
+#       - medisphere
+#     command: >
+#       sh -c "sleep 10 && python manage.py migrate &&
+#       (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py)"
+#   user-service-celery:
+#     build: ./User_Service
+#     container_name: User_Service_Celery
+#     depends_on:
+#       - redis
+#       - db
+#     volumes:
+#       - ./User_Service:/app
+#     env_file:
+#       - .env
+#     networks:
+#       - medisphere
+#     command: >
+#       sh -c "sleep 10 && celery -A User_Service worker -l info"
+#   video-call-service:
+#     build: ./Video_Call_Service
+#     container_name: Video_Call_Service
+#     ports:
+#       - "8004:8004"
+#     volumes:
+#       - ./Video_Call_Service:/app
+#     depends_on:
+#       - db
+#       - redis
+#     env_file:
+#       - .env
+#     networks:
+#       - medisphere
 
 # volumes:
 #   postgres_data:
+
 # networks:
 #   medisphere:
 #     driver: bridge
+
 
 
 version: '3.8'
@@ -222,6 +254,21 @@ services:
       sh -c "sleep 10 && python manage.py migrate &&
       (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py)"
 
+  user-service-celery:
+    build: ./User_Service
+    container_name: User_Service_Celery
+    depends_on:
+      - redis
+      - db
+    volumes:
+      - ./User_Service:/app
+    env_file:
+      - .env
+    networks:
+      - medisphere
+    command: >
+      sh -c "sleep 10 && celery -A User_Service worker -l info"
+
   video-call-service:
     build: ./Video_Call_Service
     container_name: Video_Call_Service
@@ -236,6 +283,9 @@ services:
       - .env
     networks:
       - medisphere
+    command: >
+      sh -c "python manage.py migrate &&
+             daphne -b 0.0.0.0 -p 8004 Video_Call_Service.asgi:application"
 
 volumes:
   postgres_data:

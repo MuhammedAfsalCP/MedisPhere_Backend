@@ -12,7 +12,7 @@ def send_appointment_email(to_email, subject, message):
         subject,
         message,
         from_email,  # Sender email
-        to_email  # Recipient email
+        [to_email]  # Recipient email
         
     )
     email.send()

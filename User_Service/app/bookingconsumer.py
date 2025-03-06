@@ -17,7 +17,7 @@ django.setup()
 
 # Now import your models
 from app.models import UserProfile, DoctorAvailability# 
-from app.task import send_appointment_email
+from app.tasks import send_appointment_email
 
 # Initialize Django ORM manually if needed
 
@@ -89,8 +89,13 @@ def check_doctor_availability(data):
                 logging.warning(f"Doctor {doctor.first_name} is not available on {date} at {slot}.")
                 return {"error": "Doctor is not available"}
     except UserProfile.DoesNotExist:
-        logging.error(f"Doctor '{doctor.first_name}' not found.")
-        return {"error": "Doctor not found"}
+        if not UserProfile.objects.filter(email=doctor_email, is_doctor=True).exists():
+            logging.error(f"Doctor with email '{doctor_email}' not found.")
+            return {"error": "Doctor not found"}
+        
+        if not UserProfile.objects.filter(email=patient_email, is_doctor=False).exists():
+            logging.error(f"Patient with email '{patient_email}' not found.")
+            return {"error": "Patient not found"}
 
     except Exception as e:
         logging.error(f"Database error: {e}")
