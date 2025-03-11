@@ -1,7 +1,7 @@
 from django.core.cache import cache  # For temporary storage
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import UserProfile,DoctorAvailability
+from .models import UserProfile, DoctorAvailability
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import AllowAny, IsAdminUser
 from django.contrib.auth import authenticate
@@ -19,8 +19,10 @@ from .serializer import (
 import pika
 import json
 
+
 class Register_Validate(APIView):
     permission_classes = [AllowAny]
+
     def post(self, request):
         serializer = RegisterValidateSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
@@ -35,6 +37,7 @@ class Register_Validate(APIView):
 
 class Register_User(APIView):
     permission_classes = [AllowAny]
+
     def post(self, request):
         serializer = Register_User_Data(data=request.data)
 
@@ -67,6 +70,7 @@ class Register_User(APIView):
 
 class Register_Doctor(APIView):
     permission_classes = [AllowAny]
+
     def post(self, request):
         serializer = Register_Doctor_Data(data=request.data)
 
@@ -99,7 +103,7 @@ class Register_Doctor(APIView):
 
 class Login_Email_and_Password(APIView):
     permission_classes = [AllowAny]
-    
+
     def post(self, request):
         email = request.data.get("email")
         password = request.data.get("password")
@@ -183,6 +187,7 @@ class Login_Mobile_Number_verify(APIView):
 
 class Chaining_Password(APIView):
     permission_classes = [AllowAny]
+
     def post(self, request):
         serializer = ChainingPasswordSerializer(data=request.data)
         if serializer.is_valid():
@@ -196,6 +201,7 @@ class Chaining_Password(APIView):
 
 class Forget_Password_otp_Sent(APIView):
     permission_classes = [AllowAny]
+
     def post(self, request):
         phone = request.data.get("mobile_number")
         user = UserProfile.objects.get(mobile_number=phone)
@@ -216,6 +222,7 @@ class Forget_Password_otp_Sent(APIView):
 
 class Forge_Password_Save(APIView):
     permission_classes = [AllowAny]
+
     def post(self, request):
         phone = request.data.get("checkmobile")
         otp_entered = request.data.get("otp")
@@ -237,6 +244,8 @@ class Forge_Password_Save(APIView):
                 )
 
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 class DoctorAvailabilityAPIView(APIView):
     """API to check doctor availability"""
 
@@ -245,22 +254,31 @@ class DoctorAvailabilityAPIView(APIView):
         doctor_firstname = data.get("doctor_name")
         date = data.get("date")
         slot = data.get("slot")
-        
 
         try:
-            doctor = UserProfile.objects.get(first_name=doctor_firstname, is_doctor=True)
+            doctor = UserProfile.objects.get(
+                first_name=doctor_firstname, is_doctor=True
+            )
             availability = DoctorAvailability.objects.filter(
                 doctor=doctor, date=date, slot=slot, is_available=True
             )
 
             if availability:
                 return Response(
-                    {"available": True, "doctor_name": f"{doctor.first_name} {doctor.last_name}"}
+                    {
+                        "available": True,
+                        "doctor_name": f"{doctor.first_name} {doctor.last_name}",
+                    }
                 )
             else:
                 return Response(
-                    {"available": False, "doctor_name": f"{doctor.first_name} {doctor.last_name}"}
+                    {
+                        "available": False,
+                        "doctor_name": f"{doctor.first_name} {doctor.last_name}",
+                    }
                 )
 
         except UserProfile.DoesNotExist:
-            return Response({"error": "Doctor not found"}, status=status.HTTP_404_NOT_FOUND)
+            return Response(
+                {"error": "Doctor not found"}, status=status.HTTP_404_NOT_FOUND
+            )

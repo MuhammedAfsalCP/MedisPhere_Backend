@@ -1,4 +1,3 @@
-
 import pika
 import json
 import time
@@ -23,8 +22,8 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
         logging.FileHandler("consumer.log"),  # Save logs
-        logging.StreamHandler()  # Print logs
-    ]
+        logging.StreamHandler(),  # Print logs
+    ],
 )
 logger = logging.getLogger(__name__)
 logger.info("hlo")
@@ -62,14 +61,20 @@ def doctor_slot_creation(data):
         logger.info(doctor)
         with transaction.atomic():
             #  Prevent duplicate slot creation
-            existing_slot = DoctorAvailability.objects.filter(doctor=doctor, date=date, slot=slot).first()
+            existing_slot = DoctorAvailability.objects.filter(
+                doctor=doctor, date=date, slot=slot
+            ).first()
             if existing_slot:
-                logger.warning(f" Slot already exists for Dr. {doctor.first_name} on {date} at {slot}.")
+                logger.warning(
+                    f" Slot already exists for Dr. {doctor.first_name} on {date} at {slot}."
+                )
                 return {"status": "Slot Already Exists"}
 
             #  Create Slot
             DoctorAvailability.objects.create(doctor=doctor, date=date, slot=slot)
-            logger.info(f" Slot created for Dr. {doctor.first_name} on {date} at {slot}.")
+            logger.info(
+                f" Slot created for Dr. {doctor.first_name} on {date} at {slot}."
+            )
             return {"status": "Slot Created", "date": date, "slot": slot}
 
     except UserProfile.DoesNotExist:
@@ -121,11 +126,12 @@ def start_consumer():
             logger.info("Connecting to RabbitMQ...")
             connection = connect_to_rabbitmq()
             channel = connection.channel()
-            channel.queue_declare(queue='doctor_slot_creation', durable=False)
+            channel.queue_declare(queue="doctor_slot_creation", durable=False)
 
-  
             channel.basic_qos(prefetch_count=1)
-            channel.basic_consume(queue="doctor_slot_creation", on_message_callback=callback)
+            channel.basic_consume(
+                queue="doctor_slot_creation", on_message_callback=callback
+            )
 
             logger.info(" [✔] Waiting for messages from Appointment Service...")
             channel.start_consuming()

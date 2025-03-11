@@ -4,7 +4,7 @@ from django.contrib.auth.models import (
     PermissionsMixin,
 )
 from django.db import models
-
+import uuid
 
 class UserManager(BaseUserManager):
     def create_user(self, email, mobile_number, password=None, **extra_fields):
@@ -118,9 +118,8 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
-
 class TimeSlotChoices(models.TextChoices):
-    
+
     NINE_TEN_AM = "09:00", "09:00-10:00"
     TEN_ELEVEN_AM = "10:00", "10:00-11:00"
     ELEVEN_TWELVE_AM = "11:00", "11:00-12:00"
@@ -133,27 +132,41 @@ class TimeSlotChoices(models.TextChoices):
     SIX_SEVEN_PM = "6:00", "6:00-7:00"
     SEVEN_EIGHT_PM = "7:00", "7:00-8:00"
     EIGHT_NINE_PM = "8:00", "8:00-9:00"
-    
+
 
 class DoctorAvailability(models.Model):
-    doctor = models.ForeignKey(UserProfile,
+    doctor = models.ForeignKey(
+        UserProfile,
         on_delete=models.CASCADE,
-        limit_choices_to={'is_doctor': True},
-        related_name='availabilities'
+        limit_choices_to={"is_doctor": True},
+        related_name="availabilities",
     )
     date = models.DateField(help_text="Date of availability")
     slot = models.CharField(
-        max_length=5, 
-        choices=TimeSlotChoices.choices, 
-        help_text="Select the available time slot (each slot is one hour)"
+        max_length=5,
+        choices=TimeSlotChoices.choices,
+        help_text="Select the available time slot (each slot is one hour)",
     )
-    is_available = models.BooleanField(default=True, help_text="Indicates if the doctor is available during this slot")
-    patient = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name="appointments",limit_choices_to={'is_doctor': False})
-    class Meta:
-        unique_together = ('doctor', 'date', 'slot')
-        ordering = ['date', 'slot']
+    is_available = models.BooleanField(
+        default=True, help_text="Indicates if the doctor is available during this slot"
+    )
+    patient = models.ForeignKey(
+        UserProfile,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="appointments",
+        limit_choices_to={"is_doctor": False},
+    )
+    meet_link=models.CharField(max_length=500,blank=True,null=True)
+    room_created = models.BooleanField(
+        default=False
+    )
     
+    class Meta:
+        unique_together = ("doctor", "date", "slot")
+        ordering = ["date", "slot"]
+
     def __str__(self):
         slot_label = dict(TimeSlotChoices.choices).get(self.slot, self.slot)
         return f"{self.doctor.first_name} {self.doctor.last_name} on {self.date} at {slot_label}"
-

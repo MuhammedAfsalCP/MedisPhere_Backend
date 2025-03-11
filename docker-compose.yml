@@ -252,7 +252,7 @@ services:
       - medisphere
     command: >
       sh -c "sleep 10 && python manage.py migrate &&
-      (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py)"
+      (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py & python app/roomupdateconsumer.py)"
 
   user-service-celery:
     build: ./User_Service
@@ -286,6 +286,27 @@ services:
     command: >
       sh -c "python manage.py migrate &&
              daphne -b 0.0.0.0 -p 8004 Video_Call_Service.asgi:application"
+  # video-call-service:
+  #   build: ./Video_Call_Service
+  #   container_name: Video_Call_Service
+  #   ports:
+  #     - "8004:8004"
+  #   volumes:
+  #     - ./Video_Call_Service:/app
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy  # Wait for DB to be healthy
+  #     redis:
+  #       condition: service_healthy  # Wait for Redis to be healthy
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     - DJANGO_SETTINGS_MODULE=Video_Call_Service.settings  # Explicitly set
+  #   networks:
+  #     - medisphere
+  #   command: >
+  #     sh -c "python manage.py migrate --noinput &&
+  #            daphne -b 0.0.0.0 -p 8004 Video_Call_Service.asgi:application"
 
 volumes:
   postgres_data:

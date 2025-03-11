@@ -16,17 +16,32 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views import Register_Validate,Register_User,Register_Doctor,Login_Email_and_Password,Login_Mobile_Number_otp_sent,Login_Mobile_Number_verify,Chaining_Password,Forget_Password_otp_Sent,Forge_Password_Save,DoctorAvailabilityAPIView
+from .views import (
+    Register_Validate,
+    Register_User,
+    Register_Doctor,
+    Login_Email_and_Password,
+    Login_Mobile_Number_otp_sent,
+    Login_Mobile_Number_verify,
+    Chaining_Password,
+    Forget_Password_otp_Sent,
+    Forge_Password_Save,
+    DoctorAvailabilityAPIView,
+)
 
 urlpatterns = [
-    path('registervalidate/',Register_Validate.as_view()),
-    path('userregistersave/',Register_User.as_view()),
-    path('doctorregistersave/',Register_Doctor.as_view()),
-    path('loginemailandpassword/',Login_Email_and_Password.as_view()),
-    path('loginemobilenumberverify/',Login_Mobile_Number_verify.as_view()),
-    path('loginmobilenumberotpsent/',Login_Mobile_Number_otp_sent.as_view()),
-    path('chainigpassword/',Chaining_Password.as_view()),
-    path('forgetpasswordotpsent/',Forget_Password_otp_Sent.as_view()),
-    path('forgetpasswordsave/',Forge_Password_Save.as_view()),
-    path('doctor_availability/', DoctorAvailabilityAPIView.as_view(), name='doctor_availability'),
+    path("registervalidate/", Register_Validate.as_view()),
+    path("userregistersave/", Register_User.as_view()),
+    path("doctorregistersave/", Register_Doctor.as_view()),
+    path("loginemailandpassword/", Login_Email_and_Password.as_view()),
+    path("loginemobilenumberverify/", Login_Mobile_Number_verify.as_view()),
+    path("loginmobilenumberotpsent/", Login_Mobile_Number_otp_sent.as_view()),
+    path("chainigpassword/", Chaining_Password.as_view()),
+    path("forgetpasswordotpsent/", Forget_Password_otp_Sent.as_view()),
+    path("forgetpasswordsave/", Forge_Password_Save.as_view()),
+    path(
+        "doctor_availability/",
+        DoctorAvailabilityAPIView.as_view(),
+        name="doctor_availability",
+    ),
 ]

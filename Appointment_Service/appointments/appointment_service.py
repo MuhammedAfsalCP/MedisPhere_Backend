@@ -15,10 +15,12 @@ response_queue_name = response_queue.method.queue
 
 doctor_response = None
 
+
 def on_response(ch, method, properties, body):
     """Handles responses from User Service"""
     global doctor_response
     doctor_response = json.loads(body)
+
 
 def check_doctor_availability(doctor_id, date, slot):
     """Sends a request to User Service to check doctor availability"""
@@ -33,7 +35,9 @@ def check_doctor_availability(doctor_id, date, slot):
     channel.basic_publish(
         exchange="",
         routing_key="check_doctor_availability",
-        properties=pika.BasicProperties(reply_to=response_queue_name, correlation_id=correlation_id),
+        properties=pika.BasicProperties(
+            reply_to=response_queue_name, correlation_id=correlation_id
+        ),
         body=request_json,
     )
 
@@ -41,6 +45,7 @@ def check_doctor_availability(doctor_id, date, slot):
         connection.process_data_events()
 
     return doctor_response
+
 
 # Function to process appointment requests
 def process_appointment_request(ch, method, properties, body):
@@ -64,9 +69,16 @@ def process_appointment_request(ch, method, properties, body):
     else:
         print(f"Doctor {doctor_name} is NOT available. Rejecting appointment.")
 
+
 # Start consuming appointment requests
-channel.basic_consume(queue="appointment_requests", on_message_callback=process_appointment_request, auto_ack=True)
-channel.basic_consume(queue=response_queue_name, on_message_callback=on_response, auto_ack=True)
+channel.basic_consume(
+    queue="appointment_requests",
+    on_message_callback=process_appointment_request,
+    auto_ack=True,
+)
+channel.basic_consume(
+    queue=response_queue_name, on_message_callback=on_response, auto_ack=True
+)
 
 print("Appointment Service is waiting for requests...")
 channel.start_consuming()
