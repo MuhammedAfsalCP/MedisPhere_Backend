@@ -15,6 +15,7 @@ from .serializer import (
     LoginSerializer,
     ChainingPasswordSerializer,
     ForgetPasswordSerializer,
+    UserDetailSerializer
 )
 import pika
 import json
@@ -282,3 +283,13 @@ class DoctorAvailabilityAPIView(APIView):
             return Response(
                 {"error": "Doctor not found"}, status=status.HTTP_404_NOT_FOUND
             )
+
+
+class UserDetailsGet(APIView):
+
+    def get(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return Response({"error": "User not authenticated"}, status=401)
+        serializer=UserDetailSerializer(instance=user)  # `request.user` is populated by JWTAuthentication
+        return Response({"userdetail": serializer.data})

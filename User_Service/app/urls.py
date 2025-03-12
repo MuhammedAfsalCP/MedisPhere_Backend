@@ -27,6 +27,7 @@ from .views import (
     Forget_Password_otp_Sent,
     Forge_Password_Save,
     DoctorAvailabilityAPIView,
+    UserDetailsGet
 )
 
 urlpatterns = [
@@ -39,6 +40,7 @@ urlpatterns = [
     path("chainigpassword/", Chaining_Password.as_view()),
     path("forgetpasswordotpsent/", Forget_Password_otp_Sent.as_view()),
     path("forgetpasswordsave/", Forge_Password_Save.as_view()),
+    path("userdetailsget/", UserDetailsGet.as_view()),
     path(
         "doctor_availability/",
         DoctorAvailabilityAPIView.as_view(),

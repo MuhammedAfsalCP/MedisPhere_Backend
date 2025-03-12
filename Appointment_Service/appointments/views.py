@@ -6,14 +6,14 @@ import json
 import uuid
 import time
 import logging
-
+from rest_framework.permissions import AllowAny, IsAdminUser
 # Setup logging
 logger = logging.getLogger(__name__)
 
 
 class BookingAppointmentAPIView(APIView):
     """API to create an appointment by checking doctor availability via RabbitMQ"""
-
+    
     def post(self, request):
         data = request.data
         doctor_email = data.get("doctor_email")

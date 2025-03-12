@@ -230,3 +230,10 @@ class ForgetPasswordSerializer(serializers.ModelSerializer):
         user.save()
 
         return user  # Return updated user
+
+
+
+class UserDetailSerializer(serializers.ModelSerializer):
+    class Meta():
+        model = UserProfile
+        fields = "__all__"

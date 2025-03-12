@@ -100,12 +100,12 @@ DATABASES = {
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.SessionAuthentication",
+        "appointments.authentication.CustomJWTAuthentication",
         # "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
-    # "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
 }
-
+USER_SERVICE_URL = "http://localhost:8003/userdetailsget/"
 from datetime import timedelta
 
 SIMPLE_JWT = {

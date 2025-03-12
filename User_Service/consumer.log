@@ -8816,3 +8816,952 @@ pika.exceptions.AMQPConnectionError
 2025-03-11 06:27:34,239 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
 2025-03-11 06:27:34,501 - INFO - hlo
 2025-03-11 06:27:34,506 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-11 06:27:39,119 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:27:39,166 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:27:39,170 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 51408)>; error=111 (Connection refused)
+2025-03-11 06:27:39,180 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.4', 5672))
+2025-03-11 06:27:39,184 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-11 06:27:39,191 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-11 06:27:39,196 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-11 06:27:39,202 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-11 06:27:39,211 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-11 06:27:39,248 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-11 06:27:39,251 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:27:39,340 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:27:39,348 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 51414)>; error=111 (Connection refused)
+2025-03-11 06:27:39,350 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.4', 5672))
+2025-03-11 06:27:39,353 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-11 06:27:39,367 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-11 06:27:39,370 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-11 06:27:39,372 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-11 06:27:39,375 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-11 06:27:39,392 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-11 06:27:39,513 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:27:39,587 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:27:39,590 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 51416)>; error=111 (Connection refused)
+2025-03-11 06:27:39,613 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.4', 5672))
+2025-03-11 06:27:39,621 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-11 06:27:39,624 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-11 06:27:39,633 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-11 06:27:39,636 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-11 06:27:39,645 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-11 06:27:39,677 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-11 06:27:44,256 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:27:44,280 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 40712), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:27:44,287 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912fe80>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912fe80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:27:44,350 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912fe80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:27:44,356 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912fe80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:27:44,369 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912fe80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:27:44,372 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:27:44,376 - INFO - Created channel=1
+2025-03-11 06:27:44,407 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:27:44,410 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 40716), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:27:44,425 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb8f3d60460>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb8f3d60460> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:27:44,443 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:27:44,468 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb8f3d60460> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:27:44,470 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb8f3d60460> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:27:44,474 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb8f3d60460> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:27:44,477 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:27:44,486 - INFO - Created channel=1
+2025-03-11 06:27:44,524 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-11 06:27:44,696 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:27:44,702 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 40724), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:27:44,707 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8b3071bc40>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8b3071bc40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:27:44,729 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8b3071bc40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:27:44,758 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8b3071bc40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:27:44,770 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8b3071bc40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:27:44,775 - INFO -  Connected to RabbitMQ successfully.
+2025-03-11 06:27:44,785 - INFO - Created channel=1
+2025-03-11 06:27:44,811 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-11 06:28:18,763 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:28:18,767 - INFO - farisss@gmail.com
+2025-03-11 06:28:18,768 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:28:18,887 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:28:18,888 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:28:23,893 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:28:24,330 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:28:24,335 - INFO - Socket connected: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 40828), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:28:24,340 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1690>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1690> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:28:24,362 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1690> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:24,364 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1690> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:24,367 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1690> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:24,370 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:28:24,379 - INFO - Created channel=1
+2025-03-11 06:28:24,424 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:28:29,230 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:28:29,240 - INFO - farisss@gmail.com
+2025-03-11 06:28:29,266 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:28:29,690 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:28:29,783 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:28:34,824 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:28:34,828 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:28:34,835 - INFO - Socket connected: <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 51872), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:28:34,843 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f23e0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f23e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:28:34,855 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f23e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:34,868 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f23e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:34,883 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f23e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:34,886 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:28:34,889 - INFO - Created channel=1
+2025-03-11 06:28:34,918 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:28:40,615 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:28:40,623 - INFO - farisss@gmail.com
+2025-03-11 06:28:40,632 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:28:40,665 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:28:40,673 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:28:45,686 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:28:45,762 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:28:45,857 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 47168), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:28:45,863 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912fe20>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912fe20> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:28:45,871 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912fe20> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:45,879 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912fe20> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:45,888 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912fe20> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:45,895 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:28:45,917 - INFO - Created channel=1
+2025-03-11 06:28:45,928 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:28:45,930 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:28:45,932 - INFO - farisss@gmail.com
+2025-03-11 06:28:45,935 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:28:45,940 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:28:45,946 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:28:50,949 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:28:50,956 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:28:50,963 - INFO - Socket connected: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 47182), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:28:50,969 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1600>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1600> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:28:51,011 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1600> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:51,022 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1600> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:51,024 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1600> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:51,026 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:28:51,033 - INFO - Created channel=1
+2025-03-11 06:28:51,049 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:28:51,053 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:28:51,061 - INFO - farisss@gmail.com
+2025-03-11 06:28:51,064 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:28:51,077 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:28:51,081 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:28:56,088 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:28:56,096 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:28:56,101 - INFO - Socket connected: <socket.socket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 39330), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:28:56,103 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3100>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3100> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:28:56,125 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3100> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:56,135 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3100> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:56,151 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3100> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:28:56,154 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:28:56,160 - INFO - Created channel=1
+2025-03-11 06:28:56,175 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:29:01,824 - INFO - Received message: {'room_name': 'd5defaa5-15ad-4ada-9ba6-8e39b43d9b83', 'email': 'fariskt00%40gmail.com', 'slot': '8%3A00', 'date': '2025-03-13'}
+2025-03-11 06:29:01,836 - INFO - fariskt00@gmail.com
+2025-03-11 06:29:01,841 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/d5defaa5-15ad-4ada-9ba6-8e39b43d9b83/?role=doctor
+2025-03-11 06:29:02,302 - INFO - Updated existing room d5defaa5-15ad-4ada-9ba6-8e39b43d9b83 for doctor with email fariskt00@gmail.com
+2025-03-11 06:29:02,311 - INFO - Sent response: {'room_created': True, 'meet_link': 'ws://localhost:8004/ws/video_call/d5defaa5-15ad-4ada-9ba6-8e39b43d9b83/?role=doctor', 'email': 'fariskt00@gmail.com', 'date': '2025-03-13', 'slot': '8:00'}
+2025-03-11 06:29:02,320 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:29:02,329 - INFO - farisss@gmail.com
+2025-03-11 06:29:02,333 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:29:02,338 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:29:02,366 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:29:07,377 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:29:07,381 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:29:07,384 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 48460), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:29:07,387 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f32b0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f32b0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:29:07,398 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f32b0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:29:07,404 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f32b0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:29:07,409 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f32b0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:29:07,414 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:29:07,416 - INFO - Created channel=1
+2025-03-11 06:29:07,433 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:29:07,434 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:29:07,436 - INFO - farisss@gmail.com
+2025-03-11 06:29:07,439 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:29:07,449 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:29:07,452 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:29:12,459 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:29:12,465 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:29:12,468 - INFO - Socket connected: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 58392), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:29:12,472 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f12d0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f12d0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:29:12,481 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f12d0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:29:12,487 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f12d0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:29:12,494 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f12d0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:29:12,503 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:29:12,520 - INFO - Created channel=1
+2025-03-11 06:29:12,565 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:29:12,575 - INFO - Received message: {'room_name': 'd5defaa5-15ad-4ada-9ba6-8e39b43d9b83', 'email': 'fariskt00%40gmail.com', 'slot': '8%3A00', 'date': '2025-03-13'}
+2025-03-11 06:29:12,588 - INFO - fariskt00@gmail.com
+2025-03-11 06:29:12,599 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/d5defaa5-15ad-4ada-9ba6-8e39b43d9b83/?role=doctor
+2025-03-11 06:29:12,623 - INFO - Updated existing room d5defaa5-15ad-4ada-9ba6-8e39b43d9b83 for doctor with email fariskt00@gmail.com
+2025-03-11 06:29:12,690 - INFO - Sent response: {'room_created': True, 'meet_link': 'ws://localhost:8004/ws/video_call/d5defaa5-15ad-4ada-9ba6-8e39b43d9b83/?role=doctor', 'email': 'fariskt00@gmail.com', 'date': '2025-03-13', 'slot': '8:00'}
+2025-03-11 06:29:13,686 - INFO - Received message: {'room_name': 'd5defaa5-15ad-4ada-9ba6-8e39b43d9b83', 'email': 'fariskt00%40gmail.com', 'slot': '8%3A00', 'date': '2025-03-13'}
+2025-03-11 06:29:13,688 - INFO - fariskt00@gmail.com
+2025-03-11 06:29:13,701 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/d5defaa5-15ad-4ada-9ba6-8e39b43d9b83/?role=doctor
+2025-03-11 06:29:13,728 - INFO - Updated existing room d5defaa5-15ad-4ada-9ba6-8e39b43d9b83 for doctor with email fariskt00@gmail.com
+2025-03-11 06:29:13,736 - INFO - Sent response: {'room_created': True, 'meet_link': 'ws://localhost:8004/ws/video_call/d5defaa5-15ad-4ada-9ba6-8e39b43d9b83/?role=doctor', 'email': 'fariskt00@gmail.com', 'date': '2025-03-13', 'slot': '8:00'}
+2025-03-11 06:29:50,828 - INFO - Received message: {'room_name': 'efbc5115-6c54-420d-8b50-9376d5df013c', 'email': 'fariskt00%40gmail.com', 'slot': '8%3A00', 'date': '2025-03-13'}
+2025-03-11 06:29:50,830 - INFO - fariskt00@gmail.com
+2025-03-11 06:29:50,833 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/efbc5115-6c54-420d-8b50-9376d5df013c/?role=doctor
+2025-03-11 06:29:50,854 - INFO - Updated existing room efbc5115-6c54-420d-8b50-9376d5df013c for doctor with email fariskt00@gmail.com
+2025-03-11 06:29:50,864 - INFO - Sent response: {'room_created': True, 'meet_link': 'ws://localhost:8004/ws/video_call/efbc5115-6c54-420d-8b50-9376d5df013c/?role=doctor', 'email': 'fariskt00@gmail.com', 'date': '2025-03-13', 'slot': '8:00'}
+2025-03-11 06:29:50,993 - INFO - Received message: {'room_name': 'efbc5115-6c54-420d-8b50-9376d5df013c', 'email': 'fariskt00%40gmail.com', 'slot': '8%3A00', 'date': '2025-03-13'}
+2025-03-11 06:29:51,002 - INFO - fariskt00@gmail.com
+2025-03-11 06:29:51,003 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/efbc5115-6c54-420d-8b50-9376d5df013c/?role=doctor
+2025-03-11 06:29:51,029 - INFO - Updated existing room efbc5115-6c54-420d-8b50-9376d5df013c for doctor with email fariskt00@gmail.com
+2025-03-11 06:29:51,039 - INFO - Sent response: {'room_created': True, 'meet_link': 'ws://localhost:8004/ws/video_call/efbc5115-6c54-420d-8b50-9376d5df013c/?role=doctor', 'email': 'fariskt00@gmail.com', 'date': '2025-03-13', 'slot': '8:00'}
+2025-03-11 06:29:51,048 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:29:51,058 - INFO - farisss@gmail.com
+2025-03-11 06:29:51,062 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:29:51,081 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:29:51,151 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:29:56,166 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:29:56,169 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:29:56,174 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 43166), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:29:56,178 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f21d0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f21d0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:29:56,197 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f21d0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:29:56,201 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f21d0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:29:56,215 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f21d0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:29:56,218 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:29:56,234 - INFO - Created channel=1
+2025-03-11 06:29:56,261 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:30:30,243 - INFO - Received message: {'room_name': '8a1ff848-fb72-4e14-aa22-5f8344473f3a', 'email': 'fariskt00%40gmail.com', 'slot': '8%3A00', 'date': '2025-03-13'}
+2025-03-11 06:30:30,273 - INFO - fariskt00@gmail.com
+2025-03-11 06:30:30,276 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/8a1ff848-fb72-4e14-aa22-5f8344473f3a/?role=doctor
+2025-03-11 06:30:30,294 - INFO - Updated existing room 8a1ff848-fb72-4e14-aa22-5f8344473f3a for doctor with email fariskt00@gmail.com
+2025-03-11 06:30:30,358 - INFO - Sent response: {'room_created': True, 'meet_link': 'ws://localhost:8004/ws/video_call/8a1ff848-fb72-4e14-aa22-5f8344473f3a/?role=doctor', 'email': 'fariskt00@gmail.com', 'date': '2025-03-13', 'slot': '8:00'}
+2025-03-11 06:30:30,503 - INFO - Received message: {'room_name': '8a1ff848-fb72-4e14-aa22-5f8344473f3a', 'email': 'fariskt00%40gmail.com', 'slot': '8%3A00', 'date': '2025-03-13'}
+2025-03-11 06:30:30,508 - INFO - fariskt00@gmail.com
+2025-03-11 06:30:30,523 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/8a1ff848-fb72-4e14-aa22-5f8344473f3a/?role=doctor
+2025-03-11 06:30:30,557 - INFO - Updated existing room 8a1ff848-fb72-4e14-aa22-5f8344473f3a for doctor with email fariskt00@gmail.com
+2025-03-11 06:30:30,576 - INFO - Sent response: {'room_created': True, 'meet_link': 'ws://localhost:8004/ws/video_call/8a1ff848-fb72-4e14-aa22-5f8344473f3a/?role=doctor', 'email': 'fariskt00@gmail.com', 'date': '2025-03-13', 'slot': '8:00'}
+2025-03-11 06:58:34,846 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:58:34,895 - INFO - farisss@gmail.com
+2025-03-11 06:58:34,896 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:58:35,226 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:58:35,234 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:58:40,240 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:58:40,361 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:58:40,367 - INFO - Socket connected: <socket.socket fd=24, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 34204), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:58:40,381 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3e50>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3e50> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:58:40,444 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3e50> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:58:40,447 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3e50> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:58:40,448 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3e50> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:58:40,453 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:58:40,463 - INFO - Created channel=1
+2025-03-11 06:58:40,504 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:58:55,913 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:58:55,914 - INFO - farisss@gmail.com
+2025-03-11 06:58:55,915 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:58:55,923 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:58:55,924 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:59:00,927 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:59:00,935 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:59:00,939 - INFO - Socket connected: <socket.socket fd=28, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 33510), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:59:00,946 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40700>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40700> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:59:00,963 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40700> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:59:00,967 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40700> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:59:00,984 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40700> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:59:00,984 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:59:00,986 - INFO - Created channel=1
+2025-03-11 06:59:00,998 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:59:12,271 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:59:12,273 - INFO - farisss@gmail.com
+2025-03-11 06:59:12,275 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:59:12,303 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:59:12,304 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:59:17,311 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:59:17,315 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:59:17,316 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 42002), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:59:17,319 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1150>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1150> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:59:17,338 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1150> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:59:17,342 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1150> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:59:17,347 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f1150> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:59:17,349 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:59:17,352 - INFO - Created channel=1
+2025-03-11 06:59:17,365 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:59:17,366 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:59:17,368 - INFO - farisss@gmail.com
+2025-03-11 06:59:17,370 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:59:17,379 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:59:17,380 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:59:22,386 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:59:22,390 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:59:22,394 - INFO - Socket connected: <socket.socket fd=24, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 51106), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:59:22,399 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912f4c0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912f4c0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:59:22,428 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912f4c0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:59:22,430 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912f4c0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:59:22,431 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912f4c0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:59:22,433 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:59:22,438 - INFO - Created channel=1
+2025-03-11 06:59:22,455 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 06:59:22,457 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 06:59:22,460 - INFO - farisss@gmail.com
+2025-03-11 06:59:22,466 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 06:59:22,476 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 06:59:22,483 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 06:59:27,497 - INFO - Connecting to RabbitMQ...
+2025-03-11 06:59:27,501 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 06:59:27,503 - INFO - Socket connected: <socket.socket fd=32, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 51120), raddr=('172.18.0.4', 5672)>
+2025-03-11 06:59:27,505 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40fa0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40fa0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 06:59:27,516 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40fa0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:59:27,517 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40fa0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:59:27,519 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40fa0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 06:59:27,538 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 06:59:27,544 - INFO - Created channel=1
+2025-03-11 06:59:27,557 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 07:29:00,758 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 07:29:00,759 - INFO - farisss@gmail.com
+2025-03-11 07:29:00,760 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 07:29:00,771 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 07:29:00,773 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 07:29:05,775 - INFO - Connecting to RabbitMQ...
+2025-03-11 07:29:05,817 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 07:29:05,820 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 52784), raddr=('172.18.0.4', 5672)>
+2025-03-11 07:29:05,825 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912ee90>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912ee90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 07:29:05,841 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912ee90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:29:05,843 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912ee90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:29:05,846 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f214912ee90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:29:05,849 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 07:29:05,853 - INFO - Created channel=1
+2025-03-11 07:29:05,864 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 07:29:05,864 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 07:29:05,865 - INFO - farisss@gmail.com
+2025-03-11 07:29:05,867 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 07:29:05,873 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 07:29:05,876 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 07:29:10,882 - INFO - Connecting to RabbitMQ...
+2025-03-11 07:29:10,888 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 07:29:10,891 - INFO - Socket connected: <socket.socket fd=24, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 52788), raddr=('172.18.0.4', 5672)>
+2025-03-11 07:29:10,893 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3730>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3730> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 07:29:10,903 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3730> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:29:10,905 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3730> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:29:10,909 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3730> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:29:10,911 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 07:29:10,915 - INFO - Created channel=1
+2025-03-11 07:29:10,928 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 07:29:10,929 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 07:29:10,931 - INFO - farisss@gmail.com
+2025-03-11 07:29:10,935 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 07:29:10,943 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 07:29:10,946 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 07:29:15,952 - INFO - Connecting to RabbitMQ...
+2025-03-11 07:29:15,962 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 07:29:15,965 - INFO - Socket connected: <socket.socket fd=36, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 35412), raddr=('172.18.0.4', 5672)>
+2025-03-11 07:29:15,971 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40280>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 07:29:15,992 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:29:15,996 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:29:15,997 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d40280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:29:15,998 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 07:29:16,001 - INFO - Created channel=1
+2025-03-11 07:29:16,009 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 07:49:26,872 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 07:49:26,882 - INFO - farisss@gmail.com
+2025-03-11 07:49:26,883 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 07:49:26,897 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 07:49:26,899 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 07:49:31,896 - INFO - Connecting to RabbitMQ...
+2025-03-11 07:49:31,906 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 07:49:31,910 - INFO - Socket connected: <socket.socket fd=40, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 52042), raddr=('172.18.0.4', 5672)>
+2025-03-11 07:49:31,925 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3700>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3700> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 07:49:31,959 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3700> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:49:31,960 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3700> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:49:31,973 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3700> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:49:31,974 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 07:49:31,976 - INFO - Created channel=1
+2025-03-11 07:49:32,000 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 07:49:32,016 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 07:49:32,016 - INFO - farisss@gmail.com
+2025-03-11 07:49:32,020 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 07:49:32,032 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 07:49:32,034 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 07:49:37,051 - INFO - Connecting to RabbitMQ...
+2025-03-11 07:49:37,068 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 07:49:37,077 - INFO - Socket connected: <socket.socket fd=24, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 52046), raddr=('172.18.0.4', 5672)>
+2025-03-11 07:49:37,083 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3f40>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3f40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 07:49:37,104 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3f40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:49:37,106 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3f40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:49:37,109 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3f40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:49:37,113 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 07:49:37,117 - INFO - Created channel=1
+2025-03-11 07:49:37,126 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 07:59:05,575 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 07:59:05,580 - INFO - farisss@gmail.com
+2025-03-11 07:59:05,582 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 07:59:05,592 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 07:59:05,594 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 07:59:10,602 - INFO - Connecting to RabbitMQ...
+2025-03-11 07:59:10,615 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 07:59:10,629 - INFO - Socket connected: <socket.socket fd=44, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 38964), raddr=('172.18.0.4', 5672)>
+2025-03-11 07:59:10,637 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42410>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42410> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 07:59:10,669 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42410> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:59:10,670 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42410> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:59:10,675 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42410> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 07:59:10,677 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 07:59:10,685 - INFO - Created channel=1
+2025-03-11 07:59:10,705 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 08:19:15,568 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 08:19:15,572 - INFO - farisss@gmail.com
+2025-03-11 08:19:15,579 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 08:19:15,587 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 08:19:15,589 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 08:19:20,596 - INFO - Connecting to RabbitMQ...
+2025-03-11 08:19:20,624 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 08:19:20,655 - INFO - Socket connected: <socket.socket fd=48, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 41554), raddr=('172.18.0.4', 5672)>
+2025-03-11 08:19:20,662 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43010>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43010> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 08:19:20,684 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43010> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 08:19:20,692 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43010> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 08:19:20,703 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43010> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 08:19:20,707 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 08:19:20,718 - INFO - Created channel=1
+2025-03-11 08:19:20,734 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 08:19:20,737 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 08:19:20,740 - INFO - farisss@gmail.com
+2025-03-11 08:19:20,748 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 08:19:20,757 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 08:19:20,764 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 08:19:25,773 - INFO - Connecting to RabbitMQ...
+2025-03-11 08:19:25,777 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 08:19:25,781 - INFO - Socket connected: <socket.socket fd=24, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 35532), raddr=('172.18.0.4', 5672)>
+2025-03-11 08:19:25,790 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3520>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3520> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 08:19:25,805 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3520> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 08:19:25,806 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3520> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 08:19:25,807 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3520> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 08:19:25,811 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 08:19:25,816 - INFO - Created channel=1
+2025-03-11 08:19:25,823 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 08:19:31,717 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 08:19:31,719 - INFO - farisss@gmail.com
+2025-03-11 08:19:31,722 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 08:19:31,730 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 08:19:31,734 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 08:19:36,741 - INFO - Connecting to RabbitMQ...
+2025-03-11 08:19:36,753 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 08:19:36,771 - INFO - Socket connected: <socket.socket fd=52, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 48380), raddr=('172.18.0.4', 5672)>
+2025-03-11 08:19:36,782 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42200>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 08:19:36,815 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 08:19:36,836 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 08:19:36,841 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42200> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 08:19:36,854 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 08:19:36,859 - INFO - Created channel=1
+2025-03-11 08:19:36,881 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 09:06:40,470 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 09:06:40,500 - INFO - farisss@gmail.com
+2025-03-11 09:06:40,503 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 09:06:40,733 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 09:06:40,738 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 09:06:45,743 - INFO - Connecting to RabbitMQ...
+2025-03-11 09:06:45,799 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 09:06:45,802 - INFO - Socket connected: <socket.socket fd=56, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 37454), raddr=('172.18.0.4', 5672)>
+2025-03-11 09:06:45,810 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43e20>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43e20> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 09:06:45,858 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43e20> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:06:45,859 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43e20> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:06:45,865 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43e20> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:06:45,867 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 09:06:45,874 - INFO - Created channel=1
+2025-03-11 09:06:45,905 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 09:06:50,536 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 09:06:50,538 - INFO - farisss@gmail.com
+2025-03-11 09:06:50,541 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 09:06:50,565 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 09:06:50,566 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 09:06:55,573 - INFO - Connecting to RabbitMQ...
+2025-03-11 09:06:55,583 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 09:06:55,587 - INFO - Socket connected: <socket.socket fd=24, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 43066), raddr=('172.18.0.4', 5672)>
+2025-03-11 09:06:55,595 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42230>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42230> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 09:06:55,615 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42230> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:06:55,616 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42230> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:06:55,619 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d42230> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:06:55,620 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 09:06:55,623 - INFO - Created channel=1
+2025-03-11 09:06:55,634 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 09:06:55,635 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 09:06:55,637 - INFO - farisss@gmail.com
+2025-03-11 09:06:55,637 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 09:06:55,643 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 09:06:55,643 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 09:07:00,650 - INFO - Connecting to RabbitMQ...
+2025-03-11 09:07:00,653 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 09:07:00,655 - INFO - Socket connected: <socket.socket fd=52, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 43068), raddr=('172.18.0.4', 5672)>
+2025-03-11 09:07:00,658 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f2260>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f2260> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 09:07:00,674 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f2260> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:07:00,676 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f2260> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:07:00,679 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f2260> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:07:00,681 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 09:07:00,685 - INFO - Created channel=1
+2025-03-11 09:07:00,732 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 09:07:00,736 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 09:07:00,743 - INFO - farisss@gmail.com
+2025-03-11 09:07:00,748 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 09:07:00,763 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 09:07:00,763 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 09:07:05,768 - INFO - Connecting to RabbitMQ...
+2025-03-11 09:07:05,771 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 09:07:05,773 - INFO - Socket connected: <socket.socket fd=60, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 35480), raddr=('172.18.0.4', 5672)>
+2025-03-11 09:07:05,776 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d68700>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d68700> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 09:07:05,785 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d68700> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:07:05,786 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d68700> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:07:05,787 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d68700> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:07:05,789 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 09:07:05,791 - INFO - Created channel=1
+2025-03-11 09:07:05,813 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 09:36:45,725 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 09:36:45,734 - INFO - farisss@gmail.com
+2025-03-11 09:36:45,735 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 09:36:45,784 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 09:36:45,785 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 09:36:50,791 - INFO - Connecting to RabbitMQ...
+2025-03-11 09:36:50,818 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 09:36:50,821 - INFO - Socket connected: <socket.socket fd=21, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 48376), raddr=('172.18.0.4', 5672)>
+2025-03-11 09:36:50,824 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f2c20>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f2c20> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 09:36:50,848 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f2c20> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:36:50,850 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f2c20> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:36:50,853 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f2c20> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:36:50,854 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 09:36:50,861 - INFO - Created channel=1
+2025-03-11 09:36:50,878 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 09:36:50,879 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 09:36:50,882 - INFO - farisss@gmail.com
+2025-03-11 09:36:50,884 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 09:36:50,889 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 09:36:50,891 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 09:36:55,898 - INFO - Connecting to RabbitMQ...
+2025-03-11 09:36:55,902 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 09:36:55,903 - INFO - Socket connected: <socket.socket fd=49, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 60292), raddr=('172.18.0.4', 5672)>
+2025-03-11 09:36:55,906 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d41150>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d41150> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 09:36:55,916 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d41150> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:36:55,917 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d41150> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:36:55,918 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d41150> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:36:55,920 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 09:36:55,923 - INFO - Created channel=1
+2025-03-11 09:36:55,929 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 09:36:55,931 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 09:36:55,933 - INFO - farisss@gmail.com
+2025-03-11 09:36:55,934 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 09:36:55,942 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 09:36:55,944 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 09:37:00,953 - INFO - Connecting to RabbitMQ...
+2025-03-11 09:37:00,987 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 09:37:00,989 - INFO - Socket connected: <socket.socket fd=64, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 54214), raddr=('172.18.0.4', 5672)>
+2025-03-11 09:37:00,991 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43ca0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43ca0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 09:37:00,999 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43ca0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:37:01,002 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43ca0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:37:01,003 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d43ca0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:37:01,005 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 09:37:01,012 - INFO - Created channel=1
+2025-03-11 09:37:01,027 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 09:57:05,531 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 09:57:05,534 - INFO - farisss@gmail.com
+2025-03-11 09:57:05,535 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 09:57:05,545 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 09:57:05,546 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 09:57:10,550 - INFO - Connecting to RabbitMQ...
+2025-03-11 09:57:10,556 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 09:57:10,562 - INFO - Socket connected: <socket.socket fd=68, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 47776), raddr=('172.18.0.4', 5672)>
+2025-03-11 09:57:10,565 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d69780>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d69780> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 09:57:10,596 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d69780> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:57:10,597 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d69780> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:57:10,600 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d69780> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:57:10,602 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 09:57:10,605 - INFO - Created channel=1
+2025-03-11 09:57:10,623 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 09:57:10,627 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 09:57:10,630 - INFO - farisss@gmail.com
+2025-03-11 09:57:10,631 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 09:57:10,638 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 09:57:10,639 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 09:57:15,645 - INFO - Connecting to RabbitMQ...
+2025-03-11 09:57:15,649 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 09:57:15,650 - INFO - Socket connected: <socket.socket fd=49, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 51890), raddr=('172.18.0.4', 5672)>
+2025-03-11 09:57:15,654 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3f40>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3f40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 09:57:15,664 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3f40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:57:15,667 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3f40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:57:15,670 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f21491f3f40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 09:57:15,671 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 09:57:15,675 - INFO - Created channel=1
+2025-03-11 09:57:15,685 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 10:06:50,723 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 10:06:50,725 - INFO - farisss@gmail.com
+2025-03-11 10:06:50,726 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 10:06:50,733 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 10:06:50,734 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-11 10:06:55,738 - INFO - Connecting to RabbitMQ...
+2025-03-11 10:06:55,742 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-11 10:06:55,745 - INFO - Socket connected: <socket.socket fd=72, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 53422), raddr=('172.18.0.4', 5672)>
+2025-03-11 10:06:55,751 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d69bd0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d69bd0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-11 10:06:55,760 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d69bd0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 10:06:55,764 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d69bd0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 10:06:55,767 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2148d69bd0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-11 10:06:55,771 - INFO - Connected to RabbitMQ successfully.
+2025-03-11 10:06:55,779 - INFO - Created channel=1
+2025-03-11 10:06:55,788 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-11 10:27:00,807 - INFO - Received message: {'room_name': '0c8c916e-f244-4e3f-961f-de43905e73e0', 'email': 'farisss%40gmail.com', 'slot': '45', 'date': '2025-03-13'}
+2025-03-11 10:27:00,811 - INFO - farisss@gmail.com
+2025-03-11 10:27:00,816 - INFO - Constructed meet_link: ws://localhost:8004/ws/video_call/0c8c916e-f244-4e3f-961f-de43905e73e0/?role=doctor
+2025-03-11 10:27:00,823 - ERROR - Database error while processing room 0c8c916e-f244-4e3f-961f-de43905e73e0: UserProfile matching query does not exist.
+2025-03-11 10:27:00,826 - ERROR - Consumer error: Object of type DoesNotExist is not JSON serializable. Restarting in 5 seconds...
+2025-03-12 02:47:38,613 - INFO - hlo
+2025-03-12 02:47:38,619 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 02:47:38,647 - INFO - hlo
+2025-03-12 02:47:38,648 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 02:47:39,376 - INFO - Hello from RabbitMQ consumer
+2025-03-12 02:47:39,387 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 02:47:43,634 - INFO - Connecting to RabbitMQ...
+2025-03-12 02:47:43,654 - INFO - Connecting to RabbitMQ...
+2025-03-12 02:47:43,913 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:47:43,929 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:47:43,945 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 53216)>; error=111 (Connection refused)
+2025-03-12 02:47:43,946 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 53214)>; error=111 (Connection refused)
+2025-03-12 02:47:44,009 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.9', 5672))
+2025-03-12 02:47:44,010 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.9', 5672))
+2025-03-12 02:47:44,041 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 02:47:44,042 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 02:47:44,061 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 02:47:44,062 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 02:47:44,081 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:44,082 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:44,094 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:44,096 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:44,109 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 02:47:44,106 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 02:47:44,127 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-12 02:47:44,152 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-12 02:47:44,405 - INFO - Connecting to RabbitMQ...
+2025-03-12 02:47:44,553 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:47:44,557 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 53222)>; error=111 (Connection refused)
+2025-03-12 02:47:44,563 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.9', 5672))
+2025-03-12 02:47:44,567 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 02:47:44,578 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 02:47:44,584 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:44,590 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:44,592 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 02:47:44,595 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-12 02:47:49,173 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:47:49,175 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:47:49,177 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 45022)>; error=111 (Connection refused)
+2025-03-12 02:47:49,185 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 45024)>; error=111 (Connection refused)
+2025-03-12 02:47:49,187 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.9', 5672))
+2025-03-12 02:47:49,188 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 02:47:49,192 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 02:47:49,193 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:49,194 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:49,196 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 02:47:49,197 - WARNING - Retry 2/15 - Waiting for RabbitMQ...
+2025-03-12 02:47:49,199 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.9', 5672))
+2025-03-12 02:47:49,206 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 02:47:49,213 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 02:47:49,233 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:49,236 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:49,242 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 02:47:49,270 - WARNING - Retry 2/15 - Waiting for RabbitMQ...
+2025-03-12 02:47:49,609 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:47:49,620 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 45026)>; error=111 (Connection refused)
+2025-03-12 02:47:49,623 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.9', 5672))
+2025-03-12 02:47:49,625 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 02:47:49,626 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 02:47:49,627 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:49,628 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:49,629 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 02:47:49,630 - WARNING - Retry 2/15 - Waiting for RabbitMQ...
+2025-03-12 02:47:54,210 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:47:54,222 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 45036)>; error=111 (Connection refused)
+2025-03-12 02:47:54,223 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.9', 5672))
+2025-03-12 02:47:54,224 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 02:47:54,225 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 02:47:54,226 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:54,229 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:54,232 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 02:47:54,235 - WARNING - Retry 3/15 - Waiting for RabbitMQ...
+2025-03-12 02:47:54,318 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:47:54,321 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 45042)>; error=111 (Connection refused)
+2025-03-12 02:47:54,331 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.9', 5672))
+2025-03-12 02:47:54,333 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 02:47:54,335 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 02:47:54,337 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:54,340 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:54,341 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 02:47:54,347 - WARNING - Retry 3/15 - Waiting for RabbitMQ...
+2025-03-12 02:47:54,813 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:47:54,815 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 45052)>; error=111 (Connection refused)
+2025-03-12 02:47:54,816 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.9', 5672))
+2025-03-12 02:47:54,820 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 02:47:54,821 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 02:47:54,823 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:54,824 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:54,825 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 02:47:54,831 - WARNING - Retry 3/15 - Waiting for RabbitMQ...
+2025-03-12 02:47:59,239 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:47:59,476 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 39444)>; error=111 (Connection refused)
+2025-03-12 02:47:59,477 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.9', 5672))
+2025-03-12 02:47:59,477 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 02:47:59,478 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 02:47:59,478 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:59,478 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:59,479 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 02:47:59,480 - WARNING - Retry 4/15 - Waiting for RabbitMQ...
+2025-03-12 02:47:59,492 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:47:59,504 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 39458)>; error=111 (Connection refused)
+2025-03-12 02:47:59,506 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.9', 5672))
+2025-03-12 02:47:59,508 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 02:47:59,510 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 02:47:59,511 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:59,513 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:59,515 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 02:47:59,516 - WARNING - Retry 4/15 - Waiting for RabbitMQ...
+2025-03-12 02:47:59,868 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:47:59,869 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 39460)>; error=111 (Connection refused)
+2025-03-12 02:47:59,871 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.9', 5672))
+2025-03-12 02:47:59,872 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 02:47:59,874 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 02:47:59,876 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:59,877 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 02:47:59,879 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 02:47:59,880 - WARNING - Retry 4/15 - Waiting for RabbitMQ...
+2025-03-12 02:48:04,488 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:48:04,525 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:48:04,525 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 39464), raddr=('172.18.0.9', 5672)>
+2025-03-12 02:48:04,527 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 39478), raddr=('172.18.0.9', 5672)>
+2025-03-12 02:48:04,529 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f7efdb888e0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f7efdb888e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-12 02:48:04,532 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc7d21390c0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc7d21390c0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-12 02:48:04,568 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f7efdb888e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 02:48:04,568 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc7d21390c0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 02:48:04,613 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc7d21390c0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 02:48:04,613 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f7efdb888e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 02:48:04,617 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc7d21390c0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 02:48:04,620 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f7efdb888e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 02:48:04,622 - INFO - Connected to RabbitMQ successfully.
+2025-03-12 02:48:04,623 - INFO -  Connected to RabbitMQ successfully.
+2025-03-12 02:48:04,625 - INFO - Created channel=1
+2025-03-12 02:48:04,640 - INFO - Created channel=1
+2025-03-12 02:48:04,652 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-12 02:48:04,677 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-12 02:48:04,888 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-12 02:48:04,909 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 39494), raddr=('172.18.0.9', 5672)>
+2025-03-12 02:48:04,919 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f67a2790af0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f67a2790af0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-12 02:48:04,944 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f67a2790af0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 02:48:04,951 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f67a2790af0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 02:48:04,954 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f67a2790af0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 02:48:04,958 - INFO - Connected to RabbitMQ successfully.
+2025-03-12 02:48:04,963 - INFO - Created channel=1
+2025-03-12 02:48:04,976 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-12 07:35:14,641 - INFO - hlo
+2025-03-12 07:35:14,643 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 07:35:14,756 - INFO - hlo
+2025-03-12 07:35:14,761 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 07:35:14,932 - INFO - Hello from RabbitMQ consumer
+2025-03-12 07:35:14,933 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 07:35:19,647 - INFO - Connecting to RabbitMQ...
+2025-03-12 07:35:19,660 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-12 07:35:19,661 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 53996)>; error=111 (Connection refused)
+2025-03-12 07:35:19,662 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.4', 5672))
+2025-03-12 07:35:19,663 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 07:35:19,664 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 07:35:19,665 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 07:35:19,666 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 07:35:19,668 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 07:35:19,670 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-12 07:35:19,775 - INFO - Connecting to RabbitMQ...
+2025-03-12 07:35:19,808 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-12 07:35:19,811 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 54008)>; error=111 (Connection refused)
+2025-03-12 07:35:19,814 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.4', 5672))
+2025-03-12 07:35:19,821 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 07:35:19,841 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 07:35:19,858 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 07:35:19,874 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 07:35:19,893 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 07:35:19,900 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-12 07:35:19,934 - INFO - Connecting to RabbitMQ...
+2025-03-12 07:35:19,986 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-12 07:35:19,995 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 54012)>; error=111 (Connection refused)
+2025-03-12 07:35:20,000 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.4', 5672))
+2025-03-12 07:35:20,031 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 07:35:20,035 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 07:35:20,050 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 07:35:20,065 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 07:35:20,081 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 07:35:20,097 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-12 07:35:24,683 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-12 07:35:24,686 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 58462), raddr=('172.18.0.4', 5672)>
+2025-03-12 07:35:24,691 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa8eaf33c40>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa8eaf33c40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-12 07:35:24,740 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa8eaf33c40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 07:35:24,741 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa8eaf33c40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 07:35:24,743 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa8eaf33c40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 07:35:24,745 - INFO -  Connected to RabbitMQ successfully.
+2025-03-12 07:35:24,747 - INFO - Created channel=1
+2025-03-12 07:35:24,763 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-12 07:35:24,915 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-12 07:35:24,917 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 58476), raddr=('172.18.0.4', 5672)>
+2025-03-12 07:35:24,925 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f843614c460>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f843614c460> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-12 07:35:24,933 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f843614c460> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 07:35:24,935 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f843614c460> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 07:35:24,940 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f843614c460> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 07:35:24,943 - INFO - Connected to RabbitMQ successfully.
+2025-03-12 07:35:24,944 - INFO - Created channel=1
+2025-03-12 07:35:24,961 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-12 07:35:25,117 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-12 07:35:25,118 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 58478), raddr=('172.18.0.4', 5672)>
+2025-03-12 07:35:25,126 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f376dd1fe80>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f376dd1fe80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-12 07:35:25,134 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f376dd1fe80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 07:35:25,135 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f376dd1fe80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 07:35:25,138 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f376dd1fe80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 07:35:25,139 - INFO - Connected to RabbitMQ successfully.
+2025-03-12 07:35:25,141 - INFO - Created channel=1
+2025-03-12 07:35:25,151 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-12 09:51:20,656 - INFO - hlo
+2025-03-12 09:51:20,658 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 09:51:20,916 - INFO - Hello from RabbitMQ consumer
+2025-03-12 09:51:20,918 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 09:51:20,958 - INFO - hlo
+2025-03-12 09:51:20,961 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 09:57:10,153 - INFO - hlo
+2025-03-12 09:57:10,158 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 09:57:10,163 - INFO - Hello from RabbitMQ consumer
+2025-03-12 09:57:10,167 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 09:57:10,764 - INFO - hlo
+2025-03-12 09:57:10,766 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 10:05:39,425 - INFO - hlo
+2025-03-12 10:05:39,428 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 10:05:39,457 - INFO - hlo
+2025-03-12 10:05:39,461 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 10:05:39,768 - INFO - Hello from RabbitMQ consumer
+2025-03-12 10:05:39,769 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 10:11:48,958 - INFO - hlo
+2025-03-12 10:11:48,960 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 10:11:49,071 - INFO - Hello from RabbitMQ consumer
+2025-03-12 10:11:49,098 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 10:11:49,274 - INFO - hlo
+2025-03-12 10:11:49,275 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-12 10:11:53,967 - INFO - Connecting to RabbitMQ...
+2025-03-12 10:11:54,000 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-12 10:11:54,003 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40794)>; error=111 (Connection refused)
+2025-03-12 10:11:54,007 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.4', 5672))
+2025-03-12 10:11:54,008 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 10:11:54,009 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 10:11:54,021 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 10:11:54,028 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 10:11:54,036 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 10:11:54,057 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-12 10:11:54,118 - INFO - Connecting to RabbitMQ...
+2025-03-12 10:11:54,169 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-12 10:11:54,174 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40802)>; error=111 (Connection refused)
+2025-03-12 10:11:54,183 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.4', 5672))
+2025-03-12 10:11:54,190 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 10:11:54,192 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 10:11:54,200 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 10:11:54,201 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 10:11:54,205 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 10:11:54,219 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-12 10:11:54,279 - INFO - Connecting to RabbitMQ...
+2025-03-12 10:11:54,300 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-12 10:11:54,304 - ERROR - Socket failed to connect: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40824)>; error=111 (Connection refused)
+2025-03-12 10:11:54,308 - ERROR - TCP Connection attempt failed: ConnectionRefusedError(111, 'Connection refused'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('172.18.0.4', 5672))
+2025-03-12 10:11:54,309 - ERROR - AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused')
+2025-03-12 10:11:54,314 - ERROR - AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None.
+2025-03-12 10:11:54,315 - ERROR - AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 10:11:54,316 - ERROR - Connection workflow failed: AMQPConnectionWorkflowFailed: 1 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(111, 'Connection refused'); first exception - None
+2025-03-12 10:11:54,318 - ERROR - Error in _create_connection().
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/pika/adapters/blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-03-12 10:11:54,334 - WARNING - Retry 1/15 - Waiting for RabbitMQ...
+2025-03-12 10:11:59,090 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-12 10:11:59,092 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40826), raddr=('172.18.0.4', 5672)>
+2025-03-12 10:11:59,095 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8c0075c460>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8c0075c460> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-12 10:11:59,132 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8c0075c460> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 10:11:59,133 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8c0075c460> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 10:11:59,135 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8c0075c460> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 10:11:59,136 - INFO - Connected to RabbitMQ successfully.
+2025-03-12 10:11:59,139 - INFO - Created channel=1
+2025-03-12 10:11:59,155 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-12 10:11:59,228 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-12 10:11:59,233 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40836), raddr=('172.18.0.4', 5672)>
+2025-03-12 10:11:59,235 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa2f5d33e80>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa2f5d33e80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-12 10:11:59,243 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa2f5d33e80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 10:11:59,248 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa2f5d33e80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 10:11:59,250 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa2f5d33e80> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 10:11:59,251 - INFO - Connected to RabbitMQ successfully.
+2025-03-12 10:11:59,253 - INFO - Created channel=1
+2025-03-12 10:11:59,271 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-12 10:11:59,340 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-12 10:11:59,341 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40848), raddr=('172.18.0.4', 5672)>
+2025-03-12 10:11:59,343 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd89e32fc40>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd89e32fc40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-12 10:11:59,354 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd89e32fc40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 10:11:59,356 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd89e32fc40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 10:11:59,358 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd89e32fc40> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-12 10:11:59,366 - INFO -  Connected to RabbitMQ successfully.
+2025-03-12 10:11:59,371 - INFO - Created channel=1
+2025-03-12 10:11:59,392 - INFO -  [✔] Waiting for messages from Appointment Service...

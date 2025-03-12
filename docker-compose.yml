@@ -252,7 +252,7 @@ services:
       - medisphere
     command: >
       sh -c "sleep 10 && python manage.py migrate &&
-      (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py & python app/roomupdateconsumer.py)"
+      (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py & python app/roomupdateconsumer.py & python app/jwtconsumer.py)"
 
   user-service-celery:
     build: ./User_Service
