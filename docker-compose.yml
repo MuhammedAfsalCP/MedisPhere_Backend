@@ -1,150 +1,4 @@
 
-
-# version: '3.8'
-
-# services:
-#   rabbitmq:
-#     image: "rabbitmq:management"
-#     container_name: rabbitmq
-#     ports:
-#       - "5672:5672"  # RabbitMQ message broker
-#       - "15672:15672" # Management UI
-#     environment:
-#       RABBITMQ_DEFAULT_USER: guest
-#       RABBITMQ_DEFAULT_PASS: guest
-#     networks:
-#       - medisphere
-
-#   redis:
-#     image: redis:alpine
-#     container_name: redis
-#     restart: always
-#     networks:
-#       - medisphere
-#     healthcheck:
-#       test: ["CMD", "redis-cli", "ping"]
-#       interval: 10s
-#       retries: 5
-#     ports:
-#       - "6379:6379"
-#   db:
-#     image: postgres:latest
-#     container_name: postgres_container
-#     restart: always
-#     env_file:
-#       - .env
-#     environment:
-#       POSTGRES_USER: ${DATA_BASE_USER}
-#       POSTGRES_PASSWORD: ${DATA_BASE_PASSWORD}
-#       POSTGRES_DB: ${DATA_BASE_NAME}
-#     ports:
-#       - "5432:5432"
-#     volumes:
-#       - postgres_data:/var/lib/postgresql/data
-#     networks:
-#       - medisphere
-
-#   ai-diagnostics-service:
-#     build: ./AI_Diagnostics_Service
-#     container_name: AI_Diagnostics_Service
-#     ports:
-#       - "8000:8000"
-#     volumes:
-#       - ./AI_Diagnostics_Service:/app
-#     depends_on:
-#       - db
-#       - redis
-#     env_file:
-#       - .env
-#     networks:
-#       - medisphere
-
-#   appointment-service:
-#     build: ./Appointment_Service
-#     container_name: Appointment_Service
-#     ports:
-#       - "8001:8001"
-#     volumes:
-#       - ./Appointment_Service:/app
-#     depends_on:
-#       - db
-#       - redis
-#     env_file:
-#       - .env
-#     networks:
-#       - medisphere
-
-#   notification-service:
-#     build: ./Notification_Service
-#     container_name: Notification_Service
-#     ports:
-#       - "8002:8002"
-#     volumes:
-#       - ./Notification_Service:/app
-#     depends_on:
-#       - db
-#       - redis
-#     env_file:
-#       - .env
-#     networks:
-#       - medisphere
-
-#   user-service:
-#     build: ./User_Service
-#     container_name: User_Service
-#     ports:
-#       - "8003:8003"
-#     volumes:
-#       - ./User_Service:/app
-#     depends_on:
-#       - db
-#       - redis
-#       - rabbitmq
-#     env_file:
-#       - .env
-#     networks:
-#       - medisphere
-#     command: >
-#       sh -c "sleep 10 && python manage.py migrate &&
-#       (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py)"
-#   user-service-celery:
-#     build: ./User_Service
-#     container_name: User_Service_Celery
-#     depends_on:
-#       - redis
-#       - db
-#     volumes:
-#       - ./User_Service:/app
-#     env_file:
-#       - .env
-#     networks:
-#       - medisphere
-#     command: >
-#       sh -c "sleep 10 && celery -A User_Service worker -l info"
-#   video-call-service:
-#     build: ./Video_Call_Service
-#     container_name: Video_Call_Service
-#     ports:
-#       - "8004:8004"
-#     volumes:
-#       - ./Video_Call_Service:/app
-#     depends_on:
-#       - db
-#       - redis
-#     env_file:
-#       - .env
-#     networks:
-#       - medisphere
-
-# volumes:
-#   postgres_data:
-
-# networks:
-#   medisphere:
-#     driver: bridge
-
-
-
 version: '3.8'
 
 services:
@@ -252,7 +106,7 @@ services:
       - medisphere
     command: >
       sh -c "sleep 10 && python manage.py migrate &&
-      (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py & python app/roomupdateconsumer.py & python app/jwtconsumer.py)"
+      (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py & python app/roomupdateconsumer.py & python app/jwtconsumer.py & python app/doctorsgettingconsumer.py)"
 
   user-service-celery:
     build: ./User_Service
@@ -286,27 +140,7 @@ services:
     command: >
       sh -c "python manage.py migrate &&
              daphne -b 0.0.0.0 -p 8004 Video_Call_Service.asgi:application"
-  # video-call-service:
-  #   build: ./Video_Call_Service
-  #   container_name: Video_Call_Service
-  #   ports:
-  #     - "8004:8004"
-  #   volumes:
-  #     - ./Video_Call_Service:/app
-  #   depends_on:
-  #     db:
-  #       condition: service_healthy  # Wait for DB to be healthy
-  #     redis:
-  #       condition: service_healthy  # Wait for Redis to be healthy
-  #   env_file:
-  #     - .env
-  #   environment:
-  #     - DJANGO_SETTINGS_MODULE=Video_Call_Service.settings  # Explicitly set
-  #   networks:
-  #     - medisphere
-  #   command: >
-  #     sh -c "python manage.py migrate --noinput &&
-  #            daphne -b 0.0.0.0 -p 8004 Video_Call_Service.asgi:application"
+ 
 
 volumes:
   postgres_data:

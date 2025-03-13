@@ -19,25 +19,20 @@ logger = logging.getLogger('django')
 def on_request(ch, method, properties, body):
     """Handle incoming requests to fetch user data."""
     request_data = json.loads(body)
-    user_id = request_data.get("user_id")
+    
 
     response = {}
     try:
-        user = UserProfile.objects.get(id=user_id)
-        response = {
-            "id": user.id,
-            "email": user.email,
-            "first_name": user.first_name,
-            "last_name": user.last_name,
-            "is_doctor": user.is_doctor,
-            "is_admin": user.is_admin,
-            "is_staff": user.is_staff,
-        }
-        logger.info(f"User data retrieved for ID: {user_id}")
+        doctors = UserProfile.objects.filter(is_doctor=True).values(
+            "id", "profile_pic", "first_name", "last_name", "years_of_experiance",
+            "consultation_fee", "department"
+        )
+        
+        
     except UserProfile.DoesNotExist:
-        response = {"error": "User not found"}
-        logger.error(f"User not found for ID: {user_id}")
-
+        response = {"error": "Doctors not found"}
+        
+    response = {"doctors": list(doctors)}
     response_body = json.dumps(response)
     logger.info(f"Attempting to send response to reply_to queue: {properties.reply_to}, correlation_id: {properties.correlation_id}")
     try:
@@ -63,9 +58,9 @@ def start_user_service():
             connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))
             channel = connection.channel()
 
-            channel.queue_declare(queue="get_user", durable=True)
+            channel.queue_declare(queue="get_doctors", durable=True)
 
-            channel.basic_consume(queue="get_user", on_message_callback=on_request)
+            channel.basic_consume(queue="get_doctors", on_message_callback=on_request)
             logger.info(" [x] Waiting for user requests...")
             channel.start_consuming()
         except pika.exceptions.AMQPConnectionError as e:

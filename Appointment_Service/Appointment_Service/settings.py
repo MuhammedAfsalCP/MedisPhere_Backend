@@ -24,6 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("APPONTMENT_SERVICE_SECRET_KEY")
+# SECRET_KEY = os.getenv("USER_SERVICE_SECRET_KEY")
 # BROKER_URL = os.getenv("BROKER_URL")
 
 # # If you're using Celery
@@ -97,25 +98,26 @@ DATABASES = {
         "PASSWORD": os.getenv("DATA_BASE_PASSWORD"),
     }
 }
+from datetime import timedelta
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "appointments.authentication.CustomJWTAuthentication",
-        # "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
 }
-USER_SERVICE_URL = "http://localhost:8003/userdetailsget/"
-from datetime import timedelta
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": os.getenv("USER_SERVICE_SECRET_KEY"),
+    "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
-
+RABBITMQ_HOST = os.getenv("RABBITMQ_HOST", "rabbitmq")
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
