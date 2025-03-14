@@ -120,18 +120,25 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 
 class TimeSlotChoices(models.TextChoices):
 
-    NINE_TEN_AM = "09:00", "09:00-10:00"
-    TEN_ELEVEN_AM = "10:00", "10:00-11:00"
-    ELEVEN_TWELVE_AM = "11:00", "11:00-12:00"
-    TWELVE_ONE_PM = "12:00", "12:00-1:00"
-    ONE_TWO_PM = "1:00", "1:00-2:00"
-    TWO_THREE_PM = "2:00", "2:00-3:00"
-    THREE_FOUR_PM = "3:00", "3:00-4:00"
-    FOUR_FIVE_PM = "4:00", "4:00-5:00"
-    FIVE_SIX_PM = "5:00", "5:00-6:00"
-    SIX_SEVEN_PM = "6:00", "6:00-7:00"
-    SEVEN_EIGHT_PM = "7:00", "7:00-8:00"
-    EIGHT_NINE_PM = "8:00", "8:00-9:00"
+    NINE_TEN_AM = "09:00 am - 10:00 am","09:00 am - 10:00 am"
+    TEN_ELEVEN_AM = "10:00 am - 11:00 am"
+    ELEVEN_TWELVE_AM = "11:00 am - 12:00 pm"
+    TWELVE_ONE_PM = "12:00 pm - 1:00 pm"
+    ONE_TWO_PM = "1:00 pm - 2:00 pm"
+    TWO_THREE_PM = "2:00 pm - 3:00 pm"
+    THREE_FOUR_PM = "3:00 pm - 4:00 pm"
+    FOUR_FIVE_PM = "4:00 pm - 5:00 pm"
+    FIVE_SIX_PM = "5:00 pm - 6:00 pm"
+    SIX_SEVEN_PM = "6:00 pm - 7:00 pm"
+    SEVEN_EIGHT_PM ="7:00 pm - 8:00 pm"
+    EIGHT_NINE_PM = "8:00 pm - 9:00 pm"
+
+class StatusChoices(models.TextChoices):
+
+    PENDING = "Pending"
+    COMPLETED = "Completed"
+    CANCELLED = "Cancelled"
+
 
 
 class DoctorAvailability(models.Model):
@@ -143,7 +150,7 @@ class DoctorAvailability(models.Model):
     )
     date = models.DateField(help_text="Date of availability")
     slot = models.CharField(
-        max_length=5,
+        max_length=19,
         choices=TimeSlotChoices.choices,
         help_text="Select the available time slot (each slot is one hour)",
     )
@@ -162,6 +169,13 @@ class DoctorAvailability(models.Model):
     room_created = models.BooleanField(
         default=False
     )
+    status = models.CharField(
+        max_length=9,
+        choices=StatusChoices.choices,
+        blank=True,
+        null=True
+    )
+    
     
     class Meta:
         unique_together = ("doctor", "date", "slot")

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import UserProfile
+from .models import UserProfile,DoctorAvailability
 import re
 
 
@@ -157,6 +157,8 @@ class LoginSerializer(serializers.ModelSerializer):
             "email",
             "is_staff",
             "is_doctor",
+            "profile_pic",
+            "is_admin"
         )
 
 
@@ -236,4 +238,27 @@ class ForgetPasswordSerializer(serializers.ModelSerializer):
 class UserDetailSerializer(serializers.ModelSerializer):
     class Meta():
         model = UserProfile
-        fields = "__all__"
+        fields = (
+            "mobile_number",
+            "first_name",
+            "last_name",
+            "email",
+            "is_staff",
+            "is_doctor",
+            "profile_pic",
+            "is_admin"
+        )
+class DoctorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
+        fields = ["id", "first_name", "last_name", "department"]
+class AppointmentHistorySerializer(serializers.ModelSerializer):
+    doctor = DoctorSerializer()
+    class Meta():
+        model = DoctorAvailability
+        fields = (
+            "doctor",
+            "date",
+            "slot",
+            "status"
+        )

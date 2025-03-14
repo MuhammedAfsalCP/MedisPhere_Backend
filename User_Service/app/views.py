@@ -7,6 +7,7 @@ from rest_framework.permissions import AllowAny, IsAdminUser
 from django.contrib.auth import authenticate
 from rest_framework import status
 from django.views.decorators.csrf import csrf_exempt
+from .permissions import IsDoctor, IsAdmin, IsStaff, IsPatient
 from .utils import send_otp
 from .serializer import (
     RegisterValidateSerializer,
@@ -15,7 +16,8 @@ from .serializer import (
     LoginSerializer,
     ChainingPasswordSerializer,
     ForgetPasswordSerializer,
-    UserDetailSerializer
+    UserDetailSerializer,
+    AppointmentHistorySerializer
 )
 import pika
 import json
@@ -293,3 +295,16 @@ class UserDetailsGet(APIView):
             return Response({"error": "User not authenticated"}, status=401)
         serializer=UserDetailSerializer(instance=user)  # `request.user` is populated by JWTAuthentication
         return Response({"userdetail": serializer.data})
+    
+class AppointmentHistory(APIView):
+    permission_classes=[IsPatient]
+    def get(self,request):
+        user=request.user
+        History=DoctorAvailability.objects.filter(patient__email=user.email).select_related("doctor")
+        if not History.exists():
+                return Response(
+                    {"message": "No appointment history found."},
+                    status=status.HTTP_404_NOT_FOUND
+                )
+        serializer=AppointmentHistorySerializer(History,many=True)
+        return Response({"History": serializer.data})

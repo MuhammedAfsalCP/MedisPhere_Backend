@@ -27,9 +27,11 @@ from .views import (
     Forget_Password_otp_Sent,
     Forge_Password_Save,
     DoctorAvailabilityAPIView,
-    UserDetailsGet
+    UserDetailsGet,
+    AppointmentHistory
 )
-
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path("registervalidate/", Register_Validate.as_view()),
     path("userregistersave/", Register_User.as_view()),
@@ -41,9 +43,12 @@ urlpatterns = [
     path("forgetpasswordotpsent/", Forget_Password_otp_Sent.as_view()),
     path("forgetpasswordsave/", Forge_Password_Save.as_view()),
     path("userdetailsget/", UserDetailsGet.as_view()),
+    path("appointmenthistory/", AppointmentHistory.as_view()),
     path(
         "doctor_availability/",
         DoctorAvailabilityAPIView.as_view(),
         name="doctor_availability",
     ),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

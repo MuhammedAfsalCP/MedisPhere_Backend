@@ -80,6 +80,7 @@ def check_doctor_availability(data):
 
             if availability:
                 availability.is_available = False
+                availability.status='Pending'
                 availability.patient = patient
                 availability.save()
                 logging.info("hi")
