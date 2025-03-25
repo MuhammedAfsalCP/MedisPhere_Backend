@@ -260,5 +260,6 @@ class AppointmentHistorySerializer(serializers.ModelSerializer):
             "doctor",
             "date",
             "slot",
-            "status"
+            "status",
+            "id"
         )

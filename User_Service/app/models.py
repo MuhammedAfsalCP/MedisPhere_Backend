@@ -175,11 +175,11 @@ class DoctorAvailability(models.Model):
         blank=True,
         null=True
     )
-    earning=models.CharField(max_length=20,blank=True,null=True,default=None)
-    
+    amount=models.CharField(max_length=20,blank=True,null=True,default=None)
+    isDelete=models.BooleanField(default=False)
     
     class Meta:
-        unique_together = ("doctor", "date", "slot")
+        
         ordering = ["date", "slot"]
 
     def __str__(self):
