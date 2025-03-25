@@ -308,3 +308,5 @@ class AppointmentHistory(APIView):
                 )
         serializer=AppointmentHistorySerializer(History,many=True)
         return Response({"History": serializer.data})
+
+

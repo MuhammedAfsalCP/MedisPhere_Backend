@@ -19,26 +19,22 @@ logger = logging.getLogger('django')
 def on_request(ch, method, properties, body):
     """Handle incoming requests to fetch user data."""
     request_data = json.loads(body)
-    department=request_data.get("department")
-    logger.info(department)
+    id=request_data.get("id")
+    date=request_data.get("date")
+    # logger.info(department)
     response = {}
     try:
-        if department=="All":
-            doctors = UserProfile.objects.filter(is_doctor=True).values(
-            "id", "profile_pic", "first_name", "last_name", "years_of_experiance",
-            "consultation_fee", "department"
-        )
-        else:
-            doctors = UserProfile.objects.filter(is_doctor=True,department=department).values(
-            "id", "profile_pic", "first_name", "last_name", "years_of_experiance",
-            "consultation_fee", "department"
+        
+        slots = DoctorAvailability.objects.filter(doctor__id=id,date=date).values(
+        str("slot"), "is_available"
         )
         
         
-    except UserProfile.DoesNotExist:
+        
+    except DoctorAvailability.DoesNotExist:
         response = {"error": "Doctors not found"}
         
-    response = {"doctors": list(doctors)}
+    response = {"slots": list(slots)}
     response_body = json.dumps(response)
     logger.info(f"Attempting to send response to reply_to queue: {properties.reply_to}, correlation_id: {properties.correlation_id}")
     try:
@@ -64,9 +60,9 @@ def start_user_service():
             connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))
             channel = connection.channel()
 
-            channel.queue_declare(queue="get_doctors", durable=True)
+            channel.queue_declare(queue="slot_fetching", durable=True)
 
-            channel.basic_consume(queue="get_doctors", on_message_callback=on_request)
+            channel.basic_consume(queue="slot_fetching", on_message_callback=on_request)
             logger.info(" [x] Waiting for user requests...")
             channel.start_consuming()
         except pika.exceptions.AMQPConnectionError as e:

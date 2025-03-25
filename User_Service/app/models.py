@@ -121,17 +121,17 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 class TimeSlotChoices(models.TextChoices):
 
     NINE_TEN_AM = "09:00 am - 10:00 am","09:00 am - 10:00 am"
-    TEN_ELEVEN_AM = "10:00 am - 11:00 am"
-    ELEVEN_TWELVE_AM = "11:00 am - 12:00 pm"
-    TWELVE_ONE_PM = "12:00 pm - 1:00 pm"
-    ONE_TWO_PM = "1:00 pm - 2:00 pm"
-    TWO_THREE_PM = "2:00 pm - 3:00 pm"
-    THREE_FOUR_PM = "3:00 pm - 4:00 pm"
-    FOUR_FIVE_PM = "4:00 pm - 5:00 pm"
-    FIVE_SIX_PM = "5:00 pm - 6:00 pm"
-    SIX_SEVEN_PM = "6:00 pm - 7:00 pm"
-    SEVEN_EIGHT_PM ="7:00 pm - 8:00 pm"
-    EIGHT_NINE_PM = "8:00 pm - 9:00 pm"
+    TEN_ELEVEN_AM = "10:00 am - 11:00 am","10:00 am - 11:00 am"
+    ELEVEN_TWELVE_AM = "11:00 am - 12:00 pm","11:00 am - 12:00 pm"
+    TWELVE_ONE_PM = "12:00 pm - 1:00 pm","12:00 pm - 1:00 pm"
+    ONE_TWO_PM = "1:00 pm - 2:00 pm","1:00 pm - 2:00 pm"
+    TWO_THREE_PM = "2:00 pm - 3:00 pm","2:00 pm - 3:00 pm"
+    THREE_FOUR_PM = "3:00 pm - 4:00 pm","3:00 pm - 4:00 pm"
+    FOUR_FIVE_PM = "4:00 pm - 5:00 pm","4:00 pm - 5:00 pm"
+    FIVE_SIX_PM = "5:00 pm - 6:00 pm","5:00 pm - 6:00 pm"
+    SIX_SEVEN_PM = "6:00 pm - 7:00 pm","6:00 pm - 7:00 pm"
+    SEVEN_EIGHT_PM ="7:00 pm - 8:00 pm","7:00 pm - 8:00 pm"
+    EIGHT_NINE_PM = "8:00 pm - 9:00 pm","8:00 pm - 9:00 pm"
 
 class StatusChoices(models.TextChoices):
 
@@ -175,6 +175,7 @@ class DoctorAvailability(models.Model):
         blank=True,
         null=True
     )
+    earning=models.CharField(max_length=20,blank=True,null=True,default=None)
     
     
     class Meta:

@@ -134,7 +134,7 @@ SIMPLE_JWT = {
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
     "AUTH_HEADER_TYPES": ("Bearer",),
-    "SIGNING_KEY": os.getenv("USER_SERVICE_SECRET_KEY"),
+    "SIGNING_KEY": os.getenv("JWT_KEY"),
     "ALGORITHM": "HS256",
 }
 # Password validation
@@ -172,7 +172,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+# STATICFILES_DIRS = [
+#     '/app/static',
+# ]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
