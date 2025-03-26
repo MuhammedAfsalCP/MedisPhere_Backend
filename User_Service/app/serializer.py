@@ -263,3 +263,18 @@ class AppointmentHistorySerializer(serializers.ModelSerializer):
             "status",
             "id"
         )
+class PatientDetailsSerializer(serializers.ModelSerializer):
+    class Meta():
+        model=UserProfile
+        fields=(
+            "email",
+            "profile_pic",
+            "first_name",
+            "last_name",
+            "medical_report",
+            "mobile_number",
+            "date_of_birth",
+            "gender",
+            "weight",
+            "height"
+        )

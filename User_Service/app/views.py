@@ -17,7 +17,8 @@ from .serializer import (
     ChainingPasswordSerializer,
     ForgetPasswordSerializer,
     UserDetailSerializer,
-    AppointmentHistorySerializer
+    AppointmentHistorySerializer,
+    PatientDetailsSerializer
 )
 import pika
 import json
@@ -309,4 +310,21 @@ class AppointmentHistory(APIView):
         serializer=AppointmentHistorySerializer(History,many=True)
         return Response({"History": serializer.data})
 
+
+class PatientDetials(APIView):
+    permission_classes=[IsPatient]
+    def get(self,request):
+        user=request.user
+        
+        try:
+            User=UserProfile.objects.get(email=user.email)
+                
+
+        except:
+            return Response(
+                    {"message": "No user found."},
+                    status=status.HTTP_404_NOT_FOUND
+                )
+        serializer=PatientDetailsSerializer(User)
+        return Response({"User": serializer.data})
 

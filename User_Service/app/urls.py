@@ -28,7 +28,8 @@ from .views import (
     Forge_Password_Save,
     DoctorAvailabilityAPIView,
     UserDetailsGet,
-    AppointmentHistory
+    AppointmentHistory,
+    PatientDetials
 )
 from django.conf import settings
 from django.conf.urls.static import static
@@ -44,6 +45,7 @@ urlpatterns = [
     path("forgetpasswordsave/", Forge_Password_Save.as_view()),
     path("userdetailsget/", UserDetailsGet.as_view()),
     path("appointmenthistory/", AppointmentHistory.as_view()),
+    path("patientdetails/", PatientDetials.as_view()),
     path(
         "doctor_availability/",
         DoctorAvailabilityAPIView.as_view(),
