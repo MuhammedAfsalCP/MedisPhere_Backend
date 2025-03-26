@@ -20,13 +20,12 @@ def on_request(ch, method, properties, body):
     """Handle incoming requests to fetch user data."""
     request_data = json.loads(body)
     id=request_data.get("id")
-    date=request_data.get("date")
-    slot=request_data.get("slot")
+    
     # logger.info(department)
     response = {}
     try:
         
-       details = DoctorAvailability.objects.select_related("doctor").get(id=id,date=date,slot=slot)
+       details = DoctorAvailability.objects.select_related("doctor").get(id=id)
         
        History = {
             "id": details.doctor.id,
@@ -38,7 +37,9 @@ def on_request(ch, method, properties, body):
             "department": details.doctor.department,
             "email": details.doctor.email,
             "status":details.status,
-            "room_created":details.room_created
+            "room_created":details.room_created,
+            "date":str(details.date),
+            "slot":details.slot
         }
         
         

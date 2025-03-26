@@ -251,7 +251,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
 class DoctorSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = ["id", "first_name", "last_name", "department"]
+        fields = ["id", "first_name", "last_name", "department","profile_pic"]
 class AppointmentHistorySerializer(serializers.ModelSerializer):
     doctor = DoctorSerializer()
     class Meta():

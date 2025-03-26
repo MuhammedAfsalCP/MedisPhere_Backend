@@ -20,8 +20,7 @@ from app.tasks import send_appointment_email
 def on_request(ch, method, properties, body):
     request_data = json.loads(body)
     id = request_data.get("id")
-    date = request_data.get("date")
-    slot = request_data.get("slot")
+
     patient_email = request_data.get("patient_email")
     response = {}
 
@@ -30,26 +29,17 @@ def on_request(ch, method, properties, body):
     try:
         with transaction.atomic():
             room = DoctorAvailability.objects.get(id=id, isDelete=False)     
-            updateroom = DoctorAvailability.objects.get(doctor__id=room.doctor.id, date=date, slot=slot)
-            updateroom.is_available = False
-            updateroom.status = "Pending"
-            updateroom.patient = room.patient
-            updateroom.amount = room.amount
-            updateroom.save()
-            room.is_available = True
-            room.status = None
-            room.patient = None
+            newroom=DoctorAvailability.objects.create(doctor=room.doctor, date=room.date, slot=room.slot)
+            room.status="Cancelled"
             room.save()
-            response = {"available": False, "message": "rescheduled","id":updateroom.id}
+            response = {"message": "Appointment Cancelled"}
         to_email = patient_email
         if to_email:
-            subject = "Appointment Confirmation"
-            message = f"Reschedule is confirmed. See you soon! Booking Date {date} at {slot}"
+            subject = "Appointment Cancelled"
+            message = f" Appointment Cancelled Booking Date {newroom.date} at {newroom.slot}"
             send_appointment_email.delay(to_email, subject, message)
 
-    except DoctorAvailability.DoesNotExist:
-        logger.error(f"DoctorAvailability not found for id={id} or doctor={room.doctor.id if 'room' in locals() else 'unknown'}, date={date}, slot={slot}")
-        response = {"error": "Doctor availability not found for the given ID or slot"}
+    
     except Exception as e:
         logger.error(f"Database error: {str(e)}")
         response = {"error": f"Database connection failed: {str(e)}"}
@@ -78,9 +68,9 @@ def start_user_service():
             connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))
             channel = connection.channel()
 
-            channel.queue_declare(queue="reschedule", durable=True)
+            channel.queue_declare(queue="cancel", durable=True)
 
-            channel.basic_consume(queue="reschedule", on_message_callback=on_request)
+            channel.basic_consume(queue="cancel", on_message_callback=on_request)
             logger.info(" [x] Waiting for user requests...")
             channel.start_consuming()
         except pika.exceptions.AMQPConnectionError as e:
