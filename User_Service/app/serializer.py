@@ -239,6 +239,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
     class Meta():
         model = UserProfile
         fields = (
+            "id",
             "mobile_number",
             "first_name",
             "last_name",
@@ -276,5 +277,6 @@ class PatientDetailsSerializer(serializers.ModelSerializer):
             "date_of_birth",
             "gender",
             "weight",
-            "height"
+            "height",
+            "blood_group"
         )

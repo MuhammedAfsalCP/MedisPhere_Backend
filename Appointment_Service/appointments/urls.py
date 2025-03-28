@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import BookingAppointmentAPIView, DoctorSlotCreating,DoctorFetching,Specificdoctorfetching,Slotfetching,AppointmentBookingViewMore,Reschedulig,Canceling
+from .views import BookingAppointmentAPIView, DoctorSlotCreating,DoctorFetching,Specificdoctorfetching,Slotfetching,AppointmentBookingViewMore,Reschedulig,Canceling,SlotDeleting,AppointmentHistory,AppointmentHistoryViewMore
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
@@ -42,6 +42,20 @@ urlpatterns = [
         "canceling/",
         Canceling.as_view(),
         name="canceling",
+    ),path(
+        "slotdeleting/",
+        SlotDeleting.as_view(),
+        name="slotdeleting",
+    ),
+    path(
+        "appointmenthistory/",
+        AppointmentHistory.as_view(),
+        name="appointmenthistory",
+    ),
+    path(
+        "appointmenthistoryviewmore/",
+        AppointmentHistoryViewMore.as_view(),
+        name="appointmenthistoryviewmore",
     ),
 ]
 if settings.DEBUG:

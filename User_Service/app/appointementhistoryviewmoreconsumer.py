@@ -20,21 +20,33 @@ def on_request(ch, method, properties, body):
     """Handle incoming requests to fetch user data."""
     request_data = json.loads(body)
     id=request_data.get("id")
-    date=request_data.get("date")
+    
     # logger.info(department)
     response = {}
     try:
         
-        slots = DoctorAvailability.objects.filter(doctor__id=id,date=date).values(
-        str("slot"), "is_available","id"
-        )
+       details = DoctorAvailability.objects.select_related("patient").get(id=id)
+        
+       History = {
+            # "id": details.patient,
+            "profile_pic": details.patient.profile_pic.url if details.patient.profile_pic else None,
+            "first_name": details.patient.first_name,
+            "last_name": details.patient.last_name,
+            "gender": details.patient.gender,
+            "blood_group": details.patient.blood_group,  # Convert Decimal to string
+            "weight": details.patient.weight,
+            "height": details.patient.height,
+            "email":details.patient.email,
+            "mobile_number":details.patient.mobile_number,
+            "medical_report":str(details.patient.medical_report),
+            "room_created":details.room_created
+        }
         
         
-        
-    except DoctorAvailability.DoesNotExist:
+    except UserProfile.DoesNotExist:
         response = {"error": "Doctors not found"}
         
-    response = {"slots": list(slots)}
+    response = {"History": History}
     response_body = json.dumps(response)
     logger.info(f"Attempting to send response to reply_to queue: {properties.reply_to}, correlation_id: {properties.correlation_id}")
     try:
@@ -60,9 +72,9 @@ def start_user_service():
             connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))
             channel = connection.channel()
 
-            channel.queue_declare(queue="slot_fetching", durable=True)
+            channel.queue_declare(queue="booking_details_fetching", durable=True)
 
-            channel.basic_consume(queue="slot_fetching", on_message_callback=on_request)
+            channel.basic_consume(queue="booking_details_fetching", on_message_callback=on_request)
             logger.info(" [x] Waiting for user requests...")
             channel.start_consuming()
         except pika.exceptions.AMQPConnectionError as e:

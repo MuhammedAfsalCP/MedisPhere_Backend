@@ -14055,3 +14055,674 @@ pika.exceptions.AMQPConnectionError
 2025-03-26 05:45:15,652 - ERROR - Doctor with email 'doctor@example.com' not found
 2025-03-26 05:45:15,653 - INFO - Processed booking request: {'error': 'Doctor not found'}
 2025-03-26 05:45:15,654 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 04:27:51,345 - INFO - Hello from RabbitMQ consumer
+2025-03-28 04:27:51,346 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 04:27:51,368 - INFO - Initializing consumer...
+2025-03-28 04:27:51,386 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 04:27:51,387 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 04:27:51,402 - INFO - hlo
+2025-03-28 04:27:51,402 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 04:27:56,349 - INFO - Connecting to RabbitMQ...
+2025-03-28 04:27:56,363 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-28 04:27:56,367 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 57258), raddr=('172.18.0.9', 5672)>
+2025-03-28 04:27:56,368 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f08d9333610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f08d9333610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 04:27:56,377 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f08d9333610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:27:56,385 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f08d9333610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:27:56,388 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f08d9333610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:27:56,390 - INFO - Connecting to RabbitMQ...
+2025-03-28 04:27:56,398 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 04:27:56,406 - INFO - Connecting to RabbitMQ...
+2025-03-28 04:27:56,410 - INFO - Created channel=1
+2025-03-28 04:27:56,416 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-28 04:27:56,421 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 04:27:56,422 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 57268), raddr=('172.18.0.9', 5672)>
+2025-03-28 04:27:56,426 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-03-28 04:27:56,426 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f296cb4e4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f296cb4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 04:27:56,429 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 57282), raddr=('172.18.0.9', 5672)>
+2025-03-28 04:27:56,433 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f296cb4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:27:56,439 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f61daf2f400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f61daf2f400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 04:27:56,441 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f296cb4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:27:56,445 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f61daf2f400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:27:56,475 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f296cb4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:27:56,487 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f61daf2f400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:27:56,522 - INFO - Connected to RabbitMQ successfully
+2025-03-28 04:27:56,522 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f61daf2f400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:27:56,530 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 04:27:56,530 - INFO - Created channel=1
+2025-03-28 04:27:56,532 - INFO - Created channel=1
+2025-03-28 04:27:56,534 - INFO - Published test message to slotbooking queue
+2025-03-28 04:27:56,536 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 04:27:56,539 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 04:27:56,608 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 04:27:56,610 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 04:27:56,613 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 04:27:56,633 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 04:27:56,638 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 04:46:43,424 - INFO - hlo
+2025-03-28 04:46:43,425 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 04:46:43,448 - INFO - Hello from RabbitMQ consumer
+2025-03-28 04:46:43,450 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 04:46:43,485 - INFO - Initializing consumer...
+2025-03-28 04:46:43,495 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 04:46:43,496 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 04:46:48,430 - INFO - Connecting to RabbitMQ...
+2025-03-28 04:46:48,452 - INFO - Connecting to RabbitMQ...
+2025-03-28 04:46:48,459 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 04:46:48,460 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 58538), raddr=('172.18.0.4', 5672)>
+2025-03-28 04:46:48,465 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 04:46:48,466 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f892892f400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f892892f400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 04:46:48,469 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 58546), raddr=('172.18.0.4', 5672)>
+2025-03-28 04:46:48,475 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbcd7713610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbcd7713610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 04:46:48,480 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f892892f400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:46:48,483 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f892892f400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:46:48,486 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f892892f400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:46:48,487 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 04:46:48,488 - INFO - Created channel=1
+2025-03-28 04:46:48,491 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbcd7713610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:46:48,492 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbcd7713610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:46:48,494 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbcd7713610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:46:48,495 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 04:46:48,497 - INFO - Created channel=1
+2025-03-28 04:46:48,498 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 04:46:48,501 - INFO - Connecting to RabbitMQ...
+2025-03-28 04:46:48,508 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 04:46:48,508 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 04:46:48,509 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 58562), raddr=('172.18.0.4', 5672)>
+2025-03-28 04:46:48,511 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f6b28f4e4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f6b28f4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 04:46:48,515 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f6b28f4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:46:48,516 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f6b28f4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:46:48,516 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f6b28f4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 04:46:48,518 - INFO - Connected to RabbitMQ successfully
+2025-03-28 04:46:48,519 - INFO - Created channel=1
+2025-03-28 04:46:48,522 - INFO - Published test message to slotbooking queue
+2025-03-28 04:46:48,524 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 04:46:48,525 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 04:46:48,525 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 04:46:48,529 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 04:46:48,529 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 04:46:48,530 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 05:59:53,315 - INFO - Initializing consumer...
+2025-03-28 05:59:53,317 - INFO - Hello from RabbitMQ consumer
+2025-03-28 05:59:53,318 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 05:59:53,333 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 05:59:53,334 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 05:59:53,386 - INFO - hlo
+2025-03-28 05:59:53,386 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 05:59:58,321 - INFO - Connecting to RabbitMQ...
+2025-03-28 05:59:58,341 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 05:59:58,342 - INFO - Connecting to RabbitMQ...
+2025-03-28 05:59:58,342 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.5', 52112), raddr=('172.18.0.3', 5672)>
+2025-03-28 05:59:58,344 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fac25913610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fac25913610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 05:59:58,354 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fac25913610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 05:59:58,355 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fac25913610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 05:59:58,356 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fac25913610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 05:59:58,356 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 05:59:58,357 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 05:59:58,357 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.5', 52122), raddr=('172.18.0.3', 5672)>
+2025-03-28 05:59:58,358 - INFO - Created channel=1
+2025-03-28 05:59:58,359 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f161db3e4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f161db3e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 05:59:58,362 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f161db3e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 05:59:58,363 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f161db3e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 05:59:58,364 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 05:59:58,364 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f161db3e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 05:59:58,365 - INFO - Connected to RabbitMQ successfully
+2025-03-28 05:59:58,366 - INFO - Created channel=1
+2025-03-28 05:59:58,368 - INFO - Published test message to slotbooking queue
+2025-03-28 05:59:58,370 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 05:59:58,370 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 05:59:58,370 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 05:59:58,373 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 05:59:58,374 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 05:59:58,374 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 05:59:58,392 - INFO - Connecting to RabbitMQ...
+2025-03-28 05:59:58,396 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 05:59:58,396 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.5', 52132), raddr=('172.18.0.3', 5672)>
+2025-03-28 05:59:58,397 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f806df1b400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f806df1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 05:59:58,401 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f806df1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 05:59:58,402 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f806df1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 05:59:58,402 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f806df1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 05:59:58,403 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 05:59:58,404 - INFO - Created channel=1
+2025-03-28 05:59:58,409 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 06:00:37,159 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-28", "slot": "8:00 pm - 9:00 pm"}
+2025-03-28 06:00:37,160 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-28', 'slot': '8:00 pm - 9:00 pm'}
+2025-03-28 06:00:37,171 - INFO - shadilx8@gmail.com
+2025-03-28 06:00:37,176 - INFO -  Slot created for Dr. Shadil on 2025-03-28 at 8:00 pm - 9:00 pm.
+2025-03-28 06:00:37,180 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-28', 'slot': '8:00 pm - 9:00 pm'}
+2025-03-28 06:07:27,131 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-28", "slot": "11:00 am - 12:00 pm"}
+2025-03-28 06:07:27,132 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-28', 'slot': '11:00 am - 12:00 pm'}
+2025-03-28 06:07:27,136 - INFO - shadilx8@gmail.com
+2025-03-28 06:07:27,139 - INFO -  Slot created for Dr. Shadil on 2025-03-28 at 11:00 am - 12:00 pm.
+2025-03-28 06:07:27,142 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-28', 'slot': '11:00 am - 12:00 pm'}
+2025-03-28 06:07:49,820 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-28", "slot": "09:00 am - 10:00 am"}
+2025-03-28 06:07:49,820 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-28', 'slot': '09:00 am - 10:00 am'}
+2025-03-28 06:07:49,822 - INFO - shadilx8@gmail.com
+2025-03-28 06:07:49,826 - INFO -  Slot created for Dr. Shadil on 2025-03-28 at 09:00 am - 10:00 am.
+2025-03-28 06:07:49,829 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-28', 'slot': '09:00 am - 10:00 am'}
+2025-03-28 06:11:35,080 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-28", "slot": "12:00 pm - 1:00 pm"}
+2025-03-28 06:11:35,081 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-28', 'slot': '12:00 pm - 1:00 pm'}
+2025-03-28 06:11:35,084 - INFO - shadilx8@gmail.com
+2025-03-28 06:11:35,087 - INFO -  Slot created for Dr. Shadil on 2025-03-28 at 12:00 pm - 1:00 pm.
+2025-03-28 06:11:35,090 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-28', 'slot': '12:00 pm - 1:00 pm'}
+2025-03-28 06:11:54,871 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-28", "slot": "12:00 pm - 1:00 pm"}
+2025-03-28 06:11:54,873 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-28', 'slot': '12:00 pm - 1:00 pm'}
+2025-03-28 06:11:54,875 - INFO - shadilx8@gmail.com
+2025-03-28 06:11:54,882 - WARNING -  Slot already exists for Dr. Shadil on 2025-03-28 at 12:00 pm - 1:00 pm.
+2025-03-28 06:11:54,890 - INFO - 📤 Sent response: {'status': 'Slot Already Exists'}
+2025-03-28 06:12:41,084 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-28", "slot": "09:00 am - 10:00 am"}
+2025-03-28 06:12:41,214 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-28', 'slot': '09:00 am - 10:00 am'}
+2025-03-28 06:12:41,219 - INFO - shadilx8@gmail.com
+2025-03-28 06:12:41,233 - INFO -  Slot created for Dr. Shadil on 2025-03-28 at 09:00 am - 10:00 am.
+2025-03-28 06:12:41,257 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-28', 'slot': '09:00 am - 10:00 am'}
+2025-03-28 06:13:30,360 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-28", "slot": "09:00 am - 10:00 am"}
+2025-03-28 06:13:30,362 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-28', 'slot': '09:00 am - 10:00 am'}
+2025-03-28 06:13:30,365 - INFO - shadilx8@gmail.com
+2025-03-28 06:13:30,368 - INFO -  Slot created for Dr. Shadil on 2025-03-28 at 09:00 am - 10:00 am.
+2025-03-28 06:13:30,374 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-28', 'slot': '09:00 am - 10:00 am'}
+2025-03-28 06:14:20,942 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-28", "slot": "09:00 am - 10:00 am"}
+2025-03-28 06:14:20,946 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-28', 'slot': '09:00 am - 10:00 am'}
+2025-03-28 06:14:20,949 - INFO - shadilx8@gmail.com
+2025-03-28 06:14:20,953 - INFO -  Slot created for Dr. Shadil on 2025-03-28 at 09:00 am - 10:00 am.
+2025-03-28 06:14:20,956 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-28', 'slot': '09:00 am - 10:00 am'}
+2025-03-28 06:15:58,676 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-28", "slot": "10:00 am - 11:00 am"}
+2025-03-28 06:15:58,679 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-28', 'slot': '10:00 am - 11:00 am'}
+2025-03-28 06:15:58,684 - INFO - shadilx8@gmail.com
+2025-03-28 06:15:58,691 - INFO -  Slot created for Dr. Shadil on 2025-03-28 at 10:00 am - 11:00 am.
+2025-03-28 06:15:58,696 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-28', 'slot': '10:00 am - 11:00 am'}
+2025-03-28 06:17:08,394 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-28", "slot": "11:00 am - 12:00 pm"}
+2025-03-28 06:17:08,396 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-28', 'slot': '11:00 am - 12:00 pm'}
+2025-03-28 06:17:08,400 - INFO - shadilx8@gmail.com
+2025-03-28 06:17:08,403 - INFO -  Slot created for Dr. Shadil on 2025-03-28 at 11:00 am - 12:00 pm.
+2025-03-28 06:17:08,406 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-28', 'slot': '11:00 am - 12:00 pm'}
+2025-03-28 06:17:18,140 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-28", "slot": "12:00 pm - 1:00 pm"}
+2025-03-28 06:17:18,145 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-28', 'slot': '12:00 pm - 1:00 pm'}
+2025-03-28 06:17:18,160 - INFO - shadilx8@gmail.com
+2025-03-28 06:17:18,171 - INFO -  Slot created for Dr. Shadil on 2025-03-28 at 12:00 pm - 1:00 pm.
+2025-03-28 06:17:18,182 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-28', 'slot': '12:00 pm - 1:00 pm'}
+2025-03-28 06:22:03,296 - INFO - hlo
+2025-03-28 06:22:03,308 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 06:22:03,342 - INFO - Initializing consumer...
+2025-03-28 06:22:03,343 - INFO - Hello from RabbitMQ consumer
+2025-03-28 06:22:03,343 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 06:22:03,352 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 06:22:03,353 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 06:22:08,315 - INFO - Connecting to RabbitMQ...
+2025-03-28 06:22:08,347 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 06:22:08,348 - INFO - Connecting to RabbitMQ...
+2025-03-28 06:22:08,349 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 52736), raddr=('172.18.0.4', 5672)>
+2025-03-28 06:22:08,355 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f370f717400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f370f717400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 06:22:08,359 - INFO - Connecting to RabbitMQ...
+2025-03-28 06:22:08,370 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f370f717400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:22:08,374 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f370f717400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:22:08,376 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 06:22:08,376 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f370f717400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:22:08,380 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 06:22:08,380 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 52746), raddr=('172.18.0.4', 5672)>
+2025-03-28 06:22:08,383 - INFO - Created channel=1
+2025-03-28 06:22:08,383 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 06:22:08,385 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f6d54b33610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f6d54b33610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 06:22:08,387 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 52762), raddr=('172.18.0.4', 5672)>
+2025-03-28 06:22:08,390 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff35df3a4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff35df3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 06:22:08,397 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff35df3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:22:08,398 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f6d54b33610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:22:08,399 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff35df3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:22:08,399 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f6d54b33610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:22:08,399 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 06:22:08,400 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff35df3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:22:08,401 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f6d54b33610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:22:08,402 - INFO - Connected to RabbitMQ successfully
+2025-03-28 06:22:08,402 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 06:22:08,403 - INFO - Created channel=1
+2025-03-28 06:22:08,403 - INFO - Created channel=1
+2025-03-28 06:22:08,406 - INFO - Published test message to slotbooking queue
+2025-03-28 06:22:08,409 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 06:22:08,410 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 06:22:08,410 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 06:22:08,411 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 06:22:08,414 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 06:22:08,415 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 06:22:08,415 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 06:31:44,525 - INFO - Initializing consumer...
+2025-03-28 06:31:44,539 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 06:31:44,543 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 06:31:44,559 - INFO - Hello from RabbitMQ consumer
+2025-03-28 06:31:44,559 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 06:31:44,584 - INFO - hlo
+2025-03-28 06:31:44,585 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 06:31:49,549 - INFO - Connecting to RabbitMQ...
+2025-03-28 06:31:49,566 - INFO - Connecting to RabbitMQ...
+2025-03-28 06:31:49,581 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 06:31:49,586 - INFO - Connecting to RabbitMQ...
+2025-03-28 06:31:49,600 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 49522), raddr=('172.18.0.3', 5672)>
+2025-03-28 06:31:49,607 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 06:31:49,613 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe6d2f4e4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe6d2f4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 06:31:49,615 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 49526), raddr=('172.18.0.3', 5672)>
+2025-03-28 06:31:49,628 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb8d3f33610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb8d3f33610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 06:31:49,633 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe6d2f4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:31:49,640 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe6d2f4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:31:49,642 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 06:31:49,644 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb8d3f33610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:31:49,646 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb8d3f33610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:31:49,646 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe6d2f4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:31:49,648 - INFO - Connected to RabbitMQ successfully
+2025-03-28 06:31:49,648 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb8d3f33610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:31:49,647 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 49534), raddr=('172.18.0.3', 5672)>
+2025-03-28 06:31:49,651 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 06:31:49,651 - INFO - Created channel=1
+2025-03-28 06:31:49,653 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f94ad333400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f94ad333400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 06:31:49,655 - INFO - Created channel=1
+2025-03-28 06:31:49,658 - INFO - Published test message to slotbooking queue
+2025-03-28 06:31:49,664 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 06:31:49,665 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f94ad333400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:31:49,667 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 06:31:49,677 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 06:31:49,677 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f94ad333400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:31:49,681 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 06:31:49,681 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f94ad333400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 06:31:49,683 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 06:31:49,684 - INFO - Created channel=1
+2025-03-28 06:31:49,688 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 06:31:49,689 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 06:31:49,690 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 06:31:49,691 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 06:44:27,652 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": null, "slot": null}
+2025-03-28 06:44:27,653 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': None, 'slot': None}
+2025-03-28 06:44:27,678 - INFO - shadilx8@gmail.com
+2025-03-28 06:44:27,688 - ERROR - Database error: null value in column "date" of relation "app_doctoravailability" violates not-null constraint
+DETAIL:  Failing row contains (23, null, null, t, null, f, null, 4, null, null, f).
+
+2025-03-28 06:44:27,690 - INFO - 📤 Sent response: {'error': 'Database connection failed'}
+2025-03-28 08:48:21,386 - INFO - hlo
+2025-03-28 08:48:21,388 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 08:48:21,416 - INFO - Initializing consumer...
+2025-03-28 08:48:21,431 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 08:48:21,431 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 08:48:21,446 - INFO - Hello from RabbitMQ consumer
+2025-03-28 08:48:21,446 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 08:48:26,394 - INFO - Connecting to RabbitMQ...
+2025-03-28 08:48:26,420 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 08:48:26,421 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 58400), raddr=('172.18.0.4', 5672)>
+2025-03-28 08:48:26,424 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7efc53b1b400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7efc53b1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 08:48:26,438 - INFO - Connecting to RabbitMQ...
+2025-03-28 08:48:26,448 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7efc53b1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 08:48:26,450 - INFO - Connecting to RabbitMQ...
+2025-03-28 08:48:26,453 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7efc53b1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 08:48:26,465 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7efc53b1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 08:48:26,468 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 08:48:26,471 - INFO - Created channel=1
+2025-03-28 08:48:26,476 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 08:48:26,478 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 08:48:26,478 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 58408), raddr=('172.18.0.4', 5672)>
+2025-03-28 08:48:26,480 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4af8f4e4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4af8f4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 08:48:26,482 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 58414), raddr=('172.18.0.4', 5672)>
+2025-03-28 08:48:26,487 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe048113610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe048113610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 08:48:26,490 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4af8f4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 08:48:26,491 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 08:48:26,491 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4af8f4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 08:48:26,493 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4af8f4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 08:48:26,494 - INFO - Connected to RabbitMQ successfully
+2025-03-28 08:48:26,494 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe048113610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 08:48:26,496 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe048113610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 08:48:26,496 - INFO - Created channel=1
+2025-03-28 08:48:26,497 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe048113610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 08:48:26,498 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 08:48:26,499 - INFO - Created channel=1
+2025-03-28 08:48:26,500 - INFO - Published test message to slotbooking queue
+2025-03-28 08:48:26,503 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 08:48:26,504 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 08:48:26,508 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 08:48:26,510 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 08:48:26,514 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 08:48:26,514 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 08:48:26,515 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 09:01:14,425 - INFO - Hello from RabbitMQ consumer
+2025-03-28 09:01:14,425 - INFO - hlo
+2025-03-28 09:01:14,426 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:01:14,426 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:01:14,484 - INFO - Initializing consumer...
+2025-03-28 09:01:14,495 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 09:01:14,495 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 09:01:19,431 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:01:19,432 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:01:19,448 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 09:01:19,448 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 09:01:19,449 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 54102), raddr=('172.18.0.4', 5672)>
+2025-03-28 09:01:19,451 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 54106), raddr=('172.18.0.4', 5672)>
+2025-03-28 09:01:19,452 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f304dd13610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f304dd13610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:01:19,454 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd24392f400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd24392f400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:01:19,458 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f304dd13610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:01:19,459 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f304dd13610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:01:19,460 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd24392f400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:01:19,461 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f304dd13610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:01:19,464 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd24392f400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:01:19,464 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 09:01:19,467 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd24392f400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:01:19,467 - INFO - Created channel=1
+2025-03-28 09:01:19,470 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 09:01:19,472 - INFO - Created channel=1
+2025-03-28 09:01:19,479 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 09:01:19,480 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:01:19,497 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:01:19,503 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 09:01:19,505 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 54112), raddr=('172.18.0.4', 5672)>
+2025-03-28 09:01:19,506 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbc38f3a4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbc38f3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:01:19,512 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbc38f3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:01:19,515 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbc38f3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:01:19,516 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbc38f3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:01:19,517 - INFO - Connected to RabbitMQ successfully
+2025-03-28 09:01:19,519 - INFO - Created channel=1
+2025-03-28 09:01:19,522 - INFO - Published test message to slotbooking queue
+2025-03-28 09:01:19,524 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:01:19,525 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 09:01:19,526 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 09:01:19,530 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 09:01:19,531 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 09:01:19,532 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 09:06:24,100 - INFO - Hello from RabbitMQ consumer
+2025-03-28 09:06:24,100 - INFO - hlo
+2025-03-28 09:06:24,108 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:06:24,109 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:06:24,139 - INFO - Initializing consumer...
+2025-03-28 09:06:24,158 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 09:06:24,159 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 09:06:29,117 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:06:29,118 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:06:29,138 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 09:06:29,138 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 09:06:29,139 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 55992), raddr=('172.18.0.3', 5672)>
+2025-03-28 09:06:29,139 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 55996), raddr=('172.18.0.3', 5672)>
+2025-03-28 09:06:29,141 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f352d11f610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f352d11f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:06:29,141 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4e81f1b400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4e81f1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:06:29,151 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f352d11f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:06:29,152 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4e81f1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:06:29,152 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f352d11f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:06:29,152 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4e81f1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:06:29,153 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f352d11f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:06:29,154 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4e81f1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:06:29,154 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 09:06:29,155 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 09:06:29,155 - INFO - Created channel=1
+2025-03-28 09:06:29,155 - INFO - Created channel=1
+2025-03-28 09:06:29,160 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:06:29,160 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 09:06:29,162 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:06:29,166 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 09:06:29,167 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 56000), raddr=('172.18.0.3', 5672)>
+2025-03-28 09:06:29,169 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f229c94e4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f229c94e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:06:29,172 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f229c94e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:06:29,172 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f229c94e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:06:29,173 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f229c94e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:06:29,173 - INFO - Connected to RabbitMQ successfully
+2025-03-28 09:06:29,174 - INFO - Created channel=1
+2025-03-28 09:06:29,177 - INFO - Published test message to slotbooking queue
+2025-03-28 09:06:29,178 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:06:29,179 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 09:06:29,179 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 09:06:29,183 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 09:06:29,183 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 09:06:29,184 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 09:10:52,334 - INFO - Hello from RabbitMQ consumer
+2025-03-28 09:10:52,334 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:10:52,362 - INFO - Initializing consumer...
+2025-03-28 09:10:52,372 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 09:10:52,372 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 09:10:52,424 - INFO - hlo
+2025-03-28 09:10:52,425 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:10:57,341 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:10:57,357 - INFO - Pika version 1.3.2 connecting to ('172.18.0.2', 5672)
+2025-03-28 09:10:57,359 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 35974), raddr=('172.18.0.2', 5672)>
+2025-03-28 09:10:57,362 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f295b52f610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f295b52f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:10:57,375 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:10:57,378 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f295b52f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:10:57,379 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f295b52f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:10:57,383 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f295b52f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:10:57,388 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 09:10:57,393 - INFO - Created channel=1
+2025-03-28 09:10:57,399 - INFO - Pika version 1.3.2 connecting to ('172.18.0.2', 5672)
+2025-03-28 09:10:57,405 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 35982), raddr=('172.18.0.2', 5672)>
+2025-03-28 09:10:57,409 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd838b3a4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd838b3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:10:57,411 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 09:10:57,419 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd838b3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:10:57,421 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd838b3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:10:57,423 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd838b3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:10:57,424 - INFO - Connected to RabbitMQ successfully
+2025-03-28 09:10:57,426 - INFO - Created channel=1
+2025-03-28 09:10:57,426 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:10:57,431 - INFO - Published test message to slotbooking queue
+2025-03-28 09:10:57,434 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:10:57,436 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 09:10:57,437 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 09:10:57,438 - INFO - Pika version 1.3.2 connecting to ('172.18.0.2', 5672)
+2025-03-28 09:10:57,441 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 35988), raddr=('172.18.0.2', 5672)>
+2025-03-28 09:10:57,443 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5c6e117400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5c6e117400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:10:57,447 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 09:10:57,448 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 09:10:57,449 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 09:10:57,449 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5c6e117400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:10:57,451 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5c6e117400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:10:57,453 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5c6e117400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:10:57,454 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 09:10:57,455 - INFO - Created channel=1
+2025-03-28 09:10:57,463 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:13:57,953 - INFO - Initializing consumer...
+2025-03-28 09:13:57,971 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 09:13:57,974 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 09:13:58,024 - INFO - Hello from RabbitMQ consumer
+2025-03-28 09:13:58,025 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:13:58,044 - INFO - hlo
+2025-03-28 09:13:58,044 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:14:02,976 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:14:03,031 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:14:03,050 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:14:03,091 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 09:14:03,091 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 09:14:03,091 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 09:14:03,092 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.9', 38752), raddr=('172.18.0.3', 5672)>
+2025-03-28 09:14:03,092 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.9', 38754), raddr=('172.18.0.3', 5672)>
+2025-03-28 09:14:03,092 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.9', 38764), raddr=('172.18.0.3', 5672)>
+2025-03-28 09:14:03,094 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe372537610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe372537610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:14:03,094 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbfec71b400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbfec71b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:14:03,094 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0e4774e4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0e4774e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:14:03,099 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe372537610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:14:03,099 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0e4774e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:14:03,099 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbfec71b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:14:03,100 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbfec71b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:14:03,100 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe372537610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:14:03,100 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0e4774e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:14:03,103 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fbfec71b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:14:03,104 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0e4774e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:14:03,104 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe372537610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:14:03,105 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 09:14:03,105 - INFO - Connected to RabbitMQ successfully
+2025-03-28 09:14:03,105 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 09:14:03,106 - INFO - Created channel=1
+2025-03-28 09:14:03,106 - INFO - Created channel=1
+2025-03-28 09:14:03,107 - INFO - Created channel=1
+2025-03-28 09:14:03,111 - INFO - Published test message to slotbooking queue
+2025-03-28 09:14:03,113 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 09:14:03,113 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:14:03,115 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:14:03,119 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 09:14:03,122 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 09:14:03,127 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 09:14:03,152 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 09:14:03,153 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 09:33:12,232 - INFO - hlo
+2025-03-28 09:33:12,232 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:33:12,281 - INFO - Hello from RabbitMQ consumer
+2025-03-28 09:33:12,282 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:33:12,322 - INFO - Initializing consumer...
+2025-03-28 09:33:12,343 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 09:33:12,343 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 09:33:17,238 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:33:17,246 - INFO - Pika version 1.3.2 connecting to ('172.18.0.2', 5672)
+2025-03-28 09:33:17,247 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.5', 53318), raddr=('172.18.0.2', 5672)>
+2025-03-28 09:33:17,248 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f286631b400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f286631b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:33:17,252 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f286631b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:33:17,252 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f286631b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:33:17,253 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f286631b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:33:17,255 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 09:33:17,256 - INFO - Created channel=1
+2025-03-28 09:33:17,262 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:33:17,286 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:33:17,294 - INFO - Pika version 1.3.2 connecting to ('172.18.0.2', 5672)
+2025-03-28 09:33:17,295 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.5', 53326), raddr=('172.18.0.2', 5672)>
+2025-03-28 09:33:17,297 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe34df33610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe34df33610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:33:17,302 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe34df33610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:33:17,304 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe34df33610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:33:17,305 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe34df33610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:33:17,307 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 09:33:17,308 - INFO - Created channel=1
+2025-03-28 09:33:17,313 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 09:33:17,346 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:33:17,352 - INFO - Pika version 1.3.2 connecting to ('172.18.0.2', 5672)
+2025-03-28 09:33:17,352 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.5', 53334), raddr=('172.18.0.2', 5672)>
+2025-03-28 09:33:17,354 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f622d1524a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f622d1524a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:33:17,358 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f622d1524a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:33:17,358 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f622d1524a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:33:17,358 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f622d1524a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:33:17,359 - INFO - Connected to RabbitMQ successfully
+2025-03-28 09:33:17,360 - INFO - Created channel=1
+2025-03-28 09:33:17,363 - INFO - Published test message to slotbooking queue
+2025-03-28 09:33:17,365 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:33:17,365 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 09:33:17,366 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 09:33:17,369 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 09:33:17,370 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 09:33:17,370 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 09:49:30,568 - INFO - Hello from RabbitMQ consumer
+2025-03-28 09:49:30,570 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:49:30,600 - INFO - hlo
+2025-03-28 09:49:30,601 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:49:30,617 - INFO - Initializing consumer...
+2025-03-28 09:49:30,634 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 09:49:30,634 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 09:49:35,573 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:49:35,602 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:49:35,615 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 09:49:35,622 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 41888), raddr=('172.18.0.3', 5672)>
+2025-03-28 09:49:35,634 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5b66b1f610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5b66b1f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:49:35,637 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:49:35,649 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 09:49:35,663 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5b66b1f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:49:35,664 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 41894), raddr=('172.18.0.3', 5672)>
+2025-03-28 09:49:35,668 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5b66b1f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:49:35,670 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4f03b17400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4f03b17400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:49:35,671 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5b66b1f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:49:35,674 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 09:49:35,679 - INFO - Created channel=1
+2025-03-28 09:49:35,680 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 09:49:35,683 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 41908), raddr=('172.18.0.3', 5672)>
+2025-03-28 09:49:35,685 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4f03b17400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:49:35,687 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4f03b17400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:49:35,691 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff0a594e4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff0a594e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:49:35,693 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 09:49:35,693 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4f03b17400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:49:35,695 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 09:49:35,700 - INFO - Created channel=1
+2025-03-28 09:49:35,702 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff0a594e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:49:35,704 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff0a594e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:49:35,708 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff0a594e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:49:35,709 - INFO - Connected to RabbitMQ successfully
+2025-03-28 09:49:35,711 - INFO - Created channel=1
+2025-03-28 09:49:35,711 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:49:35,715 - INFO - Published test message to slotbooking queue
+2025-03-28 09:49:35,717 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:49:35,718 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 09:49:35,719 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 09:49:35,724 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 09:49:35,725 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 09:49:35,726 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 09:55:59,558 - INFO - Initializing consumer...
+2025-03-28 09:55:59,560 - INFO - hlo
+2025-03-28 09:55:59,562 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:55:59,574 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 09:55:59,578 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 09:55:59,614 - INFO - Hello from RabbitMQ consumer
+2025-03-28 09:55:59,615 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:56:04,569 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:56:04,585 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:56:04,592 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 09:56:04,593 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.5', 57874), raddr=('172.18.0.3', 5672)>
+2025-03-28 09:56:04,597 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 09:56:04,614 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5915f1b400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5915f1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:56:04,612 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.5', 57876), raddr=('172.18.0.3', 5672)>
+2025-03-28 09:56:04,621 - INFO - Connecting to RabbitMQ...
+2025-03-28 09:56:04,629 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff28372a4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff28372a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:56:04,642 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5915f1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:56:04,654 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff28372a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:56:04,694 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5915f1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:56:04,697 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff28372a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:56:04,703 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5915f1b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:56:04,707 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7ff28372a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:56:04,709 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 09:56:04,710 - INFO - Connected to RabbitMQ successfully
+2025-03-28 09:56:04,714 - INFO - Created channel=1
+2025-03-28 09:56:04,714 - INFO - Created channel=1
+2025-03-28 09:56:04,715 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-28 09:56:04,720 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.5', 57890), raddr=('172.18.0.3', 5672)>
+2025-03-28 09:56:04,724 - INFO - Published test message to slotbooking queue
+2025-03-28 09:56:04,732 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:56:04,741 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4942513610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4942513610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 09:56:04,742 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 09:56:04,743 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 09:56:04,747 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4942513610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:56:04,752 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 09:56:04,754 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4942513610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:56:04,756 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4942513610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 09:56:04,758 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 09:56:04,760 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 09:56:04,763 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 09:56:04,763 - INFO - Created channel=1
+2025-03-28 09:56:04,764 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-28 09:56:04,768 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 09:57:40,917 - INFO - hlo
+2025-03-28 09:57:40,918 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 09:57:40,986 - INFO - Initializing consumer...
+2025-03-28 09:57:40,997 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 09:57:40,998 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 09:57:41,040 - INFO - Hello from RabbitMQ consumer
+2025-03-28 09:57:41,040 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 10:01:30,232 - INFO - Hello from RabbitMQ consumer
+2025-03-28 10:01:30,235 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 10:01:30,264 - INFO - hlo
+2025-03-28 10:01:30,265 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-28 10:01:30,286 - INFO - Initializing consumer...
+2025-03-28 10:01:30,302 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-28 10:01:30,303 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-28 10:01:35,241 - INFO - Connecting to RabbitMQ...
+2025-03-28 10:01:35,249 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 10:01:35,250 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 44650), raddr=('172.18.0.4', 5672)>
+2025-03-28 10:01:35,251 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2891513610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2891513610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 10:01:35,255 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2891513610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 10:01:35,256 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2891513610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 10:01:35,258 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2891513610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 10:01:35,259 - INFO - Connected to RabbitMQ successfully.
+2025-03-28 10:01:35,260 - INFO - Created channel=1
+2025-03-28 10:01:35,267 - INFO - Connecting to RabbitMQ...
+2025-03-28 10:01:35,267 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-28 10:01:35,276 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 10:01:35,278 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 44662), raddr=('172.18.0.4', 5672)>
+2025-03-28 10:01:35,279 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5f41917400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5f41917400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 10:01:35,290 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5f41917400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 10:01:35,294 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5f41917400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 10:01:35,298 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f5f41917400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 10:01:35,302 - INFO -  Connected to RabbitMQ successfully.
+2025-03-28 10:01:35,306 - INFO - Connecting to RabbitMQ...
+2025-03-28 10:01:35,306 - INFO - Created channel=1
+2025-03-28 10:01:35,320 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 10:01:35,326 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-28 10:01:35,330 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 44668), raddr=('172.18.0.4', 5672)>
+2025-03-28 10:01:35,334 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8a98f3a4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8a98f3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-28 10:01:35,343 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8a98f3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 10:01:35,349 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8a98f3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 10:01:35,360 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8a98f3a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-28 10:01:35,367 - INFO - Connected to RabbitMQ successfully
+2025-03-28 10:01:35,369 - INFO - Created channel=1
+2025-03-28 10:01:35,381 - INFO - Published test message to slotbooking queue
+2025-03-28 10:01:35,389 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-28 10:01:35,391 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-28 10:01:35,394 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-28 10:01:35,405 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-28 10:01:35,408 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-28 10:01:35,409 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key

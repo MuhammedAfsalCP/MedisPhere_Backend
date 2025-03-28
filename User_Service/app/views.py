@@ -3,6 +3,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import UserProfile, DoctorAvailability
 from rest_framework_simplejwt.tokens import RefreshToken
+import base64
+from django.core.files.base import ContentFile
 from rest_framework.permissions import AllowAny, IsAdminUser
 from django.contrib.auth import authenticate
 from rest_framework import status
@@ -327,4 +329,48 @@ class PatientDetials(APIView):
                 )
         serializer=PatientDetailsSerializer(User)
         return Response({"User": serializer.data})
+    def put(self, request):
+        try:
+            # Get the authenticated user
+            user = request.user
+            data = request.data.copy()  # Create a mutable copy of request.data
 
+            # Handle file upload (e.g., profile picture) if included
+            if 'avatar' in data and data['avatar']:
+                # Assuming avatar is sent as base64 string
+                format, imgstr = data['avatar'].split(';base64,')
+                ext = format.split('/')[-1]  # Get extension (e.g., 'png', 'jpg')
+                filename = f"{user.id}_profile.{ext}"
+                avatar_data = ContentFile(
+                    base64.b64decode(imgstr),
+                    name=filename
+                )
+                data['avatar'] = avatar_data
+            else:
+                # Remove avatar from data if not provided to avoid overwriting with empty value
+                data.pop('avatar', None)
+
+            # Serialize and update user data
+            serializer = PatientDetailsSerializer(
+                instance=user,
+                data=data,
+                partial=True  # Allow partial updates
+            )
+
+            if serializer.is_valid():
+                serializer.save()
+                return Response({
+                    'message': 'Profile updated successfully',
+                    'data': serializer.data
+                }, status=status.HTTP_200_OK)
+            else:
+                return Response({
+                    'message': 'Invalid data',
+                    'errors': serializer.errors
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+        except Exception as e:
+            return Response({
+                'message': 'An error occurred while updating profile',
+                'error': str(e)
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
