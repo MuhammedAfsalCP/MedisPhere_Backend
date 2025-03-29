@@ -65,7 +65,7 @@ def roomupdate(data):
         return {"error": "Email, date, and slot are required"}
 
     # Construct the meet_link with decoded email
-    meet_link = f"ws://localhost:8004/ws/video_call/{room_name}/?role=doctor"
+    meet_link = room_name
     logger.info(f"Constructed meet_link: {meet_link}")  # Fixed logging
 
     try:

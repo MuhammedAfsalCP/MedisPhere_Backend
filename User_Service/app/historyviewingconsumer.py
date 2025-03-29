@@ -39,7 +39,8 @@ def on_request(ch, method, properties, body):
             "status":details.status,
             "room_created":details.room_created,
             "date":str(details.date),
-            "slot":details.slot
+            "slot":details.slot,
+            "meet_link":details.meet_link
         }
         
         

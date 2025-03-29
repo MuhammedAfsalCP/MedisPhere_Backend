@@ -314,7 +314,7 @@ class AppointmentHistory(APIView):
 
 
 class PatientDetials(APIView):
-    permission_classes=[IsPatient]
+    # permission_classes=[IsPatient]
     def get(self,request):
         user=request.user
         
