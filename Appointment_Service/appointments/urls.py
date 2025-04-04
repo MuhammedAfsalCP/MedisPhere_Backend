@@ -1,8 +1,25 @@
 from django.urls import path
-from .patientviews import BookingAppointmentAPIView,DoctorFetching,Specificdoctorfetching,Slotfetching,AppointmentBookingViewMore,Reschedulig,Canceling
-from .doctorviews import DoctorCall,DoctorSlotCreating,SlotDeleting,AppointmentHistory,AppointmentHistoryViewMore,AllHistory
+from .patientviews import (
+    BookingAppointmentAPIView,
+    DoctorFetching,
+    Specificdoctorfetching,
+    Slotfetching,
+    AppointmentBookingViewMore,
+    Reschedulig,
+    Canceling,
+)
+from .doctorviews import (
+    DoctorCall,
+    DoctorSlotCreating,
+    SlotDeleting,
+    AppointmentHistory,
+    AppointmentHistoryViewMore,
+    AllHistory,
+    BookigTimes
+)
 from django.conf import settings
 from django.conf.urls.static import static
+
 urlpatterns = [
     path(
         "book_appointment/",
@@ -43,7 +60,8 @@ urlpatterns = [
         "canceling/",
         Canceling.as_view(),
         name="canceling",
-    ),path(
+    ),
+    path(
         "slotdeleting/",
         SlotDeleting.as_view(),
         name="slotdeleting",
@@ -67,6 +85,11 @@ urlpatterns = [
         "allhistory/",
         AllHistory.as_view(),
         name="allhistory",
+    ),
+    path(
+        "bookingtimes/",
+        BookigTimes.as_view(),
+        name="bookingtimes",
     ),
 ]
 if settings.DEBUG:

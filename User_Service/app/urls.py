@@ -33,6 +33,7 @@ from .views import (
 )
 from django.conf import settings
 from django.conf.urls.static import static
+
 urlpatterns = [
     path("registervalidate/", Register_Validate.as_view()),
     path("userregistersave/", Register_User.as_view()),
@@ -51,7 +52,6 @@ urlpatterns = [
         DoctorAvailabilityAPIView.as_view(),
         name="doctor_availability",
     ),
-    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

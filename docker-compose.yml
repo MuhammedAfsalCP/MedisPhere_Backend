@@ -1,4 +1,3 @@
-
 version: '3.8'
 
 services:
@@ -6,7 +5,7 @@ services:
     image: "rabbitmq:management"
     container_name: rabbitmq
     ports:
-      - "5672:5672"  # RabbitMQ message broker
+      - "5672:5672" # RabbitMQ message broker
       - "15672:15672" # Management UI
     environment:
       RABBITMQ_DEFAULT_USER: guest
@@ -21,7 +20,7 @@ services:
     networks:
       - medisphere
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: [ "CMD", "redis-cli", "ping" ]
       interval: 10s
       retries: 5
     ports:
@@ -105,8 +104,7 @@ services:
     networks:
       - medisphere
     command: >
-      sh -c "sleep 10 && python manage.py migrate &&
-      (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py & python app/roomupdateconsumer.py & python app/jwtconsumer.py & python app/doctorsgettingconsumer.py & python  app/specificdoctorfetchingconsumer.py & python app/slotfetchingconcumer.py & python app/historyviewingconsumer.py & python app/rescheduleconsumer.py & python app/appointmentcancellcunsumer.py & python app/slotdeletingconsumer.py & python app/appointmenthistoryconsumer.py & python app/appointementhistoryviewmoreconsumer.py & python app/doctorcalldetailsconsumer.py % python app/allhistoryconsumer.py)"
+      sh -c "sleep 10 && python manage.py migrate && (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py & python app/roomupdateconsumer.py & python app/walletaddconsumer.py & python app/jwtconsumer.py & python app/doctorsgettingconsumer.py & python  app/specificdoctorfetchingconsumer.py & python app/slotfetchingconcumer.py & python app/historyviewingconsumer.py & python app/rescheduleconsumer.py & python app/appointmentcancellcunsumer.py & python app/slotdeletingconsumer.py & python app/appointmenthistoryconsumer.py & python app/appointementhistoryviewmoreconsumer.py & python app/doctorcalldetailsconsumer.py & python app/allhistoryconsumer.py & python app/dashboardbookingtimeconsumer.py)"
 
   user-service-celery:
     build: ./User_Service
@@ -140,10 +138,10 @@ services:
     command: >
       sh -c "python manage.py migrate &&
              daphne -b 0.0.0.0 -p 8004 Video_Call_Service.asgi:application"
- 
 
 volumes:
   postgres_data:
+
 
 networks:
   medisphere:

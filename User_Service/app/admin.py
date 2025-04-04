@@ -91,7 +91,7 @@ admin.site.register(UserProfile, UserProfileAdmin)
 
 
 class DoctorAvailabilityAdmin(admin.ModelAdmin):
-    list_display = ("doctor", "date", "slot", "is_available", "patient","room_created")
+    list_display = ("doctor", "date", "slot", "is_available", "patient", "room_created","status")
     list_filter = ("date", "is_available")
     search_fields = ("doctor__email",)
     ordering = ("date", "slot")

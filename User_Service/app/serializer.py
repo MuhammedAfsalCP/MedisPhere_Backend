@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import UserProfile,DoctorAvailability
+from .models import UserProfile, DoctorAvailability
 import re
 
 
@@ -158,7 +158,7 @@ class LoginSerializer(serializers.ModelSerializer):
             "is_staff",
             "is_doctor",
             "profile_pic",
-            "is_admin"
+            "is_admin",
         )
 
 
@@ -234,9 +234,8 @@ class ForgetPasswordSerializer(serializers.ModelSerializer):
         return user  # Return updated user
 
 
-
 class UserDetailSerializer(serializers.ModelSerializer):
-    class Meta():
+    class Meta:
         model = UserProfile
         fields = (
             "id",
@@ -247,27 +246,28 @@ class UserDetailSerializer(serializers.ModelSerializer):
             "is_staff",
             "is_doctor",
             "profile_pic",
-            "is_admin"
+            "is_admin",
         )
+
+
 class DoctorSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = ["id", "first_name", "last_name", "department","profile_pic"]
+        fields = ["id", "first_name", "last_name", "department", "profile_pic"]
+
+
 class AppointmentHistorySerializer(serializers.ModelSerializer):
     doctor = DoctorSerializer()
-    class Meta():
+
+    class Meta:
         model = DoctorAvailability
-        fields = (
-            "doctor",
-            "date",
-            "slot",
-            "status",
-            "id"
-        )
+        fields = ("doctor", "date", "slot", "status", "id")
+
+
 class PatientDetailsSerializer(serializers.ModelSerializer):
-    class Meta():
-        model=UserProfile
-        fields=(
+    class Meta:
+        model = UserProfile
+        fields = (
             "email",
             "profile_pic",
             "first_name",
@@ -278,6 +278,5 @@ class PatientDetailsSerializer(serializers.ModelSerializer):
             "gender",
             "weight",
             "height",
-            "blood_group"
+            "blood_group",
         )
-

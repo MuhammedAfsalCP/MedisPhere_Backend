@@ -39,6 +39,7 @@ try:
 except Exception as e:
     logger.error(f"Django ORM setup failed: {str(e)}")
 
+
 def connect_to_rabbitmq():
     """Retries RabbitMQ connection until successful"""
     retries = 15
@@ -59,7 +60,9 @@ def connect_to_rabbitmq():
     logger.error("Failed to connect to RabbitMQ after multiple retries")
     raise Exception("Failed to connect to RabbitMQ after multiple retries")
 
+
 from django.db import transaction
+
 
 def slotbooking(data):
     """Check if a doctor is available and update the slot status if booked"""
@@ -68,9 +71,11 @@ def slotbooking(data):
     slot = data.get("slot")
     patient_email = data.get("patient_email")
     amount = data.get("amount")
-    
-    logger.info(f"Processing booking: doctor={doctor_email}, date={date}, slot={slot}, patient={patient_email}")
-    
+
+    logger.info(
+        f"Processing booking: doctor={doctor_email}, date={date}, slot={slot}, patient={patient_email}"
+    )
+
     try:
         doctor = UserProfile.objects.get(email=doctor_email, is_doctor=True)
         patient = UserProfile.objects.get(email=patient_email, is_doctor=False)
@@ -86,35 +91,44 @@ def slotbooking(data):
 
             if availability:
                 availability.is_available = False
-                availability.status = 'Pending'
+                availability.status = "Pending"
                 availability.patient = patient
                 availability.amount = amount
                 availability.save()
-                logger.info(f"Slot updated: is_available={availability.is_available}, status={availability.status}")
+                logger.info(
+                    f"Slot updated: is_available={availability.is_available}, status={availability.status}"
+                )
 
                 to_email = patient.email
                 subject = "Appointment Confirmation"
                 message = f"Your appointment is confirmed. See you soon! Booking Date {date} at {slot}"
                 send_appointment_email.delay(to_email, subject, message)
-                logger.info(f"Booked appointment for Dr. {doctor.first_name} on {date} at {slot}")
+                logger.info(
+                    f"Booked appointment for Dr. {doctor.first_name} on {date} at {slot}"
+                )
                 return {
                     "available": False,
                     "doctor_name": doctor.first_name,
-                    "status": "Pending"
+                    "status": "Pending",
                 }
             else:
-                logger.warning(f"No available slot for Dr. {doctor.first_name} on {date} at {slot}")
+                logger.warning(
+                    f"No available slot for Dr. {doctor.first_name} on {date} at {slot}"
+                )
                 return {"error": "Doctor is not available"}
     except UserProfile.DoesNotExist:
         if not UserProfile.objects.filter(email=doctor_email, is_doctor=True).exists():
             logger.error(f"Doctor with email '{doctor_email}' not found")
             return {"error": "Doctor not found"}
-        if not UserProfile.objects.filter(email=patient_email, is_doctor=False).exists():
+        if not UserProfile.objects.filter(
+            email=patient_email, is_doctor=False
+        ).exists():
             logger.error(f"Patient with email '{patient_email}' not found")
             return {"error": "Patient not found"}
     except Exception as e:
         logger.error(f"Database error: {str(e)}")
         return {"error": f"Database connection failed: {str(e)}"}
+
 
 def callback(ch, method, properties, body):
     """Handles incoming RabbitMQ messages"""
@@ -143,6 +157,7 @@ def callback(ch, method, properties, body):
 
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
+
 def start_consumer():
     """Starts RabbitMQ consumer and ensures connection recovery"""
     while True:
@@ -153,17 +168,17 @@ def start_consumer():
             channel.queue_declare(queue="slotbooking", durable=True)
 
             # Test message for debugging (comment out after testing)
-            test_data = json.dumps({
-                "doctor_email": "doctor@example.com",
-                "patient_email": "patient@example.com",
-                "date": "2025-03-20",
-                "slot": "10:00",
-                "amount": "500"
-            })
+            test_data = json.dumps(
+                {
+                    "doctor_email": "doctor@example.com",
+                    "patient_email": "patient@example.com",
+                    "date": "2025-03-20",
+                    "slot": "10:00",
+                    "amount": "500",
+                }
+            )
             channel.basic_publish(
-                exchange="",
-                routing_key="slotbooking",
-                body=test_data.encode()
+                exchange="", routing_key="slotbooking", body=test_data.encode()
             )
             logger.info("Published test message to slotbooking queue")
 
@@ -179,6 +194,7 @@ def start_consumer():
         except Exception as e:
             logger.error(f"Consumer error: {e}. Restarting in 5 seconds...")
             time.sleep(5)
+
 
 if __name__ == "__main__":
     logger.info("Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready")

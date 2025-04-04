@@ -6,6 +6,7 @@ from django.contrib.auth.models import (
 from django.db import models
 import uuid
 
+
 class UserManager(BaseUserManager):
     def create_user(self, email, mobile_number, password=None, **extra_fields):
         if not email:
@@ -108,7 +109,13 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     is_doctor = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
-    
+    wallet = models.DecimalField(
+        max_digits=10,  # Total digits (including decimal places)
+        decimal_places=2,  # Digits after the decimal point
+        default=0.00,  # Default balance of 0.00
+        blank=True,
+        null=True
+    )
     objects = UserManager()
 
     USERNAME_FIELD = "email"
@@ -120,25 +127,25 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 
 class TimeSlotChoices(models.TextChoices):
 
-    NINE_TEN_AM = "09:00 am - 10:00 am","09:00 am - 10:00 am"
-    TEN_ELEVEN_AM = "10:00 am - 11:00 am","10:00 am - 11:00 am"
-    ELEVEN_TWELVE_AM = "11:00 am - 12:00 pm","11:00 am - 12:00 pm"
-    TWELVE_ONE_PM = "12:00 pm - 1:00 pm","12:00 pm - 1:00 pm"
-    ONE_TWO_PM = "1:00 pm - 2:00 pm","1:00 pm - 2:00 pm"
-    TWO_THREE_PM = "2:00 pm - 3:00 pm","2:00 pm - 3:00 pm"
-    THREE_FOUR_PM = "3:00 pm - 4:00 pm","3:00 pm - 4:00 pm"
-    FOUR_FIVE_PM = "4:00 pm - 5:00 pm","4:00 pm - 5:00 pm"
-    FIVE_SIX_PM = "5:00 pm - 6:00 pm","5:00 pm - 6:00 pm"
-    SIX_SEVEN_PM = "6:00 pm - 7:00 pm","6:00 pm - 7:00 pm"
-    SEVEN_EIGHT_PM ="7:00 pm - 8:00 pm","7:00 pm - 8:00 pm"
-    EIGHT_NINE_PM = "8:00 pm - 9:00 pm","8:00 pm - 9:00 pm"
+    NINE_TEN_AM = "09:00 am - 10:00 am", "09:00 am - 10:00 am"
+    TEN_ELEVEN_AM = "10:00 am - 11:00 am", "10:00 am - 11:00 am"
+    ELEVEN_TWELVE_AM = "11:00 am - 12:00 pm", "11:00 am - 12:00 pm"
+    TWELVE_ONE_PM = "12:00 pm - 1:00 pm", "12:00 pm - 1:00 pm"
+    ONE_TWO_PM = "1:00 pm - 2:00 pm", "1:00 pm - 2:00 pm"
+    TWO_THREE_PM = "2:00 pm - 3:00 pm", "2:00 pm - 3:00 pm"
+    THREE_FOUR_PM = "3:00 pm - 4:00 pm", "3:00 pm - 4:00 pm"
+    FOUR_FIVE_PM = "4:00 pm - 5:00 pm", "4:00 pm - 5:00 pm"
+    FIVE_SIX_PM = "5:00 pm - 6:00 pm", "5:00 pm - 6:00 pm"
+    SIX_SEVEN_PM = "6:00 pm - 7:00 pm", "6:00 pm - 7:00 pm"
+    SEVEN_EIGHT_PM = "7:00 pm - 8:00 pm", "7:00 pm - 8:00 pm"
+    EIGHT_NINE_PM = "8:00 pm - 9:00 pm", "8:00 pm - 9:00 pm"
+
 
 class StatusChoices(models.TextChoices):
 
     PENDING = "Pending"
     COMPLETED = "Completed"
     CANCELLED = "Cancelled"
-
 
 
 class DoctorAvailability(models.Model):
@@ -165,24 +172,18 @@ class DoctorAvailability(models.Model):
         related_name="appointments",
         limit_choices_to={"is_doctor": False},
     )
-    meet_link=models.CharField(max_length=500,blank=True,null=True)
-    room_created = models.BooleanField(
-        default=False
-    )
+    meet_link = models.CharField(max_length=500, blank=True, null=True)
+    room_created = models.BooleanField(default=False)
     status = models.CharField(
-        max_length=9,
-        choices=StatusChoices.choices,
-        blank=True,
-        null=True
+        max_length=9, choices=StatusChoices.choices, blank=True, null=True
     )
-    amount=models.CharField(max_length=20,blank=True,null=True,default=None)
-    isDelete=models.BooleanField(default=False)
-    
+    amount = models.CharField(max_length=20, blank=True, null=True, default=None)
+    isDelete = models.BooleanField(default=False)
+
     class Meta:
-        
+
         ordering = ["date", "slot"]
 
     def __str__(self):
         slot_label = dict(TimeSlotChoices.choices).get(self.slot, self.slot)
         return f"{self.doctor.first_name} {self.doctor.last_name} on {self.date} at {slot_label}"
-
