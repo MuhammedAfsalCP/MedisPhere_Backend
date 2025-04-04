@@ -20,7 +20,7 @@ from .serializer import (
     ForgetPasswordSerializer,
     UserDetailSerializer,
     AppointmentHistorySerializer,
-    PatientDetailsSerializer
+    PatientDetailsSerializer,
 )
 import pika
 import json
@@ -374,3 +374,6 @@ class PatientDetials(APIView):
                 'message': 'An error occurred while updating profile',
                 'error': str(e)
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+import logging
+logger = logging.getLogger('django')
+

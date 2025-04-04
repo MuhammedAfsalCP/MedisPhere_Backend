@@ -16254,3 +16254,656 @@ DETAIL:  Failing row contains (23, null, null, t, null, f, null, 4, null, null, 
 2025-03-29 06:46:26,303 - INFO - Connected to RabbitMQ successfully.
 2025-03-29 06:46:26,303 - INFO - Created channel=1
 2025-03-29 06:46:26,310 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-29 06:51:46,423 - INFO - Hello from RabbitMQ consumer
+2025-03-29 06:51:46,424 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-29 06:51:46,468 - INFO - Initializing consumer...
+2025-03-29 06:51:46,487 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-29 06:51:46,487 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-29 06:51:46,546 - INFO - hlo
+2025-03-29 06:51:46,547 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-29 06:51:51,430 - INFO - Connecting to RabbitMQ...
+2025-03-29 06:51:51,445 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-29 06:51:51,446 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 42836), raddr=('172.18.0.3', 5672)>
+2025-03-29 06:51:51,449 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f9046933610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f9046933610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-29 06:51:51,452 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f9046933610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 06:51:51,453 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f9046933610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 06:51:51,455 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f9046933610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 06:51:51,456 - INFO - Connected to RabbitMQ successfully.
+2025-03-29 06:51:51,457 - INFO - Created channel=1
+2025-03-29 06:51:51,463 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-29 06:51:51,494 - INFO - Connecting to RabbitMQ...
+2025-03-29 06:51:51,499 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-29 06:51:51,499 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 42848), raddr=('172.18.0.3', 5672)>
+2025-03-29 06:51:51,500 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8609d2a4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8609d2a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-29 06:51:51,504 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8609d2a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 06:51:51,505 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8609d2a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 06:51:51,505 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8609d2a4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 06:51:51,506 - INFO - Connected to RabbitMQ successfully
+2025-03-29 06:51:51,506 - INFO - Created channel=1
+2025-03-29 06:51:51,508 - INFO - Published test message to slotbooking queue
+2025-03-29 06:51:51,511 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-29 06:51:51,511 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-29 06:51:51,512 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-29 06:51:51,515 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-29 06:51:51,516 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-29 06:51:51,517 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-29 06:51:51,551 - INFO - Connecting to RabbitMQ...
+2025-03-29 06:51:51,556 - INFO - Pika version 1.3.2 connecting to ('172.18.0.3', 5672)
+2025-03-29 06:51:51,557 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.6', 42864), raddr=('172.18.0.3', 5672)>
+2025-03-29 06:51:51,559 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f470c717400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f470c717400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-29 06:51:51,562 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f470c717400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 06:51:51,563 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f470c717400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 06:51:51,563 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f470c717400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 06:51:51,564 - INFO -  Connected to RabbitMQ successfully.
+2025-03-29 06:51:51,565 - INFO - Created channel=1
+2025-03-29 06:51:51,569 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-29 06:57:05,778 - INFO - Received message: {'room_name': 'b2073c16-3198-4238-966a-514781a8c425', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 06:57:05,779 - INFO - fariskt00@gmail.com
+2025-03-29 06:57:05,779 - INFO - Constructed meet_link: b2073c16-3198-4238-966a-514781a8c425
+2025-03-29 06:57:05,798 - INFO - Updated existing room b2073c16-3198-4238-966a-514781a8c425 for doctor with email fariskt00@gmail.com
+2025-03-29 06:57:05,800 - INFO - Sent response: {'room_created': True, 'meet_link': 'b2073c16-3198-4238-966a-514781a8c425', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:00:08,164 - INFO - Received message: {'room_name': '382ed2a8-1d9c-4baa-aee2-a30465648fc1', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:00:08,165 - INFO - fariskt00@gmail.com
+2025-03-29 07:00:08,166 - INFO - Constructed meet_link: 382ed2a8-1d9c-4baa-aee2-a30465648fc1
+2025-03-29 07:00:08,174 - INFO - Updated existing room 382ed2a8-1d9c-4baa-aee2-a30465648fc1 for doctor with email fariskt00@gmail.com
+2025-03-29 07:00:08,176 - INFO - Sent response: {'room_created': True, 'meet_link': '382ed2a8-1d9c-4baa-aee2-a30465648fc1', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:00:41,466 - INFO - Received message: {'room_name': '0b554f79-e3ae-4a4d-aa9a-a3d917caf10a', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:00:41,467 - INFO - fariskt00@gmail.com
+2025-03-29 07:00:41,468 - INFO - Constructed meet_link: 0b554f79-e3ae-4a4d-aa9a-a3d917caf10a
+2025-03-29 07:00:41,475 - INFO - Updated existing room 0b554f79-e3ae-4a4d-aa9a-a3d917caf10a for doctor with email fariskt00@gmail.com
+2025-03-29 07:00:41,480 - INFO - Sent response: {'room_created': True, 'meet_link': '0b554f79-e3ae-4a4d-aa9a-a3d917caf10a', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:01:48,865 - INFO - Received message: {'room_name': '9ef3982a-1014-458f-ac3f-2653b05cb0f3', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:01:48,866 - INFO - fariskt00@gmail.com
+2025-03-29 07:01:48,867 - INFO - Constructed meet_link: 9ef3982a-1014-458f-ac3f-2653b05cb0f3
+2025-03-29 07:01:48,874 - INFO - Updated existing room 9ef3982a-1014-458f-ac3f-2653b05cb0f3 for doctor with email fariskt00@gmail.com
+2025-03-29 07:01:48,876 - INFO - Sent response: {'room_created': True, 'meet_link': '9ef3982a-1014-458f-ac3f-2653b05cb0f3', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:03:08,327 - INFO - Received message: {'room_name': '324d973b-93f9-457f-bf6f-e1e1f5b88dd4', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:03:08,327 - INFO - fariskt00@gmail.com
+2025-03-29 07:03:08,328 - INFO - Constructed meet_link: 324d973b-93f9-457f-bf6f-e1e1f5b88dd4
+2025-03-29 07:03:08,336 - INFO - Updated existing room 324d973b-93f9-457f-bf6f-e1e1f5b88dd4 for doctor with email fariskt00@gmail.com
+2025-03-29 07:03:08,341 - INFO - Sent response: {'room_created': True, 'meet_link': '324d973b-93f9-457f-bf6f-e1e1f5b88dd4', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:05:06,513 - INFO - Received message: {'room_name': '496c9e1e-4878-4be3-adab-a2da7b3c132b', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:05:06,514 - INFO - fariskt00@gmail.com
+2025-03-29 07:05:06,515 - INFO - Constructed meet_link: 496c9e1e-4878-4be3-adab-a2da7b3c132b
+2025-03-29 07:05:06,521 - INFO - Updated existing room 496c9e1e-4878-4be3-adab-a2da7b3c132b for doctor with email fariskt00@gmail.com
+2025-03-29 07:05:06,525 - INFO - Sent response: {'room_created': True, 'meet_link': '496c9e1e-4878-4be3-adab-a2da7b3c132b', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:10:04,016 - INFO - Received message: {'room_name': 'e12465e6-0318-4df2-901f-a50b9844a401', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:10:04,017 - INFO - fariskt00@gmail.com
+2025-03-29 07:10:04,017 - INFO - Constructed meet_link: e12465e6-0318-4df2-901f-a50b9844a401
+2025-03-29 07:10:04,022 - INFO - Updated existing room e12465e6-0318-4df2-901f-a50b9844a401 for doctor with email fariskt00@gmail.com
+2025-03-29 07:10:04,026 - INFO - Sent response: {'room_created': True, 'meet_link': 'e12465e6-0318-4df2-901f-a50b9844a401', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:12:43,451 - INFO - Received message: {'room_name': 'e12465e6-0318-4df2-901f-a50b9844a401', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:12:43,460 - INFO - fariskt00@gmail.com
+2025-03-29 07:12:43,462 - INFO - Constructed meet_link: e12465e6-0318-4df2-901f-a50b9844a401
+2025-03-29 07:12:43,477 - INFO - Updated existing room e12465e6-0318-4df2-901f-a50b9844a401 for doctor with email fariskt00@gmail.com
+2025-03-29 07:12:43,485 - INFO - Sent response: {'room_created': True, 'meet_link': 'e12465e6-0318-4df2-901f-a50b9844a401', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:13:55,058 - INFO - Received message: {'room_name': 'fcec3377-3837-46ae-8cac-e545897bfc64', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:13:55,059 - INFO - fariskt00@gmail.com
+2025-03-29 07:13:55,060 - INFO - Constructed meet_link: fcec3377-3837-46ae-8cac-e545897bfc64
+2025-03-29 07:13:55,066 - INFO - Updated existing room fcec3377-3837-46ae-8cac-e545897bfc64 for doctor with email fariskt00@gmail.com
+2025-03-29 07:13:55,077 - INFO - Sent response: {'room_created': True, 'meet_link': 'fcec3377-3837-46ae-8cac-e545897bfc64', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:15:45,780 - INFO - Received message: {'room_name': 'fcec3377-3837-46ae-8cac-e545897bfc64', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:15:45,781 - INFO - fariskt00@gmail.com
+2025-03-29 07:15:45,782 - INFO - Constructed meet_link: fcec3377-3837-46ae-8cac-e545897bfc64
+2025-03-29 07:15:45,790 - INFO - Updated existing room fcec3377-3837-46ae-8cac-e545897bfc64 for doctor with email fariskt00@gmail.com
+2025-03-29 07:15:45,795 - INFO - Sent response: {'room_created': True, 'meet_link': 'fcec3377-3837-46ae-8cac-e545897bfc64', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:19:13,848 - INFO - Received message: {'room_name': '56f9d61c-10d8-4e42-a79a-c0a6b29e01ef', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:19:13,849 - INFO - fariskt00@gmail.com
+2025-03-29 07:19:13,849 - INFO - Constructed meet_link: 56f9d61c-10d8-4e42-a79a-c0a6b29e01ef
+2025-03-29 07:19:13,854 - INFO - Updated existing room 56f9d61c-10d8-4e42-a79a-c0a6b29e01ef for doctor with email fariskt00@gmail.com
+2025-03-29 07:19:13,856 - INFO - Sent response: {'room_created': True, 'meet_link': '56f9d61c-10d8-4e42-a79a-c0a6b29e01ef', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:25:02,761 - INFO - Received message: {'room_name': 'e490e42a-24e5-42ab-a8da-7a02537ac097', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:25:02,762 - INFO - fariskt00@gmail.com
+2025-03-29 07:25:02,762 - INFO - Constructed meet_link: e490e42a-24e5-42ab-a8da-7a02537ac097
+2025-03-29 07:25:02,767 - INFO - Updated existing room e490e42a-24e5-42ab-a8da-7a02537ac097 for doctor with email fariskt00@gmail.com
+2025-03-29 07:25:02,770 - INFO - Sent response: {'room_created': True, 'meet_link': 'e490e42a-24e5-42ab-a8da-7a02537ac097', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:28:50,912 - INFO - Received message: {'room_name': 'd5e4cfc1-a3a0-4daa-a145-ce627f03932e', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:28:50,913 - INFO - fariskt00@gmail.com
+2025-03-29 07:28:50,914 - INFO - Constructed meet_link: d5e4cfc1-a3a0-4daa-a145-ce627f03932e
+2025-03-29 07:28:50,922 - INFO - Updated existing room d5e4cfc1-a3a0-4daa-a145-ce627f03932e for doctor with email fariskt00@gmail.com
+2025-03-29 07:28:50,928 - INFO - Sent response: {'room_created': True, 'meet_link': 'd5e4cfc1-a3a0-4daa-a145-ce627f03932e', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:32:21,958 - INFO - Received message: {'room_name': 'd5e4cfc1-a3a0-4daa-a145-ce627f03932e', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:32:21,959 - INFO - fariskt00@gmail.com
+2025-03-29 07:32:21,959 - INFO - Constructed meet_link: d5e4cfc1-a3a0-4daa-a145-ce627f03932e
+2025-03-29 07:32:21,967 - INFO - Updated existing room d5e4cfc1-a3a0-4daa-a145-ce627f03932e for doctor with email fariskt00@gmail.com
+2025-03-29 07:32:21,970 - INFO - Sent response: {'room_created': True, 'meet_link': 'd5e4cfc1-a3a0-4daa-a145-ce627f03932e', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:32:27,892 - INFO - Received message: {'room_name': 'a562d23d-ec66-45db-82c9-2868cff4e1df', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:32:27,910 - INFO - fariskt00@gmail.com
+2025-03-29 07:32:27,911 - INFO - Constructed meet_link: a562d23d-ec66-45db-82c9-2868cff4e1df
+2025-03-29 07:32:27,923 - INFO - Updated existing room a562d23d-ec66-45db-82c9-2868cff4e1df for doctor with email fariskt00@gmail.com
+2025-03-29 07:32:27,935 - INFO - Sent response: {'room_created': True, 'meet_link': 'a562d23d-ec66-45db-82c9-2868cff4e1df', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:33:45,019 - INFO - Received message: {'room_name': '7e2cc687-d5f6-4cf3-a165-79d6d1ea41b8', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:33:45,022 - INFO - fariskt00@gmail.com
+2025-03-29 07:33:45,022 - INFO - Constructed meet_link: 7e2cc687-d5f6-4cf3-a165-79d6d1ea41b8
+2025-03-29 07:33:45,030 - INFO - Updated existing room 7e2cc687-d5f6-4cf3-a165-79d6d1ea41b8 for doctor with email fariskt00@gmail.com
+2025-03-29 07:33:45,042 - INFO - Sent response: {'room_created': True, 'meet_link': '7e2cc687-d5f6-4cf3-a165-79d6d1ea41b8', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:34:21,964 - INFO - Received message: {'room_name': '7e2cc687-d5f6-4cf3-a165-79d6d1ea41b8', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:34:21,964 - INFO - fariskt00@gmail.com
+2025-03-29 07:34:21,965 - INFO - Constructed meet_link: 7e2cc687-d5f6-4cf3-a165-79d6d1ea41b8
+2025-03-29 07:34:21,972 - INFO - Updated existing room 7e2cc687-d5f6-4cf3-a165-79d6d1ea41b8 for doctor with email fariskt00@gmail.com
+2025-03-29 07:34:21,979 - INFO - Sent response: {'room_created': True, 'meet_link': '7e2cc687-d5f6-4cf3-a165-79d6d1ea41b8', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:34:36,302 - INFO - Received message: {'room_name': '2d2b3c11-0d03-4c96-8d2c-aa3e4bacfd8c', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:34:36,303 - INFO - fariskt00@gmail.com
+2025-03-29 07:34:36,304 - INFO - Constructed meet_link: 2d2b3c11-0d03-4c96-8d2c-aa3e4bacfd8c
+2025-03-29 07:34:36,310 - INFO - Updated existing room 2d2b3c11-0d03-4c96-8d2c-aa3e4bacfd8c for doctor with email fariskt00@gmail.com
+2025-03-29 07:34:36,317 - INFO - Sent response: {'room_created': True, 'meet_link': '2d2b3c11-0d03-4c96-8d2c-aa3e4bacfd8c', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:35:51,982 - INFO - Received message: {'room_name': '48c6a3dd-bcb7-4615-b065-664f25a27e56', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:35:51,983 - INFO - fariskt00@gmail.com
+2025-03-29 07:35:51,983 - INFO - Constructed meet_link: 48c6a3dd-bcb7-4615-b065-664f25a27e56
+2025-03-29 07:35:51,989 - INFO - Updated existing room 48c6a3dd-bcb7-4615-b065-664f25a27e56 for doctor with email fariskt00@gmail.com
+2025-03-29 07:35:51,992 - INFO - Sent response: {'room_created': True, 'meet_link': '48c6a3dd-bcb7-4615-b065-664f25a27e56', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:39:53,248 - INFO - Received message: {'room_name': '8dfa87dc-d481-43fa-98f1-b808a633828f', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:39:53,250 - INFO - fariskt00@gmail.com
+2025-03-29 07:39:53,250 - INFO - Constructed meet_link: 8dfa87dc-d481-43fa-98f1-b808a633828f
+2025-03-29 07:39:53,257 - INFO - Updated existing room 8dfa87dc-d481-43fa-98f1-b808a633828f for doctor with email fariskt00@gmail.com
+2025-03-29 07:39:53,263 - INFO - Sent response: {'room_created': True, 'meet_link': '8dfa87dc-d481-43fa-98f1-b808a633828f', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:39:56,360 - INFO - Received message: {'room_name': '83840c47-eb5f-4902-bdc5-f7c077f9f4a3', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:39:56,360 - INFO - fariskt00@gmail.com
+2025-03-29 07:39:56,361 - INFO - Constructed meet_link: 83840c47-eb5f-4902-bdc5-f7c077f9f4a3
+2025-03-29 07:39:56,365 - INFO - Updated existing room 83840c47-eb5f-4902-bdc5-f7c077f9f4a3 for doctor with email fariskt00@gmail.com
+2025-03-29 07:39:56,368 - INFO - Sent response: {'room_created': True, 'meet_link': '83840c47-eb5f-4902-bdc5-f7c077f9f4a3', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:42:58,390 - INFO - Received message: {'room_name': '83840c47-eb5f-4902-bdc5-f7c077f9f4a3', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:42:58,395 - INFO - fariskt00@gmail.com
+2025-03-29 07:42:58,425 - INFO - Constructed meet_link: 83840c47-eb5f-4902-bdc5-f7c077f9f4a3
+2025-03-29 07:42:58,452 - INFO - Updated existing room 83840c47-eb5f-4902-bdc5-f7c077f9f4a3 for doctor with email fariskt00@gmail.com
+2025-03-29 07:42:58,460 - INFO - Sent response: {'room_created': True, 'meet_link': '83840c47-eb5f-4902-bdc5-f7c077f9f4a3', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:43:05,244 - INFO - Received message: {'room_name': '455e7670-b4a7-4d34-9529-d7eb2f380283', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:43:05,244 - INFO - fariskt00@gmail.com
+2025-03-29 07:43:05,245 - INFO - Constructed meet_link: 455e7670-b4a7-4d34-9529-d7eb2f380283
+2025-03-29 07:43:05,295 - INFO - Updated existing room 455e7670-b4a7-4d34-9529-d7eb2f380283 for doctor with email fariskt00@gmail.com
+2025-03-29 07:43:05,299 - INFO - Sent response: {'room_created': True, 'meet_link': '455e7670-b4a7-4d34-9529-d7eb2f380283', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:44:23,586 - INFO - Received message: {'room_name': '455e7670-b4a7-4d34-9529-d7eb2f380283', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:44:23,587 - INFO - fariskt00@gmail.com
+2025-03-29 07:44:23,589 - INFO - Constructed meet_link: 455e7670-b4a7-4d34-9529-d7eb2f380283
+2025-03-29 07:44:23,594 - INFO - Updated existing room 455e7670-b4a7-4d34-9529-d7eb2f380283 for doctor with email fariskt00@gmail.com
+2025-03-29 07:44:23,597 - INFO - Sent response: {'room_created': True, 'meet_link': '455e7670-b4a7-4d34-9529-d7eb2f380283', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:44:29,671 - INFO - Received message: {'room_name': '96d3fb21-91b9-4eba-8826-074f7ae6d15f', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:44:29,676 - INFO - fariskt00@gmail.com
+2025-03-29 07:44:29,681 - INFO - Constructed meet_link: 96d3fb21-91b9-4eba-8826-074f7ae6d15f
+2025-03-29 07:44:29,688 - INFO - Updated existing room 96d3fb21-91b9-4eba-8826-074f7ae6d15f for doctor with email fariskt00@gmail.com
+2025-03-29 07:44:29,697 - INFO - Sent response: {'room_created': True, 'meet_link': '96d3fb21-91b9-4eba-8826-074f7ae6d15f', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:51:51,324 - INFO - Received message: {'room_name': 'c5f108cf-759f-4267-b48d-37af0a10b83f', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:51:51,325 - INFO - fariskt00@gmail.com
+2025-03-29 07:51:51,325 - INFO - Constructed meet_link: c5f108cf-759f-4267-b48d-37af0a10b83f
+2025-03-29 07:51:51,337 - INFO - Updated existing room c5f108cf-759f-4267-b48d-37af0a10b83f for doctor with email fariskt00@gmail.com
+2025-03-29 07:51:51,340 - INFO - Sent response: {'room_created': True, 'meet_link': 'c5f108cf-759f-4267-b48d-37af0a10b83f', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:52:05,293 - INFO - Received message: {'room_name': '58474212-5428-4490-86e1-a9146489d045', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:52:05,294 - INFO - fariskt00@gmail.com
+2025-03-29 07:52:05,295 - INFO - Constructed meet_link: 58474212-5428-4490-86e1-a9146489d045
+2025-03-29 07:52:05,302 - INFO - Updated existing room 58474212-5428-4490-86e1-a9146489d045 for doctor with email fariskt00@gmail.com
+2025-03-29 07:52:05,308 - INFO - Sent response: {'room_created': True, 'meet_link': '58474212-5428-4490-86e1-a9146489d045', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:54:06,562 - INFO - Received message: {'room_name': '7d30d0a0-eaf7-4b43-bec3-062ecdd318eb', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:54:06,563 - INFO - fariskt00@gmail.com
+2025-03-29 07:54:06,563 - INFO - Constructed meet_link: 7d30d0a0-eaf7-4b43-bec3-062ecdd318eb
+2025-03-29 07:54:06,568 - INFO - Updated existing room 7d30d0a0-eaf7-4b43-bec3-062ecdd318eb for doctor with email fariskt00@gmail.com
+2025-03-29 07:54:06,571 - INFO - Sent response: {'room_created': True, 'meet_link': '7d30d0a0-eaf7-4b43-bec3-062ecdd318eb', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:55:35,301 - INFO - Received message: {'room_name': 'e70b4235-9ca2-4240-a0be-1628ee9c2588', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:55:35,302 - INFO - fariskt00@gmail.com
+2025-03-29 07:55:35,303 - INFO - Constructed meet_link: e70b4235-9ca2-4240-a0be-1628ee9c2588
+2025-03-29 07:55:35,349 - INFO - Updated existing room e70b4235-9ca2-4240-a0be-1628ee9c2588 for doctor with email fariskt00@gmail.com
+2025-03-29 07:55:35,352 - INFO - Sent response: {'room_created': True, 'meet_link': 'e70b4235-9ca2-4240-a0be-1628ee9c2588', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 07:56:44,694 - INFO - Received message: {'room_name': '8e2f2733-8a51-4b65-b67a-b2862ff9da5b', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 07:56:44,695 - INFO - fariskt00@gmail.com
+2025-03-29 07:56:44,697 - INFO - Constructed meet_link: 8e2f2733-8a51-4b65-b67a-b2862ff9da5b
+2025-03-29 07:56:44,705 - INFO - Updated existing room 8e2f2733-8a51-4b65-b67a-b2862ff9da5b for doctor with email fariskt00@gmail.com
+2025-03-29 07:56:44,711 - INFO - Sent response: {'room_created': True, 'meet_link': '8e2f2733-8a51-4b65-b67a-b2862ff9da5b', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:00:58,208 - INFO - Received message: {'room_name': '35808b4e-6f01-4d26-be90-4a35833975b2', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:00:58,208 - INFO - fariskt00@gmail.com
+2025-03-29 08:00:58,209 - INFO - Constructed meet_link: 35808b4e-6f01-4d26-be90-4a35833975b2
+2025-03-29 08:00:58,239 - INFO - Updated existing room 35808b4e-6f01-4d26-be90-4a35833975b2 for doctor with email fariskt00@gmail.com
+2025-03-29 08:00:58,250 - INFO - Sent response: {'room_created': True, 'meet_link': '35808b4e-6f01-4d26-be90-4a35833975b2', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:00:58,287 - INFO - Received message: {'room_name': '35808b4e-6f01-4d26-be90-4a35833975b2', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:00:58,287 - INFO - fariskt00@gmail.com
+2025-03-29 08:00:58,287 - INFO - Constructed meet_link: 35808b4e-6f01-4d26-be90-4a35833975b2
+2025-03-29 08:00:58,296 - INFO - Updated existing room 35808b4e-6f01-4d26-be90-4a35833975b2 for doctor with email fariskt00@gmail.com
+2025-03-29 08:00:58,301 - INFO - Sent response: {'room_created': True, 'meet_link': '35808b4e-6f01-4d26-be90-4a35833975b2', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:02:55,926 - INFO - Received message: {'room_name': 'ed42e5e9-0f1f-4c4f-a3d6-4f0435561bfc', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:02:55,926 - INFO - fariskt00@gmail.com
+2025-03-29 08:02:55,927 - INFO - Constructed meet_link: ed42e5e9-0f1f-4c4f-a3d6-4f0435561bfc
+2025-03-29 08:02:55,932 - INFO - Updated existing room ed42e5e9-0f1f-4c4f-a3d6-4f0435561bfc for doctor with email fariskt00@gmail.com
+2025-03-29 08:02:55,935 - INFO - Sent response: {'room_created': True, 'meet_link': 'ed42e5e9-0f1f-4c4f-a3d6-4f0435561bfc', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:02:55,969 - INFO - Received message: {'room_name': 'ed42e5e9-0f1f-4c4f-a3d6-4f0435561bfc', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:02:55,971 - INFO - fariskt00@gmail.com
+2025-03-29 08:02:55,972 - INFO - Constructed meet_link: ed42e5e9-0f1f-4c4f-a3d6-4f0435561bfc
+2025-03-29 08:02:55,977 - INFO - Updated existing room ed42e5e9-0f1f-4c4f-a3d6-4f0435561bfc for doctor with email fariskt00@gmail.com
+2025-03-29 08:02:55,980 - INFO - Sent response: {'room_created': True, 'meet_link': 'ed42e5e9-0f1f-4c4f-a3d6-4f0435561bfc', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:03:36,661 - INFO - Received message: {'room_name': '183fd5be-dc1e-4333-92c7-7e299c9d7820', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:03:36,662 - INFO - fariskt00@gmail.com
+2025-03-29 08:03:36,662 - INFO - Constructed meet_link: 183fd5be-dc1e-4333-92c7-7e299c9d7820
+2025-03-29 08:03:36,666 - INFO - Updated existing room 183fd5be-dc1e-4333-92c7-7e299c9d7820 for doctor with email fariskt00@gmail.com
+2025-03-29 08:03:36,669 - INFO - Sent response: {'room_created': True, 'meet_link': '183fd5be-dc1e-4333-92c7-7e299c9d7820', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:04:14,167 - INFO - Received message: {'room_name': '40468032-7b06-4659-9633-6bb07eb5bea6', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:04:14,168 - INFO - fariskt00@gmail.com
+2025-03-29 08:04:14,168 - INFO - Constructed meet_link: 40468032-7b06-4659-9633-6bb07eb5bea6
+2025-03-29 08:04:14,174 - INFO - Updated existing room 40468032-7b06-4659-9633-6bb07eb5bea6 for doctor with email fariskt00@gmail.com
+2025-03-29 08:04:14,176 - INFO - Sent response: {'room_created': True, 'meet_link': '40468032-7b06-4659-9633-6bb07eb5bea6', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:04:14,207 - INFO - Received message: {'room_name': '40468032-7b06-4659-9633-6bb07eb5bea6', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:04:14,208 - INFO - fariskt00@gmail.com
+2025-03-29 08:04:14,208 - INFO - Constructed meet_link: 40468032-7b06-4659-9633-6bb07eb5bea6
+2025-03-29 08:04:14,213 - INFO - Updated existing room 40468032-7b06-4659-9633-6bb07eb5bea6 for doctor with email fariskt00@gmail.com
+2025-03-29 08:04:14,216 - INFO - Sent response: {'room_created': True, 'meet_link': '40468032-7b06-4659-9633-6bb07eb5bea6', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:04:21,684 - INFO - Received message: {'room_name': '825a6f61-c864-4003-a12d-51b340d15cae', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:04:21,685 - INFO - fariskt00@gmail.com
+2025-03-29 08:04:21,687 - INFO - Constructed meet_link: 825a6f61-c864-4003-a12d-51b340d15cae
+2025-03-29 08:04:21,694 - INFO - Updated existing room 825a6f61-c864-4003-a12d-51b340d15cae for doctor with email fariskt00@gmail.com
+2025-03-29 08:04:21,698 - INFO - Sent response: {'room_created': True, 'meet_link': '825a6f61-c864-4003-a12d-51b340d15cae', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:04:21,726 - INFO - Received message: {'room_name': '825a6f61-c864-4003-a12d-51b340d15cae', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:04:21,727 - INFO - fariskt00@gmail.com
+2025-03-29 08:04:21,728 - INFO - Constructed meet_link: 825a6f61-c864-4003-a12d-51b340d15cae
+2025-03-29 08:04:21,733 - INFO - Updated existing room 825a6f61-c864-4003-a12d-51b340d15cae for doctor with email fariskt00@gmail.com
+2025-03-29 08:04:21,737 - INFO - Sent response: {'room_created': True, 'meet_link': '825a6f61-c864-4003-a12d-51b340d15cae', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:07:47,838 - INFO - Received message: {'room_name': '23e0d841-b6ab-4373-b1bf-f5ff09c24e1d', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:07:47,838 - INFO - fariskt00@gmail.com
+2025-03-29 08:07:47,839 - INFO - Constructed meet_link: 23e0d841-b6ab-4373-b1bf-f5ff09c24e1d
+2025-03-29 08:07:47,848 - INFO - Updated existing room 23e0d841-b6ab-4373-b1bf-f5ff09c24e1d for doctor with email fariskt00@gmail.com
+2025-03-29 08:07:47,851 - INFO - Sent response: {'room_created': True, 'meet_link': '23e0d841-b6ab-4373-b1bf-f5ff09c24e1d', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:10:48,322 - INFO - Received message: {'room_name': '4f1ec5ec-5439-4d53-88fa-8172eb132a41', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:10:48,324 - INFO - fariskt00@gmail.com
+2025-03-29 08:10:48,324 - INFO - Constructed meet_link: 4f1ec5ec-5439-4d53-88fa-8172eb132a41
+2025-03-29 08:10:48,333 - INFO - Updated existing room 4f1ec5ec-5439-4d53-88fa-8172eb132a41 for doctor with email fariskt00@gmail.com
+2025-03-29 08:10:48,336 - INFO - Sent response: {'room_created': True, 'meet_link': '4f1ec5ec-5439-4d53-88fa-8172eb132a41', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:13:55,986 - INFO - Received message: {'room_name': '1af9e564-37ef-48ed-9114-6ad77b5b52e3', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:13:55,987 - INFO - fariskt00@gmail.com
+2025-03-29 08:13:55,988 - INFO - Constructed meet_link: 1af9e564-37ef-48ed-9114-6ad77b5b52e3
+2025-03-29 08:13:55,993 - INFO - Updated existing room 1af9e564-37ef-48ed-9114-6ad77b5b52e3 for doctor with email fariskt00@gmail.com
+2025-03-29 08:13:55,996 - INFO - Sent response: {'room_created': True, 'meet_link': '1af9e564-37ef-48ed-9114-6ad77b5b52e3', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:14:09,881 - INFO - Received message: {'room_name': 'e20e6429-f54e-4034-999d-f89f68a8675c', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:14:09,881 - INFO - fariskt00@gmail.com
+2025-03-29 08:14:09,882 - INFO - Constructed meet_link: e20e6429-f54e-4034-999d-f89f68a8675c
+2025-03-29 08:14:09,887 - INFO - Updated existing room e20e6429-f54e-4034-999d-f89f68a8675c for doctor with email fariskt00@gmail.com
+2025-03-29 08:14:09,891 - INFO - Sent response: {'room_created': True, 'meet_link': 'e20e6429-f54e-4034-999d-f89f68a8675c', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:14:09,927 - INFO - Received message: {'room_name': 'e20e6429-f54e-4034-999d-f89f68a8675c', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:14:09,928 - INFO - fariskt00@gmail.com
+2025-03-29 08:14:09,928 - INFO - Constructed meet_link: e20e6429-f54e-4034-999d-f89f68a8675c
+2025-03-29 08:14:09,933 - INFO - Updated existing room e20e6429-f54e-4034-999d-f89f68a8675c for doctor with email fariskt00@gmail.com
+2025-03-29 08:14:09,936 - INFO - Sent response: {'room_created': True, 'meet_link': 'e20e6429-f54e-4034-999d-f89f68a8675c', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:16:31,951 - INFO - Received message: {'room_name': '1824b247-f7c9-4906-8950-28b899069a6f', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:16:31,976 - INFO - fariskt00@gmail.com
+2025-03-29 08:16:31,977 - INFO - Constructed meet_link: 1824b247-f7c9-4906-8950-28b899069a6f
+2025-03-29 08:16:31,985 - INFO - Updated existing room 1824b247-f7c9-4906-8950-28b899069a6f for doctor with email fariskt00@gmail.com
+2025-03-29 08:16:31,989 - INFO - Sent response: {'room_created': True, 'meet_link': '1824b247-f7c9-4906-8950-28b899069a6f', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:16:32,031 - INFO - Received message: {'room_name': '1824b247-f7c9-4906-8950-28b899069a6f', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:16:32,031 - INFO - fariskt00@gmail.com
+2025-03-29 08:16:32,032 - INFO - Constructed meet_link: 1824b247-f7c9-4906-8950-28b899069a6f
+2025-03-29 08:16:32,038 - INFO - Updated existing room 1824b247-f7c9-4906-8950-28b899069a6f for doctor with email fariskt00@gmail.com
+2025-03-29 08:16:32,042 - INFO - Sent response: {'room_created': True, 'meet_link': '1824b247-f7c9-4906-8950-28b899069a6f', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:16:56,502 - INFO - Received message: {'room_name': 'c4ca42e1-6b3a-4c82-a61f-e628ce443fad', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:16:56,503 - INFO - fariskt00@gmail.com
+2025-03-29 08:16:56,503 - INFO - Constructed meet_link: c4ca42e1-6b3a-4c82-a61f-e628ce443fad
+2025-03-29 08:16:56,509 - INFO - Updated existing room c4ca42e1-6b3a-4c82-a61f-e628ce443fad for doctor with email fariskt00@gmail.com
+2025-03-29 08:16:56,515 - INFO - Sent response: {'room_created': True, 'meet_link': 'c4ca42e1-6b3a-4c82-a61f-e628ce443fad', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:21:43,669 - INFO - Received message: {'room_name': '5895148e-6675-4ff3-9413-187249d6e5a2', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:21:43,669 - INFO - fariskt00@gmail.com
+2025-03-29 08:21:43,670 - INFO - Constructed meet_link: 5895148e-6675-4ff3-9413-187249d6e5a2
+2025-03-29 08:21:43,676 - INFO - Updated existing room 5895148e-6675-4ff3-9413-187249d6e5a2 for doctor with email fariskt00@gmail.com
+2025-03-29 08:21:43,682 - INFO - Sent response: {'room_created': True, 'meet_link': '5895148e-6675-4ff3-9413-187249d6e5a2', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:23:13,545 - INFO - Received message: {'room_name': '33e799c1-7683-437d-98b2-e30918fcc7cd', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 08:23:13,546 - INFO - fariskt00@gmail.com
+2025-03-29 08:23:13,547 - INFO - Constructed meet_link: 33e799c1-7683-437d-98b2-e30918fcc7cd
+2025-03-29 08:23:13,556 - INFO - Updated existing room 33e799c1-7683-437d-98b2-e30918fcc7cd for doctor with email fariskt00@gmail.com
+2025-03-29 08:23:13,560 - INFO - Sent response: {'room_created': True, 'meet_link': '33e799c1-7683-437d-98b2-e30918fcc7cd', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 08:58:48,103 - INFO - Initializing consumer...
+2025-03-29 08:58:48,130 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-29 08:58:48,131 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-29 08:58:48,135 - INFO - hlo
+2025-03-29 08:58:48,137 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-29 08:58:48,155 - INFO - Hello from RabbitMQ consumer
+2025-03-29 08:58:48,155 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-29 08:58:53,137 - INFO - Connecting to RabbitMQ...
+2025-03-29 08:58:53,143 - INFO - Connecting to RabbitMQ...
+2025-03-29 08:58:53,153 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-29 08:58:53,155 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 44602), raddr=('172.18.0.4', 5672)>
+2025-03-29 08:58:53,159 - INFO - Connecting to RabbitMQ...
+2025-03-29 08:58:53,165 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe87dd4e4a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe87dd4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-29 08:58:53,165 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-29 08:58:53,172 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 44604), raddr=('172.18.0.4', 5672)>
+2025-03-29 08:58:53,185 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa759b17400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa759b17400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-29 08:58:53,195 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-29 08:58:53,200 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 44610), raddr=('172.18.0.4', 5672)>
+2025-03-29 08:58:53,201 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe87dd4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 08:58:53,204 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb6cf133610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb6cf133610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-29 08:58:53,210 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe87dd4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 08:58:53,213 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fe87dd4e4a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 08:58:53,215 - INFO - Connected to RabbitMQ successfully
+2025-03-29 08:58:53,217 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa759b17400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 08:58:53,218 - INFO - Created channel=1
+2025-03-29 08:58:53,223 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa759b17400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 08:58:53,225 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb6cf133610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 08:58:53,226 - INFO - Published test message to slotbooking queue
+2025-03-29 08:58:53,228 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb6cf133610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 08:58:53,228 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa759b17400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 08:58:53,230 - INFO -  Connected to RabbitMQ successfully.
+2025-03-29 08:58:53,230 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb6cf133610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 08:58:53,232 - INFO - Created channel=1
+2025-03-29 08:58:53,233 - INFO - Connected to RabbitMQ successfully.
+2025-03-29 08:58:53,236 - INFO - Created channel=1
+2025-03-29 08:58:53,237 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-29 08:58:53,240 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-29 08:58:53,241 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-29 08:58:53,247 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-29 08:58:53,248 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-29 08:58:53,248 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-29 08:58:53,249 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-29 08:58:53,249 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-29 09:01:39,311 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-29", "slot": "09:00 am - 10:00 am"}
+2025-03-29 09:01:39,312 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-29', 'slot': '09:00 am - 10:00 am'}
+2025-03-29 09:01:39,327 - INFO - shadilx8@gmail.com
+2025-03-29 09:01:39,338 - INFO -  Slot created for Dr. Shadil on 2025-03-29 at 09:00 am - 10:00 am.
+2025-03-29 09:01:39,342 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-29', 'slot': '09:00 am - 10:00 am'}
+2025-03-29 09:17:26,530 - INFO - hlo
+2025-03-29 09:17:26,532 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-29 09:17:26,666 - INFO - Hello from RabbitMQ consumer
+2025-03-29 09:17:26,666 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-29 09:17:26,690 - INFO - Initializing consumer...
+2025-03-29 09:17:26,702 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-29 09:17:26,702 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-29 09:17:31,539 - INFO - Connecting to RabbitMQ...
+2025-03-29 09:17:31,545 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-29 09:17:31,546 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 56346), raddr=('172.18.0.4', 5672)>
+2025-03-29 09:17:31,547 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc3a8117400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc3a8117400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-29 09:17:31,551 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc3a8117400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:17:31,552 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc3a8117400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:17:31,554 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc3a8117400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:17:31,554 - INFO -  Connected to RabbitMQ successfully.
+2025-03-29 09:17:31,555 - INFO - Created channel=1
+2025-03-29 09:17:31,562 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-29 09:17:31,673 - INFO - Connecting to RabbitMQ...
+2025-03-29 09:17:31,692 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-29 09:17:31,693 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 56350), raddr=('172.18.0.4', 5672)>
+2025-03-29 09:17:31,696 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa0cc733610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa0cc733610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-29 09:17:31,707 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa0cc733610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:17:31,710 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa0cc733610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:17:31,713 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa0cc733610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:17:31,712 - INFO - Connecting to RabbitMQ...
+2025-03-29 09:17:31,717 - INFO - Connected to RabbitMQ successfully.
+2025-03-29 09:17:31,721 - INFO - Created channel=1
+2025-03-29 09:17:31,734 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-29 09:17:31,736 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-29 09:17:31,737 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 56358), raddr=('172.18.0.4', 5672)>
+2025-03-29 09:17:31,743 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f708d1524a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f708d1524a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-29 09:17:31,751 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f708d1524a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:17:31,753 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f708d1524a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:17:31,755 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f708d1524a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:17:31,755 - INFO - Connected to RabbitMQ successfully
+2025-03-29 09:17:31,757 - INFO - Created channel=1
+2025-03-29 09:17:31,762 - INFO - Published test message to slotbooking queue
+2025-03-29 09:17:31,765 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-29 09:17:31,766 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-29 09:17:31,767 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-29 09:17:31,773 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-29 09:17:31,775 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-29 09:17:31,775 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-29 09:31:53,161 - INFO - hlo
+2025-03-29 09:31:53,163 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-29 09:31:53,200 - INFO - Hello from RabbitMQ consumer
+2025-03-29 09:31:53,200 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-03-29 09:31:53,277 - INFO - Initializing consumer...
+2025-03-29 09:31:53,285 - INFO - Django ORM test successful: UserProfile count = 4
+2025-03-29 09:31:53,286 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-03-29 09:31:58,168 - INFO - Connecting to RabbitMQ...
+2025-03-29 09:31:58,187 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-29 09:31:58,189 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 38884), raddr=('172.18.0.4', 5672)>
+2025-03-29 09:31:58,195 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f586371b400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f586371b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-29 09:31:58,202 - INFO - Connecting to RabbitMQ...
+2025-03-29 09:31:58,205 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f586371b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:31:58,205 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f586371b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:31:58,208 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f586371b400> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:31:58,213 - INFO -  Connected to RabbitMQ successfully.
+2025-03-29 09:31:58,220 - INFO - Created channel=1
+2025-03-29 09:31:58,228 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-29 09:31:58,235 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 38890), raddr=('172.18.0.4', 5672)>
+2025-03-29 09:31:58,239 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fcaf531f610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fcaf531f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-29 09:31:58,250 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-29 09:31:58,253 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fcaf531f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:31:58,256 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fcaf531f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:31:58,257 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fcaf531f610> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:31:58,258 - INFO - Connected to RabbitMQ successfully.
+2025-03-29 09:31:58,261 - INFO - Created channel=1
+2025-03-29 09:31:58,272 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-03-29 09:31:58,289 - INFO - Connecting to RabbitMQ...
+2025-03-29 09:31:58,299 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-03-29 09:31:58,300 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.8', 38900), raddr=('172.18.0.4', 5672)>
+2025-03-29 09:31:58,303 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7feef89524a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7feef89524a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-03-29 09:31:58,308 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7feef89524a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:31:58,308 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7feef89524a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:31:58,309 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7feef89524a0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-03-29 09:31:58,310 - INFO - Connected to RabbitMQ successfully
+2025-03-29 09:31:58,310 - INFO - Created channel=1
+2025-03-29 09:31:58,313 - INFO - Published test message to slotbooking queue
+2025-03-29 09:31:58,315 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-03-29 09:31:58,316 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-03-29 09:31:58,316 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-03-29 09:31:58,320 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-03-29 09:31:58,321 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-03-29 09:31:58,321 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-03-29 09:32:18,252 - INFO - Received message: {'room_name': '71996243-6066-44f0-bc5b-05a6f8af3547', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 09:32:18,261 - INFO - fariskt00@gmail.com
+2025-03-29 09:32:18,262 - INFO - Constructed meet_link: 71996243-6066-44f0-bc5b-05a6f8af3547
+2025-03-29 09:32:18,288 - INFO - Updated existing room 71996243-6066-44f0-bc5b-05a6f8af3547 for doctor with email fariskt00@gmail.com
+2025-03-29 09:32:18,291 - INFO - Sent response: {'room_created': True, 'meet_link': '71996243-6066-44f0-bc5b-05a6f8af3547', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 09:33:28,102 - INFO - Received message: {'room_name': 'ce6e3788-101e-4104-8dd8-87c83820188c', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 09:33:28,103 - INFO - fariskt00@gmail.com
+2025-03-29 09:33:28,103 - INFO - Constructed meet_link: ce6e3788-101e-4104-8dd8-87c83820188c
+2025-03-29 09:33:28,107 - INFO - Updated existing room ce6e3788-101e-4104-8dd8-87c83820188c for doctor with email fariskt00@gmail.com
+2025-03-29 09:33:28,110 - INFO - Sent response: {'room_created': True, 'meet_link': 'ce6e3788-101e-4104-8dd8-87c83820188c', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 09:37:34,732 - INFO - Received message: {'room_name': 'd95e1f7d-030c-4f6d-9fc5-fae96fd10a01', 'email': 'fariskt00%40gmail.com', 'slot': '6%3A00%20pm%20-%207%3A00%20pm', 'date': '2025-03-28'}
+2025-03-29 09:37:34,733 - INFO - fariskt00@gmail.com
+2025-03-29 09:37:34,733 - INFO - Constructed meet_link: d95e1f7d-030c-4f6d-9fc5-fae96fd10a01
+2025-03-29 09:37:34,739 - INFO - Updated existing room d95e1f7d-030c-4f6d-9fc5-fae96fd10a01 for doctor with email fariskt00@gmail.com
+2025-03-29 09:37:34,741 - INFO - Sent response: {'room_created': True, 'meet_link': 'd95e1f7d-030c-4f6d-9fc5-fae96fd10a01', 'email': 'fariskt00@gmail.com', 'date': '2025-03-28', 'slot': '6:00 pm - 7:00 pm'}
+2025-03-29 10:19:00,255 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-03-29", "slot": "09:00 am - 10:00 am"}
+2025-03-29 10:19:00,262 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-03-29', 'slot': '09:00 am - 10:00 am'}
+2025-03-29 10:19:00,344 - INFO - shadilx8@gmail.com
+2025-03-29 10:19:00,370 - INFO -  Slot created for Dr. Shadil on 2025-03-29 at 09:00 am - 10:00 am.
+2025-03-29 10:19:00,388 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-03-29', 'slot': '09:00 am - 10:00 am'}
+2025-04-02 06:53:39,177 - INFO - Hello from RabbitMQ consumer
+2025-04-02 06:53:39,178 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-04-02 06:53:39,191 - INFO - Initializing consumer...
+2025-04-02 06:53:39,191 - INFO - hlo
+2025-04-02 06:53:39,191 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-04-02 06:53:39,206 - INFO - Django ORM test successful: UserProfile count = 4
+2025-04-02 06:53:39,206 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-04-02 06:53:44,177 - INFO - Connecting to RabbitMQ...
+2025-04-02 06:53:44,184 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-04-02 06:53:44,191 - INFO - Connecting to RabbitMQ...
+2025-04-02 06:53:44,196 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 46276), raddr=('172.18.0.9', 5672)>
+2025-04-02 06:53:44,197 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8cf3b382e0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8cf3b382e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-04-02 06:53:44,201 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8cf3b382e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-02 06:53:44,202 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8cf3b382e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-02 06:53:44,202 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-04-02 06:53:44,203 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8cf3b382e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-02 06:53:44,204 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 46288), raddr=('172.18.0.9', 5672)>
+2025-04-02 06:53:44,205 - INFO - Connecting to RabbitMQ...
+2025-04-02 06:53:44,205 - INFO - Connected to RabbitMQ successfully.
+2025-04-02 06:53:44,206 - INFO - Created channel=1
+2025-04-02 06:53:44,206 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb869133d90>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb869133d90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-04-02 06:53:44,211 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb869133d90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-02 06:53:44,212 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb869133d90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-02 06:53:44,212 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-04-02 06:53:44,213 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fb869133d90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-02 06:53:44,214 - INFO -  Connected to RabbitMQ successfully.
+2025-04-02 06:53:44,214 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-04-02 06:53:44,216 - INFO - Created channel=1
+2025-04-02 06:53:44,216 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 46296), raddr=('172.18.0.9', 5672)>
+2025-04-02 06:53:44,217 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc94653ad70>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc94653ad70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-04-02 06:53:44,221 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc94653ad70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-02 06:53:44,222 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc94653ad70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-02 06:53:44,224 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc94653ad70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-02 06:53:44,224 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-04-02 06:53:44,224 - INFO - Connected to RabbitMQ successfully
+2025-04-02 06:53:44,225 - INFO - Created channel=1
+2025-04-02 06:53:44,229 - INFO - Published test message to slotbooking queue
+2025-04-02 06:53:44,231 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-04-02 06:53:44,232 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-04-02 06:53:44,232 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-04-02 06:53:44,235 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-04-02 06:53:44,235 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-04-02 06:53:44,236 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-04-03 03:12:04,679 - INFO - Hello from RabbitMQ consumer
+2025-04-03 03:12:04,683 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-04-03 03:12:04,790 - INFO - Initializing consumer...
+2025-04-03 03:12:04,812 - INFO - Django ORM test successful: UserProfile count = 4
+2025-04-03 03:12:04,814 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-04-03 03:12:04,904 - INFO - hlo
+2025-04-03 03:12:04,905 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-04-03 03:12:09,691 - INFO - Connecting to RabbitMQ...
+2025-04-03 03:12:09,702 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-04-03 03:12:09,703 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 53936), raddr=('172.18.0.9', 5672)>
+2025-04-03 03:12:09,705 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f7863b382e0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f7863b382e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-04-03 03:12:09,710 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f7863b382e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 03:12:09,711 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f7863b382e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 03:12:09,712 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f7863b382e0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 03:12:09,713 - INFO - Connected to RabbitMQ successfully.
+2025-04-03 03:12:09,713 - INFO - Created channel=1
+2025-04-03 03:12:09,721 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-04-03 03:12:09,819 - INFO - Connecting to RabbitMQ...
+2025-04-03 03:12:09,831 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-04-03 03:12:09,833 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 53946), raddr=('172.18.0.9', 5672)>
+2025-04-03 03:12:09,835 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa7b874ed70>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa7b874ed70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-04-03 03:12:09,840 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa7b874ed70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 03:12:09,840 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa7b874ed70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 03:12:09,841 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa7b874ed70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 03:12:09,842 - INFO - Connected to RabbitMQ successfully
+2025-04-03 03:12:09,843 - INFO - Created channel=1
+2025-04-03 03:12:09,846 - INFO - Published test message to slotbooking queue
+2025-04-03 03:12:09,848 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-04-03 03:12:09,850 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-04-03 03:12:09,850 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-04-03 03:12:09,855 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-04-03 03:12:09,856 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-04-03 03:12:09,857 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-04-03 03:12:09,911 - INFO - Connecting to RabbitMQ...
+2025-04-03 03:12:09,924 - INFO - Pika version 1.3.2 connecting to ('172.18.0.9', 5672)
+2025-04-03 03:12:09,925 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 53958), raddr=('172.18.0.9', 5672)>
+2025-04-03 03:12:09,926 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0a37737d90>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0a37737d90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-04-03 03:12:09,931 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0a37737d90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 03:12:09,931 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0a37737d90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 03:12:09,932 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0a37737d90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 03:12:09,932 - INFO -  Connected to RabbitMQ successfully.
+2025-04-03 03:12:09,933 - INFO - Created channel=1
+2025-04-03 03:12:09,939 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-04-03 03:12:53,238 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-04-03", "slot": "09:00 am - 10:00 am"}
+2025-04-03 03:12:53,240 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-04-03', 'slot': '09:00 am - 10:00 am'}
+2025-04-03 03:12:53,260 - INFO - shadilx8@gmail.com
+2025-04-03 03:12:53,283 - INFO -  Slot created for Dr. Shadil on 2025-04-03 at 09:00 am - 10:00 am.
+2025-04-03 03:12:53,289 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-04-03', 'slot': '09:00 am - 10:00 am'}
+2025-04-03 03:14:40,341 - INFO - Received message: {'doctor_email': 'shadilx8@gmail.com', 'patient_email': 'fariskt00@gmail.com', 'date': '2025-04-03', 'slot': '09:00 am - 10:00 am', 'amount': '400'}
+2025-04-03 03:14:40,343 - INFO - Processing booking: doctor=shadilx8@gmail.com, date=2025-04-03, slot=09:00 am - 10:00 am, patient=fariskt00@gmail.com
+2025-04-03 03:14:40,351 - INFO - Found doctor: shadilx8@gmail.com, patient: fariskt00@gmail.com
+2025-04-03 03:14:40,367 - INFO - Availability query result: Shadil VP on 2025-04-03 at 09:00 am - 10:00 am
+2025-04-03 03:14:40,374 - INFO - Slot updated: is_available=False, status=Pending
+2025-04-03 03:14:40,664 - INFO - Booked appointment for Dr. Shadil on 2025-04-03 at 09:00 am - 10:00 am
+2025-04-03 03:14:40,670 - INFO - Processed booking request: {'available': False, 'doctor_name': 'Shadil', 'status': 'Pending'}
+2025-04-03 03:14:40,671 - INFO - Sent response to amq.gen-xMIjKxO1CRAh5ld_1MjNaA: {'available': False, 'doctor_name': 'Shadil', 'status': 'Pending'}
+2025-04-03 03:15:50,587 - INFO - Received message: {'room_name': '585e103d-2efe-47fc-8520-ad20ee78e07d', 'email': 'fariskt00%40gmail.com', 'slot': '09%3A00%20am%20-%2010%3A00%20am', 'date': '2025-04-03'}
+2025-04-03 03:15:50,589 - INFO - fariskt00@gmail.com
+2025-04-03 03:15:50,590 - INFO - Constructed meet_link: 585e103d-2efe-47fc-8520-ad20ee78e07d
+2025-04-03 03:15:50,623 - INFO - Updated existing room 585e103d-2efe-47fc-8520-ad20ee78e07d for doctor with email fariskt00@gmail.com
+2025-04-03 03:15:50,662 - INFO - Sent response: {'room_created': True, 'meet_link': '585e103d-2efe-47fc-8520-ad20ee78e07d', 'email': 'fariskt00@gmail.com', 'date': '2025-04-03', 'slot': '09:00 am - 10:00 am'}
+2025-04-03 08:07:58,873 - INFO - hlo
+2025-04-03 08:07:58,873 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-04-03 08:07:58,903 - INFO - Initializing consumer...
+2025-04-03 08:07:58,905 - INFO - Hello from RabbitMQ consumer
+2025-04-03 08:07:58,905 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-04-03 08:07:58,930 - INFO - Django ORM test successful: UserProfile count = 4
+2025-04-03 08:07:58,931 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-04-03 08:08:03,879 - INFO - Connecting to RabbitMQ...
+2025-04-03 08:08:03,884 - INFO - Pika version 1.3.2 connecting to ('172.18.0.2', 5672)
+2025-04-03 08:08:03,884 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 39986), raddr=('172.18.0.2', 5672)>
+2025-04-03 08:08:03,885 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f05e331f7c0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f05e331f7c0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-04-03 08:08:03,888 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f05e331f7c0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 08:08:03,889 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f05e331f7c0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 08:08:03,890 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f05e331f7c0> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 08:08:03,891 - INFO -  Connected to RabbitMQ successfully.
+2025-04-03 08:08:03,891 - INFO - Created channel=1
+2025-04-03 08:08:03,898 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-04-03 08:08:03,907 - INFO - Connecting to RabbitMQ...
+2025-04-03 08:08:03,914 - INFO - Pika version 1.3.2 connecting to ('172.18.0.2', 5672)
+2025-04-03 08:08:03,915 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 39988), raddr=('172.18.0.2', 5672)>
+2025-04-03 08:08:03,916 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2651558280>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2651558280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-04-03 08:08:03,920 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2651558280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 08:08:03,921 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2651558280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 08:08:03,922 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f2651558280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 08:08:03,923 - INFO - Connected to RabbitMQ successfully.
+2025-04-03 08:08:03,925 - INFO - Created channel=1
+2025-04-03 08:08:03,932 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-04-03 08:08:03,934 - INFO - Connecting to RabbitMQ...
+2025-04-03 08:08:03,942 - INFO - Pika version 1.3.2 connecting to ('172.18.0.2', 5672)
+2025-04-03 08:08:03,943 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.7', 40004), raddr=('172.18.0.2', 5672)>
+2025-04-03 08:08:03,946 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0adb73ed70>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0adb73ed70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-04-03 08:08:03,950 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0adb73ed70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 08:08:03,951 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0adb73ed70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 08:08:03,955 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0adb73ed70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-03 08:08:03,956 - INFO - Connected to RabbitMQ successfully
+2025-04-03 08:08:03,957 - INFO - Created channel=1
+2025-04-03 08:08:03,967 - INFO - Published test message to slotbooking queue
+2025-04-03 08:08:03,969 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-04-03 08:08:03,970 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-04-03 08:08:03,971 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-04-03 08:08:03,974 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-04-03 08:08:03,975 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-04-03 08:08:03,976 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key
+2025-04-03 08:10:38,976 - INFO - 📥 Raw message received: {"doctor_email": "shadilx8@gmail.com", "date": "2025-04-03", "slot": "10:00 am - 11:00 am"}
+2025-04-03 08:10:38,989 - INFO - Parsed JSON: {'doctor_email': 'shadilx8@gmail.com', 'date': '2025-04-03', 'slot': '10:00 am - 11:00 am'}
+2025-04-03 08:10:39,002 - INFO - shadilx8@gmail.com
+2025-04-03 08:10:39,008 - INFO -  Slot created for Dr. Shadil on 2025-04-03 at 10:00 am - 11:00 am.
+2025-04-03 08:10:39,011 - INFO - 📤 Sent response: {'status': 'Slot Created', 'date': '2025-04-03', 'slot': '10:00 am - 11:00 am'}
+2025-04-03 08:11:09,747 - INFO - Received message: {'doctor_email': 'shadilx8@gmail.com', 'patient_email': 'fariskt00@gmail.com', 'date': '2025-04-03', 'slot': '09:00 am - 10:00 am', 'amount': '400'}
+2025-04-03 08:11:09,747 - INFO - Processing booking: doctor=shadilx8@gmail.com, date=2025-04-03, slot=09:00 am - 10:00 am, patient=fariskt00@gmail.com
+2025-04-03 08:11:09,750 - INFO - Found doctor: shadilx8@gmail.com, patient: fariskt00@gmail.com
+2025-04-03 08:11:09,756 - INFO - Availability query result: Shadil VP on 2025-04-03 at 09:00 am - 10:00 am
+2025-04-03 08:11:09,761 - INFO - Slot updated: is_available=False, status=Pending
+2025-04-03 08:11:09,842 - INFO - Booked appointment for Dr. Shadil on 2025-04-03 at 09:00 am - 10:00 am
+2025-04-03 08:11:09,848 - INFO - Processed booking request: {'available': False, 'doctor_name': 'Shadil', 'status': 'Pending'}
+2025-04-03 08:11:09,848 - INFO - Sent response to amq.gen-wUYBo5mdvg87I5JoEhQLZA: {'available': False, 'doctor_name': 'Shadil', 'status': 'Pending'}
+2025-04-03 08:14:30,345 - INFO - Received message: {'doctor_email': 'shadilx8@gmail.com', 'patient_email': 'muhdnihal132@gmail.com', 'date': '2025-04-03', 'slot': '10:00 am - 11:00 am', 'amount': '400'}
+2025-04-03 08:14:30,346 - INFO - Processing booking: doctor=shadilx8@gmail.com, date=2025-04-03, slot=10:00 am - 11:00 am, patient=muhdnihal132@gmail.com
+2025-04-03 08:14:30,354 - INFO - Found doctor: shadilx8@gmail.com, patient: muhdnihal132@gmail.com
+2025-04-03 08:14:30,367 - INFO - Availability query result: Shadil VP on 2025-04-03 at 10:00 am - 11:00 am
+2025-04-03 08:14:30,371 - INFO - Slot updated: is_available=False, status=Pending
+2025-04-03 08:14:30,375 - INFO - Booked appointment for Dr. Shadil on 2025-04-03 at 10:00 am - 11:00 am
+2025-04-03 08:14:30,378 - INFO - Processed booking request: {'available': False, 'doctor_name': 'Shadil', 'status': 'Pending'}
+2025-04-03 08:14:30,379 - INFO - Sent response to amq.gen-B_A0yRnBX8AXE4VnQE-5qw: {'available': False, 'doctor_name': 'Shadil', 'status': 'Pending'}
+2025-04-04 02:28:58,446 - INFO - Initializing consumer...
+2025-04-04 02:28:58,474 - INFO - hlo
+2025-04-04 02:28:58,474 - INFO - Hello from RabbitMQ consumer
+2025-04-04 02:28:58,475 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-04-04 02:28:58,478 - INFO - Django ORM test successful: UserProfile count = 5
+2025-04-04 02:28:58,478 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.
+2025-04-04 02:28:58,481 - INFO - Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready
+2025-04-04 02:29:03,482 - INFO - Connecting to RabbitMQ...
+2025-04-04 02:29:03,488 - INFO - Connecting to RabbitMQ...
+2025-04-04 02:29:03,491 - INFO - Connecting to RabbitMQ...
+2025-04-04 02:29:03,521 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-04-04 02:29:03,522 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-04-04 02:29:03,522 - INFO - Pika version 1.3.2 connecting to ('172.18.0.4', 5672)
+2025-04-04 02:29:03,523 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 37166), raddr=('172.18.0.4', 5672)>
+2025-04-04 02:29:03,528 - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 37170), raddr=('172.18.0.4', 5672)>
+2025-04-04 02:29:03,528 - INFO - Socket connected: <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.18.0.10', 37172), raddr=('172.18.0.4', 5672)>
+2025-04-04 02:29:03,530 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f70d051fd90>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f70d051fd90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-04-04 02:29:03,535 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f157a138280>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f157a138280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-04-04 02:29:03,539 - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f9c7bb52d70>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f9c7bb52d70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>).
+2025-04-04 02:29:03,559 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f70d051fd90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-04 02:29:03,562 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f157a138280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-04 02:29:03,566 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f70d051fd90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-04 02:29:03,571 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f157a138280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-04 02:29:03,571 - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f9c7bb52d70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-04 02:29:03,572 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f70d051fd90> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-04 02:29:03,577 - INFO -  Connected to RabbitMQ successfully.
+2025-04-04 02:29:03,577 - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f9c7bb52d70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-04 02:29:03,577 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f157a138280> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-04 02:29:03,583 - INFO - Connected to RabbitMQ successfully.
+2025-04-04 02:29:03,583 - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f9c7bb52d70> params=<ConnectionParameters host=rabbitmq port=5672 virtual_host=/ ssl=False>>
+2025-04-04 02:29:03,583 - INFO - Created channel=1
+2025-04-04 02:29:03,588 - INFO - Connected to RabbitMQ successfully
+2025-04-04 02:29:03,590 - INFO - Created channel=1
+2025-04-04 02:29:03,593 - INFO - Created channel=1
+2025-04-04 02:29:03,606 - INFO - Published test message to slotbooking queue
+2025-04-04 02:29:03,610 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-04-04 02:29:03,613 - INFO -  [✔] Waiting for messages from Appointment Service...
+2025-04-04 02:29:03,613 - INFO -  [✔] Waiting for messages on 'roomupdate' queue...
+2025-04-04 02:29:03,614 - INFO - Received message: {'doctor_email': 'doctor@example.com', 'patient_email': 'patient@example.com', 'date': '2025-03-20', 'slot': '10:00', 'amount': '500'}
+2025-04-04 02:29:03,617 - INFO - Processing booking: doctor=doctor@example.com, date=2025-03-20, slot=10:00, patient=patient@example.com
+2025-04-04 02:29:03,627 - ERROR - Doctor with email 'doctor@example.com' not found
+2025-04-04 02:29:03,628 - INFO - Processed booking request: {'error': 'Doctor not found'}
+2025-04-04 02:29:03,630 - ERROR - Failed to send response: A non-string value was supplied for self.routing_key

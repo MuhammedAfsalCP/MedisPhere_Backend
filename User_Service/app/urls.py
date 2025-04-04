@@ -29,7 +29,7 @@ from .views import (
     DoctorAvailabilityAPIView,
     UserDetailsGet,
     AppointmentHistory,
-    PatientDetials
+    PatientDetials,
 )
 from django.conf import settings
 from django.conf.urls.static import static
@@ -51,6 +51,7 @@ urlpatterns = [
         DoctorAvailabilityAPIView.as_view(),
         name="doctor_availability",
     ),
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

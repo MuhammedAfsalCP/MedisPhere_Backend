@@ -206,3 +206,5 @@ class VideoCallConsumer(AsyncWebsocketConsumer):
         else:
             logger.warning(f"No stored offer found in {self.room_name}")
         return offer
+
+

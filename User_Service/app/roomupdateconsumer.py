@@ -76,6 +76,7 @@ def roomupdate(data):
             if existing_room:
                 existing_room.meet_link = meet_link
                 existing_room.room_created = True
+                
                 existing_room.save()
                 logger.info(f"Updated existing room {room_name} for doctor with email {email}")
             else:

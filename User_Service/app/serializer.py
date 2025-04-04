@@ -280,3 +280,4 @@ class PatientDetailsSerializer(serializers.ModelSerializer):
             "height",
             "blood_group"
         )
+

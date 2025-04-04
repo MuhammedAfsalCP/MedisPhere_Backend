@@ -108,7 +108,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     is_doctor = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
-
+    
     objects = UserManager()
 
     USERNAME_FIELD = "email"
@@ -185,3 +185,4 @@ class DoctorAvailability(models.Model):
     def __str__(self):
         slot_label = dict(TimeSlotChoices.choices).get(self.slot, self.slot)
         return f"{self.doctor.first_name} {self.doctor.last_name} on {self.date} at {slot_label}"
+
