@@ -90,7 +90,7 @@ CHANNEL_LAYERS = {
     },
 }
 ASGI_APPLICATION = "Video_Call_Service.asgi.application"
-
+RABBITMQ_HOST = os.getenv("RABBITMQ_HOST", "rabbitmq")
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -108,7 +108,7 @@ DATABASES = {
 from datetime import timedelta
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        # "video_call.authentication.CustomJWTAuthentication",
+        "video_call.authentication.CustomJWTAuthentication",
         # "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
     # "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],

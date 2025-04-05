@@ -69,15 +69,7 @@ class VideoCallConsumer(AsyncWebsocketConsumer):
         if hasattr(self, 'group_name'):
             await self.channel_layer.group_discard(self.group_name, self.channel_name)
             logger.info(f"Disconnected from {self.group_name}: {self.channel_name}, Code: {close_code}")
-            if self.role == "doctor":
-                asyncio.create_task(self.run_wallet_update())
-                logger.info(f"Scheduled WalletUpdate for room {self.room_name}")
-    async def run_wallet_update(self):
-        success = await self.WalletUpdate()
-        if success:
-            logger.info(f"Successfully processed call end for room {self.room_name}")
-        else:
-            logger.error(f"Failed to process call end for room {self.room_name}")
+            
     async def receive(self, text_data):
         logger.info(f"Received message in {self.group_name} ({self.channel_name}): {text_data}")
         message = json.loads(text_data)
@@ -201,79 +193,6 @@ class VideoCallConsumer(AsyncWebsocketConsumer):
             logger.info(f"Patient joining room {roomname}, no update needed")
             return True
         
-    @sync_to_async
-    def WalletUpdate(self):
-        roomname = self.room_name
-        logger.info(f"Processing room {roomname} for {self.role}")
-        correlation_id = str(uuid.uuid4())
-        rabbitmq_response = None
-        logger.info({"emaill doctor":self.email})
-        if self.role == "doctor":
-            try:
-                connection = pika.BlockingConnection(
-                    pika.ConnectionParameters(host="rabbitmq", heartbeat=600, blocked_connection_timeout=300)
-                )
-                channel = connection.channel()
-                channel.queue_declare(queue="walletadd")
-                response_queue = channel.queue_declare(queue="", exclusive=True)
-                response_queue_name = response_queue.method.queue
-                channel.basic_qos(prefetch_count=1)
-
-                def on_response(ch, method, properties, body):
-                    nonlocal rabbitmq_response
-                    try:
-                        if properties.correlation_id == correlation_id:
-                            rabbitmq_response = json.loads(body)
-                            logger.info(f"Received RabbitMQ response: {rabbitmq_response}")
-                    except json.JSONDecodeError:
-                        logger.error("Failed to parse JSON response from RabbitMQ")
-
-                channel.basic_consume(queue=response_queue_name, on_message_callback=on_response, auto_ack=True)
-                request_data = json.dumps({
-                    "email": self.email,
-                    "slot": self.slot,
-                    "date": self.date
-                })
-                channel.basic_publish(
-                    exchange="",
-                    routing_key="walletadd",
-                    properties=pika.BasicProperties(reply_to=response_queue_name, correlation_id=correlation_id),
-                    body=request_data,
-                )
-                logger.info(f"Sent RabbitMQ request: {request_data}")
-
-                timeout = time.time() + 10
-                while rabbitmq_response is None and time.time() < timeout:
-                    try:
-                        connection.process_data_events(time_limit=1)
-                    except pika.exceptions.AMQPConnectionError:
-                        logger.error("RabbitMQ connection lost while waiting for response")
-                        return False
-
-                if rabbitmq_response is None:
-                    logger.warning("No response from User_Service")
-                    return False
-
-                if rabbitmq_response.get("error"):
-                    logger.error(f"Room validation failed: {rabbitmq_response['error']}")
-                    return False
-
-                logger.info(f"Room {roomname} saved/updated successfully for doctor")
-                return True
-
-            except pika.exceptions.AMQPConnectionError:
-                logger.error("RabbitMQ service unavailable")
-                return False
-            except Exception as e:
-                logger.error(f"Unexpected error: {str(e)}")
-                return False
-            finally:
-                if "connection" in locals() and connection.is_open:
-                    connection.close()
-        else:  # Patient role
-            logger.info(f"Patient joining room {roomname}, no update needed")
-            return True
-
     @sync_to_async
     def store_offer(self, message):
         room_offers[self.room_name] = message

@@ -28,12 +28,14 @@ def on_request(ch, method, properties, body):
     response = {}
     try:
 
-        details = DoctorAvailability.objects.select_related("patient").get(id=id)
+        details = DoctorAvailability.objects.select_related("patient","doctor").get(id=id)
 
         details = {
             "email": details.patient.email,
             "date": str(details.date),
             "slot": str(details.slot),
+            "amount":str(details.doctor.consultation_fee),
+            "room_id":details.id
         }
 
     except UserProfile.DoesNotExist:

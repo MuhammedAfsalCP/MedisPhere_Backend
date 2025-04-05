@@ -1,8 +1,8 @@
 # vide
 from django.urls import path
-# from .views import BookingAppointmentAPIView,DoctorSlotCreating
+from .views import WalletEditing
 
 urlpatterns = [
-    # path('book_appointment/', BookingAppointmentAPIView.as_view(), name='booking_appointment'),
+    path('wallet_editing/', WalletEditing.as_view(), name='wallet_editing'),
     # path('doctor_slot_creating/', DoctorSlotCreating.as_view(), name='doctor_slot_creating'),
 ]

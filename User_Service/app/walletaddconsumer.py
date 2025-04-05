@@ -1,14 +1,15 @@
-import pika
 import json
-import time
-import logging
-import os
+import pika
 import django
+import os
 import sys
+from django.conf import settings
 from django.db import transaction
-from urllib.parse import unquote
-
-# Set the Django settings module
+import logging
+import time
+from datetime import datetime
+from decimal import Decimal
+# Set up Django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "User_Service.settings")
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 django.setup()
@@ -16,129 +17,86 @@ django.setup()
 # Import your models
 from app.models import DoctorAvailability, UserProfile
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler("consumer.log"),
-        logging.StreamHandler(),
-    ],
-)
-logger = logging.getLogger(__name__)
-logger.info("Hello from RabbitMQ consumer")
+logger = logging.getLogger("django")
+from app.tasks import send_appointment_email
 
 
-def connect_to_rabbitmq():
-    """Retries RabbitMQ connection until successful"""
-    retries = 15
-    for i in range(retries):
+def on_request(ch, method, properties, body):
+    """Process a wallet update request from RabbitMQ."""
+    request_data = json.loads(body)
+    room_id = request_data.get("room_id")
+    amount = request_data.get("amount")
+    response = {}
+
+    # Validate inputs
+    if not room_id:
+        response = {"error": "room_id is required"}
+        logger.error(f"Missing room_id")
+    elif not isinstance(amount, str) or not amount.strip():  # Check if amount is a non-empty string
+        response = {"error": "Amount must be a non-empty string"}
+        logger.error(f"Invalid input: amount={amount}")
+    else:
         try:
-            connection = pika.BlockingConnection(
-                pika.ConnectionParameters(
-                    host="rabbitmq",
-                    heartbeat=600,
-                    blocked_connection_timeout=300,
-                )
-            )
-            logger.info("Connected to RabbitMQ successfully.")
-            return connection
-        except pika.exceptions.AMQPConnectionError as e:
-            logger.warning(f"Retry {i+1}/{retries} - Waiting for RabbitMQ...")
-            time.sleep(5)
-    logger.error("Failed to connect to RabbitMQ after multiple retries.")
-    raise Exception("Failed to connect to RabbitMQ after multiple retries.")
+            # Fetch room and update wallet atomically
+            amount_decimal = Decimal(amount)
+            with transaction.atomic():
+                room = DoctorAvailability.objects.select_related("doctor").get(id=room_id)
+                wallet = Decimal(str(room.doctor.wallet))
+                room.room_created = False
+                room.status = "Completed"
+                room.doctor.wallet = wallet + amount_decimal
+                room.doctor.save()
+                room.save()
+                # logger.info(f"Wallet updated for doctor {room.doctor.id}: {wallet} -> {wallet + amount}")
+            response = {"message": "wallet added"}
+        except DoctorAvailability.DoesNotExist:
+            response = {"error": "Room not found for the given ID"}
+            logger.error(f"Room not found: room_id={room_id}")
+        except Exception as e:
+            response = {"error": f"Internal error: {str(e)}"}
+            logger.error(f"Error processing request: {str(e)}")
 
-
-def walletupdate(data):
-    """Update or create the room status in DoctorAvailability for the doctor"""
-    
-    email = unquote(data.get("email") or "")  # Decode email
-    date = data.get("date")
-    slot = unquote(data.get("slot") or "")  # Decode slot
-    logger.info(email)
-    
-
+    # Send response back to the requester
     try:
-        patient = UserProfile.objects.get(email=email)
-        
-        with transaction.atomic():
-            # Check for existing room by room_name
-            
-            existing_room = DoctorAvailability.objects.filter(
-                patient=patient, slot=slot, date=date
-            ).first()
-            if existing_room:
-                existing_room.status ="Completed"
-                existing_room.room_created = False
-                existing_room.save()
-                doctor_email=existing_room.doctor.email
-                doctor=UserProfile.objects.get(email=doctor_email,is_doctor=True)
-                
-                earnings=doctor.wallet
-    
-                fees=doctor.consultation_fee
-                doctor.wallet=earnings+fees
-                doctor.save()
-            else:
-                # Create a new room
-
-                logger.info("slot not booked")
-
-            return {
-                "messege":"Room Completed"
-            }
-
-
+        logger.info(f"Sending response to {properties.reply_to} with correlation_id {properties.correlation_id}")
+        ch.basic_publish(
+            exchange="",
+            routing_key=properties.reply_to,
+            body=json.dumps(response),
+            properties=pika.BasicProperties(correlation_id=properties.correlation_id),
+        )
+        logger.info(f"Response sent: {response}")
     except Exception as e:
-        logger.error(f"Database error while processing room {email}: {e}")
-        return {"error": e}
+        logger.error(f"Failed to publish response: {str(e)}")
 
-
-def callback(ch, method, properties, body):
-    """Handles incoming RabbitMQ messages"""
-    try:
-        data = json.loads(body)
-        logger.info(f"Received message: {data}")
-        response = walletupdate(data)
-    except json.JSONDecodeError:
-        logger.error("Invalid JSON format in received message.")
-        response = {"error": "Invalid JSON format"}
-    except Exception as e:
-        logger.error(f"Error processing message: {e}")
-        response = {"error": str(e)}
-
-    ch.basic_publish(
-        exchange="",
-        routing_key=properties.reply_to,
-        properties=pika.BasicProperties(correlation_id=properties.correlation_id),
-        body=json.dumps(response),
-    )
     ch.basic_ack(delivery_tag=method.delivery_tag)
-    logger.info(f"Sent response: {response}")
 
+def start_user_service():
+    """Start RabbitMQ consumer for user service."""
+    rabbitmq_host = getattr(settings, "RABBITMQ_HOST", "rabbitmq")
+    logger.info(f"Starting User_Service with RabbitMQ host: {rabbitmq_host}")
 
-def start_consumer():
-    """Starts RabbitMQ consumer with reconnection logic"""
     while True:
         try:
-            logger.info("Connecting to RabbitMQ...")
-            connection = connect_to_rabbitmq()
+            connection = pika.BlockingConnection(
+                pika.ConnectionParameters(host=rabbitmq_host)
+            )
             channel = connection.channel()
-            channel.queue_declare(queue="walletadd")
-            channel.basic_qos(prefetch_count=1)
-            channel.basic_consume(queue="walletadd", on_message_callback=callback)
-            logger.info(" [✔] Waiting for messages on 'roomupdate' queue...")
+
+            channel.queue_declare(queue="walletadd", durable=True)
+
+            channel.basic_consume(queue="walletadd", on_message_callback=on_request)
+            logger.info(" [x] Waiting for user requests...")
             channel.start_consuming()
         except pika.exceptions.AMQPConnectionError as e:
-            logger.error(f"RabbitMQ connection lost: {e}. Reconnecting in 5 seconds...")
+            logger.error(f"RabbitMQ not available, retrying in 5 seconds: {str(e)}")
             time.sleep(5)
-        except Exception as e:
-            logger.error(f"Consumer error: {e}. Restarting in 5 seconds...")
-            time.sleep(5)
+        finally:
+            if "channel" in locals():
+                channel.close()
+            if "connection" in locals():
+                connection.close()
 
 
 if __name__ == "__main__":
-    logger.info("Starting consumer... Waiting 5 seconds to ensure RabbitMQ is ready.")
-    time.sleep(5)
-    start_consumer()
+    start_user_service()

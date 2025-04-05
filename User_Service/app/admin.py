@@ -14,6 +14,7 @@ class UserProfileAdmin(BaseUserAdmin):
         "last_name",
         "is_staff",
         "is_doctor",
+        "wallet"
     )
 
     # Fields displayed when viewing/changing an existing user.
