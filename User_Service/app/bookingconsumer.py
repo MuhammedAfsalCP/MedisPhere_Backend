@@ -6,7 +6,7 @@ import os
 import django
 import sys
 from rest_framework import status
-
+from decimal import Decimal
 # Set the Django settings module
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "User_Service.settings")
 
@@ -71,7 +71,7 @@ def slotbooking(data):
     slot = data.get("slot")
     patient_email = data.get("patient_email")
     amount = data.get("amount")
-
+    amount_decimal = Decimal(amount)
     logger.info(
         f"Processing booking: doctor={doctor_email}, date={date}, slot={slot}, patient={patient_email}"
     )
@@ -93,7 +93,7 @@ def slotbooking(data):
                 availability.is_available = False
                 availability.status = "Pending"
                 availability.patient = patient
-                availability.amount = amount
+                availability.amount = amount_decimal
                 availability.save()
                 logger.info(
                     f"Slot updated: is_available={availability.is_available}, status={availability.status}"

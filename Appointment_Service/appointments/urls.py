@@ -15,7 +15,9 @@ from .doctorviews import (
     AppointmentHistory,
     AppointmentHistoryViewMore,
     AllHistory,
-    BookigTimes
+    BookigTimes,
+    Weekly_earnings,
+    Weekly_graph
 )
 from django.conf import settings
 from django.conf.urls.static import static
@@ -90,6 +92,16 @@ urlpatterns = [
         "bookingtimes/",
         BookigTimes.as_view(),
         name="bookingtimes",
+    ),
+    path(
+        "weekly_earnings/",
+        Weekly_earnings.as_view(),
+        name="weekly_earnings",
+    ),
+    path(
+        "weekly_graph/",
+        Weekly_graph.as_view(),
+        name="weekly_graph",
     ),
 ]
 if settings.DEBUG:

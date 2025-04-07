@@ -104,7 +104,7 @@ services:
     networks:
       - medisphere
     command: >
-      sh -c "sleep 10 && python manage.py migrate && (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py & python app/roomupdateconsumer.py & python app/walletaddconsumer.py & python app/jwtconsumer.py & python app/doctorsgettingconsumer.py & python  app/specificdoctorfetchingconsumer.py & python app/slotfetchingconcumer.py & python app/historyviewingconsumer.py & python app/rescheduleconsumer.py & python app/appointmentcancellcunsumer.py & python app/slotdeletingconsumer.py & python app/appointmenthistoryconsumer.py & python app/appointementhistoryviewmoreconsumer.py & python app/doctorcalldetailsconsumer.py & python app/allhistoryconsumer.py & python app/dashboardbookingtimeconsumer.py & python app/walletaddconsumer.py)"
+      sh -c "sleep 10 && python manage.py migrate && (python manage.py runserver 0.0.0.0:8003 & python app/slotconsumer.py & python app/bookingconsumer.py & python app/roomupdateconsumer.py & python app/walletaddconsumer.py & python app/jwtconsumer.py & python app/doctorsgettingconsumer.py & python  app/specificdoctorfetchingconsumer.py & python app/slotfetchingconcumer.py & python app/historyviewingconsumer.py & python app/rescheduleconsumer.py & python app/appointmentcancellcunsumer.py & python app/slotdeletingconsumer.py & python app/appointmenthistoryconsumer.py & python app/appointementhistoryviewmoreconsumer.py & python app/doctorcalldetailsconsumer.py & python app/allhistoryconsumer.py & python app/dashboardbookingtimeconsumer.py & python app/walletaddconsumer.py & python app/dashboardweeklyearningsconsumer.py)"
 
   user-service-celery:
     build: ./User_Service

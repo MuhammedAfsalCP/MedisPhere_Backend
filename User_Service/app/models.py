@@ -114,7 +114,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         decimal_places=2,  # Digits after the decimal point
         default=0.00,  # Default balance of 0.00
         blank=True,
-        null=True
+        null=True,
     )
     objects = UserManager()
 
@@ -177,7 +177,9 @@ class DoctorAvailability(models.Model):
     status = models.CharField(
         max_length=9, choices=StatusChoices.choices, blank=True, null=True
     )
-    amount = models.CharField(max_length=20, blank=True, null=True, default=None)
+    amount = models.DecimalField(
+        max_digits=10, decimal_places=2, default=0.00, blank=True, null=True
+    )
     isDelete = models.BooleanField(default=False)
 
     class Meta:
