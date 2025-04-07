@@ -22,33 +22,136 @@ from app.models import DoctorAvailability, UserProfile,TimeSlotChoices
 logger = logging.getLogger("django")
 
 
+# def on_request(ch, method, properties, body):
+#     """Handle incoming requests to fetch weekly earnings for a doctor."""
+#     try:
+#         request_data = json.loads(body)
+#         doctor_id = request_data.get("id")  # Renamed 'id' to 'doctor_id' for clarity
+#         logger.info(f"Received request for doctor_id: {doctor_id}")
+
+#         # Calculate date range (last 12 days)
+#         end_date = datetime.now().date() - timedelta(days=1)  # Yesterday (April 4, 2025)
+#         start_date = end_date - timedelta(days=9)  # 12 days ago (March 25, 2025)
+#         logger.info(f"Querying earnings from {start_date} to {end_date}")
+
+#         # Query revenue for the last 12 days
+#         weekly_earnings = DoctorAvailability.objects.filter(
+#             Q(date__range=(start_date, end_date)) &
+#             Q(status="Completed") &
+#             Q(doctor__id=doctor_id)
+#         ).aggregate(total=Sum('amount'))['total'] or Decimal('0')
+
+#         # Ensure weekly_earnings is a Decimal
+#         weekly_earnings = Decimal(str(weekly_earnings)) if weekly_earnings else Decimal('0')
+
+#         # Prepare response
+#         response = {
+#             "Weekly Earnings": str(weekly_earnings)  # Convert to string for JSON serialization
+#         }
+#         logger.info(f"Calculated weekly earnings for doctor {doctor_id}: {weekly_earnings}")
+
+#         # Serialize response
+#         response_body = json.dumps(response)
+#         logger.info(
+#             f"Attempting to send response to reply_to queue: {properties.reply_to}, "
+#             f"correlation_id: {properties.correlation_id}"
+#         )
+
+#         # Send response
+#         ch.basic_publish(
+#             exchange="",
+#             routing_key=properties.reply_to,
+#             body=response_body,
+#             properties=pika.BasicProperties(correlation_id=properties.correlation_id),
+#         )
+#         logger.info(
+#             f"Response sent to reply_to queue: {properties.reply_to}, "
+#             f"correlation_id: {properties.correlation_id}"
+#         )
+
+#     except json.JSONDecodeError as e:
+#         response = {"error": "Invalid request data"}
+#         logger.error(f"Failed to decode request body: {str(e)}")
+#         response_body = json.dumps(response)
+#         ch.basic_publish(
+#             exchange="",
+#             routing_key=properties.reply_to,
+#             body=response_body,
+#             properties=pika.BasicProperties(correlation_id=properties.correlation_id),
+#         )
+#     except DoctorAvailability.DoesNotExist:
+#         response = {"error": "No records found for the given doctor"}
+#         logger.error(f"No records found for doctor_id: {doctor_id}")
+#         response_body = json.dumps(response)
+#         ch.basic_publish(
+#             exchange="",
+#             routing_key=properties.reply_to,
+#             body=response_body,
+#             properties=pika.BasicProperties(correlation_id=properties.correlation_id),
+#         )
+#     except Exception as e:
+#         response = {"error": f"Internal error: {str(e)}"}
+#         logger.error(f"Error processing request for doctor_id {doctor_id}: {str(e)}")
+#         response_body = json.dumps(response)
+#         ch.basic_publish(
+#             exchange="",
+#             routing_key=properties.reply_to,
+#             body=response_body,
+#             properties=pika.BasicProperties(correlation_id=properties.correlation_id),
+#         )
+
+#     ch.basic_ack(delivery_tag=method.delivery_tag)
+
+
 def on_request(ch, method, properties, body):
-    """Handle incoming requests to fetch weekly earnings for a doctor."""
+    """Handle incoming requests to fetch weekly earnings and daily appointment counts for a doctor."""
     try:
         request_data = json.loads(body)
         doctor_id = request_data.get("id")  # Renamed 'id' to 'doctor_id' for clarity
         logger.info(f"Received request for doctor_id: {doctor_id}")
 
-        # Calculate date range (last 12 days)
-        end_date = datetime.now().date() - timedelta(days=1)  # Yesterday (April 4, 2025)
-        start_date = end_date - timedelta(days=9)  # 12 days ago (March 25, 2025)
-        logger.info(f"Querying earnings from {start_date} to {end_date}")
+        # Calculate date range (last 7 days to match your output)
+        end_date = datetime.now().date() - timedelta(days=1)  # Yesterday (April 6, 2025)
+        start_date = end_date - timedelta(days=9)  # 10 days ago (March 28, 2025)
+        logger.info(f"Querying earnings and appointments from {start_date} to {end_date}")
 
-        # Query revenue for the last 12 days
-        weekly_earnings = DoctorAvailability.objects.filter(
+        # Query revenue and appointment counts for the last 10 days
+        earnings_and_counts = DoctorAvailability.objects.filter(
             Q(date__range=(start_date, end_date)) &
             Q(status="Completed") &
             Q(doctor__id=doctor_id)
-        ).aggregate(total=Sum('amount'))['total'] or Decimal('0')
+        ).values('date').annotate(
+            daily_earnings=Sum('amount'),
+            appointment_count=Count('id'),
+            total_appointments=Count('id', distinct=True)  # Added total appointments for 10 days
+        ).order_by('date')
 
-        # Ensure weekly_earnings is a Decimal
+        # Calculate total weekly earnings
+        weekly_earnings = earnings_and_counts.aggregate(total_earnings=Sum('daily_earnings'))['total_earnings'] or Decimal('0')
         weekly_earnings = Decimal(str(weekly_earnings)) if weekly_earnings else Decimal('0')
+
+        # Get total appointments for the period
+        total_appointment_count = earnings_and_counts.aggregate(total=Sum('appointment_count'))['total'] or 0
+
+        # Prepare daily breakdown as an array
+        daily_breakdown = [
+            {
+                "date": str(entry['date']),
+                "earnings": str(entry['daily_earnings'] or Decimal('0')),
+                "appointments": entry['appointment_count']
+            }
+            for entry in earnings_and_counts
+        ]
 
         # Prepare response
         response = {
-            "Weekly Earnings": str(weekly_earnings)  # Convert to string for JSON serialization
+            "Weekly Earnings": str(weekly_earnings),  # Convert to string for JSON serialization
+            "weekly_graph": daily_breakdown,
+            "total_appointments_last_10_days": total_appointment_count  # Added new field
         }
         logger.info(f"Calculated weekly earnings for doctor {doctor_id}: {weekly_earnings}")
+        logger.info(f"Daily breakdown: {daily_breakdown}")
+        logger.info(f"Total appointments last 10 days: {total_appointment_count}")
 
         # Serialize response
         response_body = json.dumps(response)
@@ -101,7 +204,6 @@ def on_request(ch, method, properties, body):
         )
 
     ch.basic_ack(delivery_tag=method.delivery_tag)
-
 
 def start_user_service():
     """Start RabbitMQ consumer for user service."""

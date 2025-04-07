@@ -904,7 +904,7 @@ class Weekly_earnings(APIView):
             )
 
         return Response(
-            {"Weekly_Earnings": doctor_response.get("Weekly Earnings")},
+            {"Weekly_Earnings": doctor_response.get("Weekly Earnings"),"weekly_graph":doctor_response.get("weekly_graph"),"weekly_total_appointments":doctor_response.get("total_appointments_last_10_days")},
             status=status.HTTP_201_CREATED,
         )
     

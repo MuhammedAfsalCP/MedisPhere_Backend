@@ -11,7 +11,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-=jqk(j(ixzbl=g!k8__&altu@fn14#wcf51hn%uxuw*7+gmw%&"
+SECRET_KEY = os.getenv("NOTIFICATION_SERVICE_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,8 +42,18 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "Notification",
+    "rest_framework_simplejwt",
+    "rest_framework",
+    "corsheaders",
+    "django_celery_beat",
 ]
-
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")  # Redis as message broker
+ # Use your broker (Redis/RabbitMQ)
+CELERY_RESULT_BACKEND = os.getenv("CELERY_BROKER_URL")
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -75,12 +90,40 @@ WSGI_APPLICATION = "Notification_Service.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("DATA_BASE_NAME"),
+        "HOST": os.getenv("DATA_BASE_HOST"),
+        "PORT": os.getenv("DATA_BASE_PORT"),
+        "USER": os.getenv("DATA_BASE_USER"),
+        "PASSWORD": os.getenv("DATA_BASE_PASSWORD"),
     }
 }
+from datetime import timedelta
 
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "Notification.authentication.CustomJWTAuthentication",
+    ],
+    # "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
+}
 
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": os.getenv("JWT_KEY"),
+    "AUTH_HEADER_TYPES": ("Bearer",),
+}
+
+RABBITMQ_HOST = os.getenv("RABBITMQ_HOST", "rabbitmq")
+CELERY_BEAT_SCHEDULE = {
+    'check-pending-notifications': {
+        'task': 'Notification_Service.tasks.check_pending_notifications',
+        'schedule': 300.0,  # Every 5 minutes (300 seconds)
+    },
+}
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
