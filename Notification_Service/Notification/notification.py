@@ -6,7 +6,7 @@ from .models import Notification
 from .tasks import send_notification_email
 
 
-def create_booking_notification(doctor_id, patient_id, booking_time, slot, patient_email, doctor_name):
+def create_booking_notification( patient_id, booking_time, slot, patient_email, doctor_name):
     """
     Create a booking notification and schedule it to be sent 1 day before the appointment.
 
@@ -36,7 +36,7 @@ def create_booking_notification(doctor_id, patient_id, booking_time, slot, patie
                 f"Regards,\nClinic Team"
             ),
             'patient_email': patient_email,
-            'doctor_id': doctor_id,
+            'doctor_name': doctor_name,
             'slot': slot
         }
 
@@ -54,7 +54,7 @@ def create_booking_notification(doctor_id, patient_id, booking_time, slot, patie
             hour=scheduled_time.hour,
             day_of_month=scheduled_time.day,
             month_of_year=scheduled_time.month,
-            year=scheduled_time.year,
+            # year=scheduled_time.year,
         )
 
         # Create a unique PeriodicTask for this notification

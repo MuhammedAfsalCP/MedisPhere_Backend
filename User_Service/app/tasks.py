@@ -30,7 +30,7 @@ def send_appointment_email(to_email, subject, message):
         logger.error(f"Failed to send email to {to_email}: {str(e)}")
         raise
 @celery_app.task(queue='user_queue', autoretry_for=(Exception,), max_retries=3, retry_backoff=True)
-def publish_booking_event(doctor_email, patient_email, date, slot, amount, doctor_name):
+def publish_booking_event(patient_id, patient_email, date, slot, doctor_name):
     try:
         connection = pika.BlockingConnection(pika.ConnectionParameters(host='rabbitmq'))
         channel = connection.channel()
@@ -41,11 +41,11 @@ def publish_booking_event(doctor_email, patient_email, date, slot, amount, docto
         correlation_id = str(uuid.uuid4())  # Add import uuid at the top
 
         message = {
-            'doctor_email': doctor_email,
+            
             'patient_email': patient_email,
             'date': date,
             'slot': slot,
-            'amount': amount,
+            'patient_id':patient_id,
             'doctor_name': doctor_name
         }
 

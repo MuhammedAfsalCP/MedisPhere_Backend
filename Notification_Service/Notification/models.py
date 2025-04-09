@@ -8,7 +8,7 @@ class Notification(models.Model):
         ('failed', 'Failed'),
     )
 
-    id = models.BigAutoField(primary_key=True)
+    # id = models.BigAutoField(primary_key=True)
     user_id = models.BigIntegerField(help_text="ID of the UserProfile from user_service")
     message = models.TextField(help_text="JSON string containing patient_email and text")
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')

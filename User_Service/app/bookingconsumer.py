@@ -103,7 +103,7 @@ def slotbooking(data):
                 subject = "Appointment Confirmation"
                 message = f"Your appointment is confirmed. See you soon! Booking Date {date} at {slot}"
                 send_appointment_email.delay(to_email, subject, message)
-                publish_booking_event.delay(doctor.id, patient.id, date, slot, patient.email, doctor.first_name)
+                publish_booking_event.delay(patient.id,patient.email, date, slot, doctor.first_name)
                 logger.info(
                     f"Booked appointment for Dr. {doctor.first_name} on {date} at {slot}"
                 )
