@@ -28,7 +28,7 @@ def on_request(ch, method, properties, body):
     response = {}
     try:
 
-        slots = DoctorAvailability.objects.filter(doctor__id=id, date=date).values(
+        slots = DoctorAvailability.objects.filter(doctor__id=id, date=date,isDelete="False").values(
             str("slot"), "is_available", "id"
         )
 

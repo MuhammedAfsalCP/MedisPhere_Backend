@@ -3,7 +3,6 @@ FROM python:3.10
 
 # Set the working directory
 WORKDIR /app
-
 # Copy project files
 COPY . /app
 

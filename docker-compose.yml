@@ -73,21 +73,79 @@ services:
     networks:
       - medisphere
 
+  # notification-service:
+  #   build: ./Notification_Service
+  #   container_name: Notification_Service
+  #   ports:
+  #     - "8002:8002"
+  #   volumes:
+  #     - ./Notification_Service:/app
+  #   depends_on:
+  #     - db
+  #     - redis
+  #     - rabbitmq
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     - DJANGO_SETTINGS_MODULE=Notification_Service.settings
+  #   networks:
+  #     - medisphere
+  #   command: >
+  #     sh -c "python manage.py migrate && (python manage.py runserver 0.0.0.0:8002 & python Notification/consumer.py)"
+  # notification-service-beat:
+  #   build:
+  #     context: ./Notification_Service
+  #     dockerfile: Dockerfile
+  #   container_name: Notification_Service_Beat
+  #   depends_on:
+  #     - redis
+  #     - rabbitmq
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     - DJANGO_SETTINGS_MODULE=Notification_Service.settings
+  #   networks:
+  #     - medisphere
+  #   command: >
+  #     sh -c "cd /app/Notification_Service && sleep 10 && celery -A . beat --loglevel=info"
+  #   user: "1000:1000"
   notification-service:
-    build: ./Notification_Service
+    build:
+      context: ./Notification_Service
+      dockerfile: Dockerfile
     container_name: Notification_Service
     ports:
       - "8002:8002"
-    volumes:
-      - ./Notification_Service:/app
     depends_on:
       - db
       - redis
       - rabbitmq
     env_file:
       - .env
+    environment:
+      - DJANGO_SETTINGS_MODULE=Notification_Service.settings
     networks:
       - medisphere
+    command: >
+      sh -c "python /app/manage.py migrate && (python /app/manage.py runserver 0.0.0.0:8002 & python Notification/consumer.py)"
+    
+
+
+  notification-service-celery:
+    build: ./Notification_Service
+    container_name: Notification_Service_Beat
+    depends_on:
+      - redis
+      - db
+    volumes:
+      - ./Notification_Service:/app
+    env_file:
+      - .env
+    networks:
+      - medisphere
+    command: >
+      sh -c "sleep 10 && celery -A Notification_Service worker -l info"
+  
 
   user-service:
     build: ./User_Service
@@ -121,6 +179,7 @@ services:
       - medisphere
     command: >
       sh -c "sleep 10 && celery -A User_Service worker -l info"
+  
 
   video-call-service:
     build: ./Video_Call_Service

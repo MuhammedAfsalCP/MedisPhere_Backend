@@ -9,7 +9,7 @@ from rest_framework.permissions import AllowAny, IsAdminUser
 from django.contrib.auth import authenticate
 from rest_framework import status
 from django.views.decorators.csrf import csrf_exempt
-from .tasks import publish_booking_event
+# from .tasks import publish_booking_event
 from .permissions import IsDoctor, IsAdmin, IsStaff, IsPatient
 from .utils import send_otp
 from .serializer import (

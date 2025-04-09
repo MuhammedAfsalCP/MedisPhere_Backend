@@ -35,6 +35,7 @@ def on_request(ch, method, properties, body):
                 doctor=room.doctor, date=room.date, slot=room.slot
             )
             room.status = "Cancelled"
+            room.isDelete=True
             room.save()
             response = {"message": "Appointment Cancelled"}
         to_email = patient_email

@@ -29,7 +29,8 @@ TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
 TWILIO_PHONE_NUMBER = os.getenv("TWILIO_PHONE_NUMBER")
 # SECURITY WARNING: don't run with debug turned on in production!
 
-CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")  # Redis as message broker
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
+CELERY_RESULT_BACKEND = os.getenv("CELERY_RESULT_BACKEND")
 CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 
@@ -55,7 +56,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 # CORS_ALLOW_CREDENTIALS = True
 
-
+RABBITMQ_HOST = os.getenv("RABBITMQ_HOST", "rabbitmq")
 # Application definition
 
 INSTALLED_APPS = [
