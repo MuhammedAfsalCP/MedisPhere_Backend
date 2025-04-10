@@ -1,28 +1,34 @@
+
 import os
 from celery import Celery
 
+# Set the Django settings module
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Notification_Service.settings')
 
-app = Celery(
+# Initialize Celery
+celery = Celery(
     'Notification_Service',
-    broker='redis://redis:6379/0',
+    broker='amqp://guest:guest@rabbitmq:5672//',
     backend='redis://redis:6379/0',
-    include=['Notification.tasks']
+    include=['Notification.tasks']  # Resolves to /app/Notification/tasks.py
 )
 
-app.config_from_object('django.conf:settings', namespace='CELERY')
-app.autodiscover_tasks()
+# Load Celery config from Django settings
+celery.config_from_object('django.conf:settings', namespace='CELERY')
 
-app.conf.beat_schedule = {
-    'check-pending-notifications': {
-        'task': 'Notification.tasks.check_pending_notifications',
-        'schedule': 300.0,  # 5 minutes
-        'args': (),
-    },
+# Auto-discover tasks
+celery.autodiscover_tasks()
+
+# Configure queue settings
+celery.conf.task_default_queue = 'notification_queue'
+celery.conf.task_queues = {
+    'notification_queue': {
+        'binding_key': 'notification_queue'
+    }
 }
+celery.conf.task_default_routing_key = 'notification_queue'
 
-app.conf.task_default_queue = 'notification_queue'
-app.conf.task_queues = {'notification_queue': {'binding_key': 'notification_queue'}}
-app.conf.task_default_routing_key = 'notification_queue'
-
-app.conf.timezone = 'UTC'
+# Set timezone and debugging options
+celery.conf.timezone = 'UTC'
+celery.conf.task_track_started = True
+celery.conf.result_expires = 3600

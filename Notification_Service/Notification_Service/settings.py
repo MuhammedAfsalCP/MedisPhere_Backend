@@ -54,8 +54,11 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
+CELERY_TASK_TRACK_STARTED = True
+CELERY_RESULT_EXPIRES = 3600
+CELERY_TASK_DEFAULT_QUEUE = 'notification_queue'
 
-# Celery Beat Configuration
+# Optional: Celery Beat settings (if using DatabaseScheduler)
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 EMAIL_BACKEND = os.getenv("EMAIL_BACKEND")
 EMAIL_HOST = os.getenv("EMAIL_HOST")

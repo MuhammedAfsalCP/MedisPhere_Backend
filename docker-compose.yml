@@ -73,42 +73,21 @@ services:
     networks:
       - medisphere
 
-  # notification-service:
+
+  # notification-service-celery:
   #   build: ./Notification_Service
-  #   container_name: Notification_Service
-  #   ports:
-  #     - "8002:8002"
-  #   volumes:
-  #     - ./Notification_Service:/app
-  #   depends_on:
-  #     - db
-  #     - redis
-  #     - rabbitmq
-  #   env_file:
-  #     - .env
-  #   environment:
-  #     - DJANGO_SETTINGS_MODULE=Notification_Service.settings
-  #   networks:
-  #     - medisphere
-  #   command: >
-  #     sh -c "python manage.py migrate && (python manage.py runserver 0.0.0.0:8002 & python Notification/consumer.py)"
-  # notification-service-beat:
-  #   build:
-  #     context: ./Notification_Service
-  #     dockerfile: Dockerfile
   #   container_name: Notification_Service_Beat
   #   depends_on:
   #     - redis
-  #     - rabbitmq
+  #     - db
+  #   volumes:
+  #     - ./Notification_Service:/app
   #   env_file:
   #     - .env
-  #   environment:
-  #     - DJANGO_SETTINGS_MODULE=Notification_Service.settings
   #   networks:
   #     - medisphere
   #   command: >
-  #     sh -c "cd /app/Notification_Service && sleep 10 && celery -A . beat --loglevel=info"
-  #   user: "1000:1000"
+  #     sh -c "sleep 10 && celery -A Notification_Service worker -l info"
   notification-service:
     build:
       context: ./Notification_Service
@@ -124,27 +103,63 @@ services:
       - .env
     environment:
       - DJANGO_SETTINGS_MODULE=Notification_Service.settings
+    volumes:
+      - ./Notification_Service:/app
     networks:
       - medisphere
+
+  notification-consumer:
+    build:
+      context: ./Notification_Service
+      dockerfile: Dockerfile
+    container_name: Notification_Consumer
+    depends_on:
+      - rabbitmq
+      - db
+    env_file:
+      - .env
+    volumes:
+      - ./Notification_Service:/app
     command: >
-      sh -c "python /app/manage.py migrate && (python /app/manage.py runserver 0.0.0.0:8002 & python Notification/consumer.py)"
-    
+      sh -c "python /app/Notification/consumer.py"
+    networks:
+      - medisphere
 
-
-  notification-service-celery:
-    build: ./Notification_Service
+  notification-beat:
+    build:
+      context: ./Notification_Service
+      dockerfile: Dockerfile
     container_name: Notification_Service_Beat
     depends_on:
       - redis
+      - rabbitmq
       - db
-    volumes:
-      - ./Notification_Service:/app
     env_file:
       - .env
+    volumes:
+      - ./Notification_Service:/app
+    command: >
+      sh -c "celery -A Notification_Service beat -l info"
     networks:
       - medisphere
+
+  notification-worker:
+    build:
+      context: ./Notification_Service
+      dockerfile: Dockerfile
+    container_name: Notification_Service_Worker
+    depends_on:
+      - redis
+      - rabbitmq
+      - db
+    env_file:
+      - .env
+    volumes:
+      - ./Notification_Service:/app
     command: >
-      sh -c "sleep 10 && celery -A Notification_Service worker -l info"
+      sh -c "celery -A Notification_Service worker -Q notification_queue -l info"
+    networks:
+      - medisphere
   
 
   user-service:
