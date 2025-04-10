@@ -107,23 +107,25 @@ services:
       - ./Notification_Service:/app
     networks:
       - medisphere
-
-  notification-consumer:
-    build:
-      context: ./Notification_Service
-      dockerfile: Dockerfile
-    container_name: Notification_Consumer
-    depends_on:
-      - rabbitmq
-      - db
-    env_file:
-      - .env
-    volumes:
-      - ./Notification_Service:/app
     command: >
-      sh -c "python /app/Notification/consumer.py"
-    networks:
-      - medisphere
+      sh -c "sleep 10 && python manage.py migrate && (python manage.py runserver 0.0.0.0:8002 & python Notification/consumer.py)" 
+
+  # notification-consumer:
+  #   build:
+  #     context: ./Notification_Service
+  #     dockerfile: Dockerfile
+  #   container_name: Notification_Consumer
+  #   depends_on:
+  #     - rabbitmq
+  #     - db
+  #   env_file:
+  #     - .env
+  #   volumes:
+  #     - ./Notification_Service:/app
+  #   command: >
+  #     sh -c "python /app/Notification/consumer.py"
+  #   networks:
+  #     - medisphere
 
   notification-beat:
     build:
@@ -160,6 +162,8 @@ services:
       sh -c "celery -A Notification_Service worker -Q notification_queue -l info"
     networks:
       - medisphere
+
+
   
 
   user-service:
