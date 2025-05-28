@@ -32,6 +32,7 @@ def on_request(ch, method, properties, body):
 
         History = {
             "id": details.id,
+            "patient_id":details.patient.id,
             "profile_pic": (
                 details.patient.profile_pic.url if details.patient.profile_pic else None
             ),

@@ -9,7 +9,8 @@ import logging
 from rest_framework.permissions import AllowAny, IsAdminUser
 from .permissions import IsAdmin, IsDoctor, IsPatient
 from django.conf import settings
-
+from .serializer import PrescriptionsShowingSerializer
+from .models import Prescription
 # Setup logging
 logger = logging.getLogger(__name__)
 
@@ -961,3 +962,10 @@ class Canceling(APIView):
             {"message": doctor_response.get("message", "Appointment rescheduled")},
             status=status.HTTP_201_CREATED,
         )
+
+class PrescriptionListsGetingAPIView(APIView):
+    permission_classes = [IsPatient]
+    def get(self, request):
+        prescriptions = Prescription.objects.filter(patient_id=request.user.id)
+        serializer = PrescriptionsShowingSerializer(prescriptions, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

@@ -9,8 +9,9 @@ import logging
 from rest_framework.permissions import AllowAny, IsAdminUser
 from .permissions import IsAdmin, IsDoctor, IsPatient
 from django.conf import settings
+from .serializer import PrescriptionCreateSerializer, PrescriptionSerializer
+from .models import Prescription
 
-# Setup logging
 logger = logging.getLogger(__name__)
 
 import razorpay
@@ -31,20 +32,17 @@ class DoctorCall(APIView):
         doctor_response = None
 
         try:
-            # Setup RabbitMQ connection
+
             connection = pika.BlockingConnection(
                 pika.ConnectionParameters(host="rabbitmq")
             )
             channel = connection.channel()
 
-            # Declare the queue
             channel.queue_declare(queue="doctor_call", durable=True)
 
-            # Create a temporary response queue
             response_queue = channel.queue_declare(queue="", exclusive=True)
             response_queue_name = response_queue.method.queue
 
-            # Set prefetch count to 1 (Fair dispatch)
             channel.basic_qos(prefetch_count=1)
 
             def on_response(ch, method, properties, body):
@@ -57,14 +55,11 @@ class DoctorCall(APIView):
                 except json.JSONDecodeError:
                     logger.error("Failed to parse JSON response from RabbitMQ")
 
-            # Start consuming response queue asynchronously
             channel.basic_consume(
                 queue=response_queue_name,
                 on_message_callback=on_response,
                 auto_ack=True,
             )
-
-            # Send request to RabbitMQ queue
             request_data = json.dumps({"id": id})
             channel.basic_publish(
                 exchange="",
@@ -77,13 +72,10 @@ class DoctorCall(APIView):
             )
             logger.info(f"Sent request: {request_data}")
 
-            # Wait for response (Max 5 seconds to prevent infinite loop)
-            timeout = time.time() + 5  # 5-second timeout
+            timeout = time.time() + 5
             while doctor_response is None and time.time() < timeout:
                 try:
-                    connection.process_data_events(
-                        time_limit=1
-                    )  # Allow other tasks to run
+                    connection.process_data_events(time_limit=1)
                 except pika.exceptions.AMQPConnectionError:
                     logger.error("RabbitMQ connection lost while waiting for response")
                     return Response(
@@ -103,11 +95,10 @@ class DoctorCall(APIView):
                 {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
         finally:
-            # Ensure RabbitMQ connection is closed properly
+
             if "connection" in locals() and connection.is_open:
                 connection.close()
 
-        # If no response, return an error
         if doctor_response is None:
             logger.warning("No response from doctor availability service")
             return Response(
@@ -689,6 +680,7 @@ class AllHistory(APIView):
             status=status.HTTP_201_CREATED,
         )
 
+
 class BookigTimes(APIView):
     """API to create an appointment by checking doctor availability via RabbitMQ"""
 
@@ -797,7 +789,7 @@ class BookigTimes(APIView):
             {"Booking_Times": doctor_response.get("Booking_Times")},
             status=status.HTTP_201_CREATED,
         )
-    
+
 
 class Weekly_earnings(APIView):
     """API to create an appointment by checking doctor availability via RabbitMQ"""
@@ -904,13 +896,17 @@ class Weekly_earnings(APIView):
             )
 
         return Response(
-            {"Weekly_Earnings": doctor_response.get("Weekly Earnings"),"weekly_graph":doctor_response.get("weekly_graph"),"weekly_total_appointments":doctor_response.get("total_appointments_last_10_days")},
+            {
+                "Weekly_Earnings": doctor_response.get("Weekly Earnings"),
+                "weekly_graph": doctor_response.get("weekly_graph"),
+                "weekly_total_appointments": doctor_response.get(
+                    "total_appointments_last_10_days"
+                ),
+            },
             status=status.HTTP_201_CREATED,
         )
-    
 
 
-    
 class Weekly_graph(APIView):
     """API to create an appointment by checking doctor availability via RabbitMQ"""
 
@@ -1019,3 +1015,52 @@ class Weekly_graph(APIView):
             {"Weekly_Earnings": doctor_response.get("Weekly Earnings")},
             status=status.HTTP_201_CREATED,
         )
+
+
+class PrescriptionListCreateAPIView(APIView):
+    permission_classes = [IsDoctor]
+
+    def post(self, request):
+        data = request.data.copy()
+        data["doctor_id"] = str(request.user.id)
+        data["doctor_name"] = f"{request.user.first_name} {request.user.last_name}"
+        data["doctor_department"] = str(request.user.department)
+        serializer = PrescriptionCreateSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class PrescriptionDetailAPIView(APIView):
+    permission_classes = [IsDoctor]
+
+    def get_object(self, pk):
+        try:
+            return Prescription.objects.get(prescription_id=pk)
+        except Prescription.DoesNotExist:
+            return None
+
+    def get(self, request, pk):
+        prescription = self.get_object(pk)
+        if not prescription:
+            return Response({"error": "Not found"}, status=status.HTTP_404_NOT_FOUND)
+        serializer = PrescriptionSerializer(prescription)
+        return Response(serializer.data)
+
+    def put(self, request, pk):
+        prescription = self.get_object(pk)
+        if not prescription:
+            return Response({"error": "Not found"}, status=status.HTTP_404_NOT_FOUND)
+        serializer = PrescriptionSerializer(prescription, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk):
+        prescription = self.get_object(pk)
+        if not prescription:
+            return Response({"error": "Not found"}, status=status.HTTP_404_NOT_FOUND)
+        prescription.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

@@ -73,6 +73,21 @@ services:
     networks:
       - medisphere
 
+  payment-service:
+    build: ./Payment_Service
+    container_name: Payment_Service
+    ports:
+      - "8005:8005"
+    volumes:
+      - ./Payment_Service:/app
+    depends_on:
+      - db
+      - redis
+    env_file:
+      - .env
+    networks:
+      - medisphere
+
 
   # notification-service-celery:
   #   build: ./Notification_Service

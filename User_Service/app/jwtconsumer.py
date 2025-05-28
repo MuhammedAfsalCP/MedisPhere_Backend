@@ -35,6 +35,7 @@ def on_request(ch, method, properties, body):
             "is_doctor": user.is_doctor,
             "is_admin": user.is_admin,
             "is_staff": user.is_staff,
+            "department":user.department,
         }
         logger.info(f"User data retrieved for ID: {user_id}")
     except UserProfile.DoesNotExist:

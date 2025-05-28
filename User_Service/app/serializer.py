@@ -247,6 +247,9 @@ class UserDetailSerializer(serializers.ModelSerializer):
             "is_doctor",
             "profile_pic",
             "is_admin",
+            "wallet",
+            "department",
+            "date_of_birth"
         )
 
 

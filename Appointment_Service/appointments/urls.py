@@ -7,6 +7,7 @@ from .patientviews import (
     AppointmentBookingViewMore,
     Reschedulig,
     Canceling,
+    PrescriptionListsGetingAPIView
 )
 from .doctorviews import (
     DoctorCall,
@@ -17,7 +18,9 @@ from .doctorviews import (
     AllHistory,
     BookigTimes,
     Weekly_earnings,
-    Weekly_graph
+    Weekly_graph,
+    PrescriptionListCreateAPIView,
+    PrescriptionDetailAPIView
 )
 from django.conf import settings
 from django.conf.urls.static import static
@@ -103,6 +106,13 @@ urlpatterns = [
         Weekly_graph.as_view(),
         name="weekly_graph",
     ),
+    path(
+        "prescriptioncreate/",
+        PrescriptionListCreateAPIView.as_view(),
+        name="prescriptioncreate",
+    ),
+    path('prescriptions/<int:pk>/', PrescriptionDetailAPIView.as_view(), name='prescription-detail'),
+    path('prescriptions-user/', PrescriptionListsGetingAPIView.as_view(), name='prescription-user'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
